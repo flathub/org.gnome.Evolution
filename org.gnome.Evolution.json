@@ -26,6 +26,7 @@
             "--socket=x11",
             "--socket=wayland",
             "--socket=pulseaudio",
+            "--filesystem=home",
             "--talk-name=org.gnome.OnlineAccounts",
             "--talk-name=org.freedesktop.Notifications",
             "--filesystem=xdg-run/dconf",
@@ -232,6 +233,10 @@
                         "type": "archive",
                         "url": "https://download.gnome.org/sources/evolution-data-server/3.30/evolution-data-server-3.30.1.tar.xz",
                         "sha256": "a4221ece8bed77eef4cbdd91a4ba9a786068c93bc52e0c9d7aca525e620dd60e"
+                    },
+                    {
+                        "type": "patch",
+                        "path": "eds.patch"
                     }
                 ]
             },
@@ -292,7 +297,6 @@
                         "commands": [
                             "export GIO_USE_NETWORK_MONITOR=base",
                             "echo evolution-flatpak | /app/bin/gnome-keyring-daemon --daemonize --unlock &",
-                            "/app/libexec/dconf-service &",
                             "sleep 1",
                             "gsettings reset org.gnome.evolution-data-server network-monitor-gio-name",
                             "/app/libexec/evolution-source-registry &",
@@ -312,6 +316,7 @@
                             "/app/libexec/evolution-data-server/evolution-dbus-session \\",
                             "   --exec /app/bin/evolution-wrapper \\",
                             "   --service-dir /app/share/dbus-1/services/ \\",
+                            "   --iface ca.desrt.dconf:/ca/desrt/dconf \\",  
                             "   --iface org.freedesktop.Notifications:/org/freedesktop/Notifications \\",
                             "   --iface org.freedesktop.portal.Desktop:/org/freedesktop/portal/desktop \\",
                             "   --iface org.gnome.OnlineAccounts:/org/gnome/OnlineAccounts"
