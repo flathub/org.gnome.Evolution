@@ -169,6 +169,11 @@
                         "commands": [
                             "AUTOMAKE=\"/bin/true\" autoreconf -vfi"
                         ]
+                    },
+
+                    {
+                        "type": "shell",
+                        "commands": [ "cp -p /usr/share/automake-*/config.{sub,guess} ." ]
                     }
                 ]
             }, 
