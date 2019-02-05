@@ -78,8 +78,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/gnome-online-accounts/3.30/gnome-online-accounts-3.30.0.tar.xz",
-                        "sha256": "27d9d88942aa02a1f8d003dfe515483d8483f216ba1e297a8ef67a42cf4bcfc3"
+                        "url": "https://download.gnome.org/sources/gnome-online-accounts/3.30/gnome-online-accounts-3.30.1.tar.xz",
+                        "sha256": "7e968a325e959f0b2419bed5a4c5b6d3a9327aceebd72f4fb01478c78ce85b41"
                     }
                 ]
             },
@@ -159,8 +159,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "http://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.4.46.tgz",
-                        "sha256": "9a90dcb86b99ae790ccab93b7585a31fbcbeec8c94bf0f7ab0ca0a87ea0c4b2d"
+                        "url": "http://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.4.47.tgz",
+                        "sha256": "f54c5877865233d9ada77c60c0f69b3e0bfd8b1b55889504c650047cc305520b"
                     },
      
                     {
@@ -203,8 +203,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.30/evolution-data-server-3.30.3.tar.xz",
-                        "sha256": "a39c12bfc14f72a1a577a63ab1f6d4a3b77ca25df8cdc7996261993b98be3ce0"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.30/evolution-data-server-3.30.5.tar.xz",
+                        "sha256": "91d6312f60752bb5229e35975b3c1f30f8f64bd8e5cce76cc275b1073d1725e9"
                     }
                 ]
             },
@@ -248,8 +248,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.30/evolution-3.30.3.tar.xz",
-                        "sha256": "c6cce1c4c2bacb3298810053589196d781a2a07dbc1dbfaac24892b139c60bec"
+                        "url": "https://download.gnome.org/sources/evolution/3.30/evolution-3.30.5.tar.xz",
+                        "sha256": "50d0775d6102591c6631fae769cc0d5ab1ebdb1a631636e8b8378804f3901dc2"
                     },
 
                     {   "type": "patch",
@@ -308,8 +308,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.30/evolution-ews-3.30.3.tar.xz",
-                        "sha256": "2bf6963ded4f630979d5ac43326ea769e5d0340cbf5e28ccdbbb02f99cb96322"
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.30/evolution-ews-3.30.5.tar.xz",
+                        "sha256": "6b81302f59dcb78c49c093dde90bf91a89006a0d1b5548179e4d514ab3c7a7ea"
                     }
                 ]
             }
