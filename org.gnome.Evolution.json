@@ -134,8 +134,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/libgweather/3.28/libgweather-3.28.2.tar.xz",
-                        "sha256": "081ce81653afc614e12641c97a8dd9577c524528c63772407ae2dbcde12bde75"
+                        "url": "https://download.gnome.org/sources/libgweather/3.32/libgweather-3.32.0.tar.xz",
+                        "sha256": "de9a2b392a8b27e012ed80bb9c950085692cd8e898c367c092df15f964a91d13"
                     }
                 ]
             },
@@ -203,8 +203,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.30/evolution-data-server-3.30.5.tar.xz",
-                        "sha256": "91d6312f60752bb5229e35975b3c1f30f8f64bd8e5cce76cc275b1073d1725e9"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.32/evolution-data-server-3.32.0.tar.xz",
+                        "sha256": "8e10b84974e483322e07a97c57dff56ffb208aa0c33e39a13208d6c52470ddde"
                     }
                 ]
             },
@@ -248,12 +248,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.30/evolution-3.30.5.tar.xz",
-                        "sha256": "50d0775d6102591c6631fae769cc0d5ab1ebdb1a631636e8b8378804f3901dc2"
-                    },
-
-                    {   "type": "patch",
-                        "path": "evopatch.patch"
+                        "url": "https://download.gnome.org/sources/evolution/3.32/evolution-3.32.0.tar.xz",
+                        "sha256": "ccd61e080db0cf547467c579bb29ffc0f7a2e1a9d7dab92353e3f9e5c6837cea"
                     },
 			     
                     {
@@ -296,8 +292,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://www.cabextract.org.uk/libmspack/libmspack-0.9.1alpha.tar.gz",
-                        "sha256": "62a336d9c798638aaf3dceb43843320061544bbf35547c316b075b99112f2e40"
+                        "url": "https://www.cabextract.org.uk/libmspack/libmspack-0.10.1alpha.tar.gz",
+                        "sha256": "bac862dee6e0fc10d92c70212441d9f8ad9b0222edc9a708c3ead4adb1b24a8e"
                     }
                 ]
             },
@@ -308,8 +304,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.30/evolution-ews-3.30.5.tar.xz",
-                        "sha256": "6b81302f59dcb78c49c093dde90bf91a89006a0d1b5548179e4d514ab3c7a7ea"
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.32/evolution-ews-3.32.0.tar.xz",
+                        "sha256": "83902650001c8802e9043f6f48cbb042eed81ba410d93436769d3bf4869cecb7"
                     }
                 ]
             }
