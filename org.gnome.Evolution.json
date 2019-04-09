@@ -1,7 +1,7 @@
 {
         "app-id": "org.gnome.Evolution",
         "runtime": "org.gnome.Platform",
-        "runtime-version": "3.30",
+        "runtime-version": "3.32",
         "sdk": "org.gnome.Sdk",
         "command": "evolution",
         "rename-icon": "evolution",
@@ -78,8 +78,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/gnome-online-accounts/3.30/gnome-online-accounts-3.30.1.tar.xz",
-                        "sha256": "7e968a325e959f0b2419bed5a4c5b6d3a9327aceebd72f4fb01478c78ce85b41"
+                        "url": "https://download.gnome.org/sources/gnome-online-accounts/3.32/gnome-online-accounts-3.32.0.tar.xz",
+                        "sha256": "1c19e65771c8d16fa0016ab70d9a1ee2b75a84aeeedd24527a4e41b132e8d4aa"
                     }
                 ]
             },
@@ -134,8 +134,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/libgweather/3.32/libgweather-3.32.0.tar.xz",
-                        "sha256": "de9a2b392a8b27e012ed80bb9c950085692cd8e898c367c092df15f964a91d13"
+                        "url": "https://download.gnome.org/sources/libgweather/3.32/libgweather-3.32.1.tar.xz",
+                        "sha256": "1c2218ed71230dd2c550ca4fd3dab53e2f2831d38982c213575f34e48d68e980"
                     }
                 ]
             },
@@ -203,8 +203,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.32/evolution-data-server-3.32.0.tar.xz",
-                        "sha256": "8e10b84974e483322e07a97c57dff56ffb208aa0c33e39a13208d6c52470ddde"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.32/evolution-data-server-3.32.1.tar.xz",
+                        "sha256": "cdafd519307ec9a1ee0e613674330fd92cb8afab68b5d18e55e7ff4994686849"
                     }
                 ]
             },
@@ -248,8 +248,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.32/evolution-3.32.0.tar.xz",
-                        "sha256": "ccd61e080db0cf547467c579bb29ffc0f7a2e1a9d7dab92353e3f9e5c6837cea"
+                        "url": "https://download.gnome.org/sources/evolution/3.32/evolution-3.32.1.tar.xz",
+                        "sha256": "389e5529fe6568c739331118fddcef09557bc3fd316375bb0db36cbe0d37475b"
                     },
 			     
                     {
@@ -304,8 +304,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.32/evolution-ews-3.32.0.tar.xz",
-                        "sha256": "83902650001c8802e9043f6f48cbb042eed81ba410d93436769d3bf4869cecb7"
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.32/evolution-ews-3.32.1.tar.xz",
+                        "sha256": "0a6cf6d682060ed4bc7065d8320bc63022caa1885c5503d06b8087ae9eb284b0"
                     }
                 ]
             }
