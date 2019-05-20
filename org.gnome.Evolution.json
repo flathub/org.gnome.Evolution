@@ -31,7 +31,8 @@
             "--filesystem=xdg-run/dconf",
             "--filesystem=~/.config/dconf:ro",
             "--talk-name=ca.desrt.dconf",
-            "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
+            "--env=DCONF_USER_CONFIG_DIR=.config/dconf",
+            "--filesystem=~/.gnupg:rw"
         ],
         "modules": [
             {
@@ -46,8 +47,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://github.com/libical/libical/releases/download/v3.0.4/libical-3.0.4.tar.gz",
-                        "sha256": "72b216e10233c3f60cb06062facf41f3b0f70615e5a60b47f9853341a0d5d145"
+                        "url": "https://github.com/libical/libical/releases/download/v3.0.5/libical-3.0.5.tar.gz",
+                        "sha256": "7ad550c8c49c9b9983658e3ab3e68b1eee2439ec17b169a6b1e6ecb5274e78e6"
                     }
                 ]
             },
@@ -169,11 +170,6 @@
                         "commands": [
                             "AUTOMAKE=\"/bin/true\" autoreconf -vfi"
                         ]
-                    },
-
-                    {
-                        "type": "shell",
-                        "commands": [ "cp -p /usr/share/automake-*/config.{sub,guess} ." ]
                     }
                 ]
             }, 
@@ -203,8 +199,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.32/evolution-data-server-3.32.1.tar.xz",
-                        "sha256": "cdafd519307ec9a1ee0e613674330fd92cb8afab68b5d18e55e7ff4994686849"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.32/evolution-data-server-3.32.2.tar.xz",
+                        "sha256": "7ea7491065fd0382f2268cf6bf95331a75dfda587d5940deb47f9e74be1ab3c9"
                     }
                 ]
             },
@@ -248,44 +244,72 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.32/evolution-3.32.1.tar.xz",
-                        "sha256": "389e5529fe6568c739331118fddcef09557bc3fd316375bb0db36cbe0d37475b"
+                        "url": "https://download.gnome.org/sources/evolution/3.32/evolution-3.32.2.tar.xz",
+                        "sha256": "a56435ddf52eb66e2fbcb3ca043c5183e07ada82c3824bff18ea73d5e00766e9"
                     },
-			     
-                    {
-                        "type": "shell",
-                        "commands": [
-                            "cp config.h.in config.h.in.orig",
-                            "cat config.h.in.orig | sed -e \"s|\\@VERSION_SUBSTRING\\@| \\(flatpak git$(git log --pretty=format:%h --max-count=1)\\)|\" >config.h.in"
-                        ]
-                    }, 
-                    {
-                        "type": "script",
-                        "commands": [
-                            "if [ \"$1\" = \"--quit\" -o \"$1\" = \"--force-shutdown\" ]; then",
+			{
+					"type": "shell",
+					"commands": [
+						"cp config.h.in config.h.in.orig",
+						"cat config.h.in.orig | sed -e \"s|\\@VERSION_SUBSTRING\\@| \\(flatpak git$(git log --pretty=format:%h --max-count=1)\\)|\" >config.h.in"
+					]
+				},
+				{
+					"type": "script",
+					"commands": [
+						"if [ \"$1\" = \"--quit\" -o \"$1\" = \"--force-shutdown\" ]; then",
 						"	/app/bin/evolution.bin \"$@\"",
 						"else",
 						"	export GIO_USE_NETWORK_MONITOR=base",
 						"	gsettings reset org.gnome.evolution-data-server network-monitor-gio-name",
-						"	/app/libexec/evolution-source-registry &",
-						"	sleep 1",
-						"	/app/libexec/evolution-addressbook-factory -r &",
-						"	/app/libexec/evolution-calendar-factory -r &",
-						"	sleep 1",
+						"",
+						"	LINES=$(gdbus call --session --dest org.freedesktop.DBus --object-path /org/freedesktop/DBus --method org.freedesktop.DBus.ListNames | grep @SOURCES_SERVICE@ | wc -l)",
+						"	if [ \"${LINES}\" = \"0\" ]; then",
+						"		/app/libexec/evolution-source-registry &",
+						"		gdbus wait --session --timeout=1@TIMEOUTMULT@ @SOURCES_SERVICE@",
+						"	fi",
+						"",
+						"	LINES=$(gdbus call --session --dest org.freedesktop.DBus --object-path /org/freedesktop/DBus --method org.freedesktop.DBus.ListNames | grep @ADDRESSBOOK_SERVICE@ | wc -l)",
+						"	if [ \"${LINES}\" = \"0\" ]; then",
+						"		/app/libexec/evolution-addressbook-factory -r &",
+						"		gdbus wait --session --timeout=1@TIMEOUTMULT@ @ADDRESSBOOK_SERVICE@",
+						"	fi",
+						"",
+						"	LINES=$(gdbus call --session --dest org.freedesktop.DBus --object-path /org/freedesktop/DBus --method org.freedesktop.DBus.ListNames | grep @CALENDAR_SERVICE@ | wc -l)",
+						"	if [ \"${LINES}\" = \"0\" ]; then",
+						"		/app/libexec/evolution-calendar-factory -r &",
+						"		gdbus wait --session --timeout=1@TIMEOUTMULT@ @CALENDAR_SERVICE@",
+						"	fi",
+						"",
 						"	/app/bin/evolution.bin \"$@\"",
 						"fi"
-                            
-                        ],
-                        "dest-filename": "flatpak-evolution-wrapper.sh"
-                   
-                    }
-                ],
-                "post-install": [
-                    "mv /app/bin/evolution /app/bin/evolution.bin",
-                    "cp flatpak-evolution-wrapper.sh /app/bin/evolution"
-                ]
-            },
+					],
+					"dest-filename": "flatpak-evolution-wrapper.sh.in"
+				},
+				{
+					"type": "script",
+					"commands": [
+						"# see https://gitlab.gnome.org/GNOME/glib/issues/1737",
+						"# previous versions used milliseconds instead of seconds as the timeout argument",
+						"(`pkg-config --atleast-version 2.60.1 gio-2.0` || `pkg-config --atleast-version 2.61.0 gio-2.0`) && TIMEOUTMULT= || TIMEOUTMULT=000",
+						"",
+						"sed -e \"s|\\@SOURCES_SERVICE\\@|$(pkg-config --variable=sourcesdbusservicename evolution-data-server-1.2)|\" \\",
+						"	-e \"s|\\@ADDRESSBOOK_SERVICE\\@|$(pkg-config --variable=addressbookdbusservicename evolution-data-server-1.2)|\" \\",
+						"	-e \"s|\\@CALENDAR_SERVICE\\@|$(pkg-config --variable=calendardbusservicename evolution-data-server-1.2)|\" \\",
+						"	-e \"s|\\@TIMEOUTMULT\\@|${TIMEOUTMULT}|\""
+					],
+					"dest-filename": "flatpak-evolution-fix-service-names.sh"
+				}
+			],
+			"post-install": [
+				"./flatpak-evolution-fix-service-names.sh <flatpak-evolution-wrapper.sh.in >flatpak-evolution-wrapper.sh",
+				"chmod a+x flatpak-evolution-wrapper.sh",
+				"mv /app/bin/evolution /app/bin/evolution.bin",
+				"cp flatpak-evolution-wrapper.sh /app/bin/evolution"
+			]
+		},
      
+                   
             {
                 "name": "libmspack",
                 "cleanup": [ "/bin" ],
@@ -304,8 +328,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.32/evolution-ews-3.32.1.tar.xz",
-                        "sha256": "0a6cf6d682060ed4bc7065d8320bc63022caa1885c5503d06b8087ae9eb284b0"
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.32/evolution-ews-3.32.2.tar.xz",
+                        "sha256": "ffe88351494a7834a5768e55f98d685d06a7103c6cdffab33506c781c62efd83"
                     }
                 ]
             }
