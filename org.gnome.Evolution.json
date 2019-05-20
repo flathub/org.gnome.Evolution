@@ -247,6 +247,10 @@
                         "url": "https://download.gnome.org/sources/evolution/3.32/evolution-3.32.2.tar.xz",
                         "sha256": "a56435ddf52eb66e2fbcb3ca043c5183e07ada82c3824bff18ea73d5e00766e9"
                     },
+                    {
+                        "type": "patch",
+                        "path": "appdata.patch"
+                    },
 			{
 					"type": "shell",
 					"commands": [

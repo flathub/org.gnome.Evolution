@@ -1,0 +1,13 @@
+diff --git a/data/org.gnome.Evolution.appdata.xml.in.in b/data/org.gnome.Evolution.appdata.xml.in.in
+index 8be5018b286bcf4fbe08205adb35f65e0bb60b52..4dcb414f80d71b0db05231e429a5a377e7770910 100644
+--- a/data/org.gnome.Evolution.appdata.xml.in.in
++++ b/data/org.gnome.Evolution.appdata.xml.in.in
+@@ -45,4 +45,8 @@
+   <releases>
+     <release version="@APPDATA_RELEASE_VERSION@" type="@APPDATA_RELEASE_TYPE@" date="@APPDATA_RELEASE_BUILD_DATE@"/>
+   </releases>
++    <content_rating type="oars-1.1">
++    <content_attribute id="social-chat">intense</content_attribute>
++    <content_attribute id="social-contacts">intense</content_attribute>
++  </content_rating>
+ </component>
