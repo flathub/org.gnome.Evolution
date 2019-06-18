@@ -120,8 +120,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/geocode-glib/3.26/geocode-glib-3.26.0.tar.xz",
-                        "sha256": "ea4086b127050250c158beff28dbcdf81a797b3938bb79bbaaecc75e746fbeee"
+                        "url": "https://download.gnome.org/sources/geocode-glib/3.26/geocode-glib-3.26.1.tar.xz",
+                        "sha256": "5baa6ab76a76c9fc567e4c32c3af2cd1d1784934c255bc5a62c512e6af6bde1c"
                     }
                 ]
             },
@@ -199,8 +199,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.32/evolution-data-server-3.32.2.tar.xz",
-                        "sha256": "7ea7491065fd0382f2268cf6bf95331a75dfda587d5940deb47f9e74be1ab3c9"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.32/evolution-data-server-3.32.3.tar.xz",
+                        "sha256": "6481f385dd9977b6d8442f356210921ac63244cb5a188c6986b72ebe37f7a2eb"
                     }
                 ]
             },
@@ -244,12 +244,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.32/evolution-3.32.2.tar.xz",
-                        "sha256": "a56435ddf52eb66e2fbcb3ca043c5183e07ada82c3824bff18ea73d5e00766e9"
-                    },
-                    {
-                        "type": "patch",
-                        "path": "appdata.patch"
+                        "url": "https://download.gnome.org/sources/evolution/3.32/evolution-3.32.3.tar.xz",
+                        "sha256": "b653a65f8dac956d4832af6d1f1d9ecad59d198e5e9d2e6743829a5e2b891c3e"
                     },
 			{
 					"type": "shell",
