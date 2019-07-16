@@ -28,6 +28,7 @@
             "--talk-name=org.gnome.OnlineAccounts",
             "--talk-name=org.freedesktop.Notifications",
             "--talk-name=org.freedesktop.secrets",
+            "--talk-name=org.gnome.keyring.SystemPrompter",
             "--filesystem=xdg-run/dconf",
             "--filesystem=~/.config/dconf:ro",
             "--talk-name=ca.desrt.dconf",
@@ -135,8 +136,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/libgweather/3.32/libgweather-3.32.1.tar.xz",
-                        "sha256": "1c2218ed71230dd2c550ca4fd3dab53e2f2831d38982c213575f34e48d68e980"
+                        "url": "https://download.gnome.org/sources/libgweather/3.32/libgweather-3.32.2.tar.xz",
+                        "sha256": "28ed5ff00d6faf1dc885c4252a538e43ff3f614fcf6a0f20c3b63604295d3c02"
                     }
                 ]
             },
@@ -199,8 +200,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.32/evolution-data-server-3.32.3.tar.xz",
-                        "sha256": "6481f385dd9977b6d8442f356210921ac63244cb5a188c6986b72ebe37f7a2eb"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.32/evolution-data-server-3.32.4.tar.xz",
+                        "sha256": "83f67cb4b680e892b22b51bcde64c788b7ac63e92a99de401fb347e3794f4c7f"
                     }
                 ]
             },
@@ -221,11 +222,51 @@
                     }
                 ]
             },
+            {
+			"name": "bogofilter",
+			"buildsystem": "simple",
+			"build-commands": [
+			   "cd ./bogofilter/ && echo \"# Skip for Flatpak build\" > doc/Makefile.am && autoreconf -fi && ./configure --prefix=/app --disable-rpath --with-database=sqlite3 && make && make install"
+			],
+			"sources": [
+				{
+					"type": "git",
+					"url": "https://git.code.sf.net/p/bogofilter/git",
+					"branch": "0242a05e541c7a5ec7b6a27c810be7cecb9ae82f"
+				}
+			]
+		},
+
+            {
+			"name": "pinentry",
+			"config-opts": [
+				"--enable-pinentry-gnome3",
+				"--disable-ncurses",
+				"--disable-fallback-curses",
+				"--disable-pinentry-curses",
+				"--disable-pinentry-emacs",
+				"--disable-pinentry-gtk2",
+				"--disable-pinentry-qt5",
+				"--disable-pinentry-tty",
+				"--disable-pinentry-tqt",
+				"--disable-pinentry-fltk"
+			],
+			"sources": [
+				{
+					"type": "archive",
+					"url": "https://www.gnupg.org/ftp/gcrypt/pinentry/pinentry-1.1.0.tar.bz2",
+					"sha256": "68076686fa724a290ea49cdf0d1c0c1500907d1b759a3bcbfbec0293e8f56570"
+				}
+			]
+		},
+
+
      
             {
                 "name": "evolution",
                 "buildsystem": "cmake-ninja",
                 "config-opts": [
+                    "-DVERSION_SUBSTRING= (by Flathub.org)",
                     "-DENABLE_AUTOAR=OFF",
                     "-DENABLE_CONTACT_MAPS=OFF",
                     "-DENABLE_GNOME_DESKTOP=OFF",
@@ -244,44 +285,39 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.32/evolution-3.32.3.tar.xz",
-                        "sha256": "b653a65f8dac956d4832af6d1f1d9ecad59d198e5e9d2e6743829a5e2b891c3e"
+                        "url": "https://download.gnome.org/sources/evolution/3.32/evolution-3.32.4.tar.xz",
+                        "sha256": "10af2af919bc0b5e7f6acbd1231ad573f6101ff095469613ce485b07c9ab1502"
                     },
-			{
-					"type": "shell",
-					"commands": [
-						"cp config.h.in config.h.in.orig",
-						"cat config.h.in.orig | sed -e \"s|\\@VERSION_SUBSTRING\\@| \\(flatpak git$(git log --pretty=format:%h --max-count=1)\\)|\" >config.h.in"
-					]
-				},
 				{
 					"type": "script",
 					"commands": [
 						"if [ \"$1\" = \"--quit\" -o \"$1\" = \"--force-shutdown\" ]; then",
-						"	/app/bin/evolution.bin \"$@\"",
+						"   /app/bin/evolution.bin \"$@\"",
 						"else",
-						"	export GIO_USE_NETWORK_MONITOR=base",
-						"	gsettings reset org.gnome.evolution-data-server network-monitor-gio-name",
+						"   export GIO_USE_NETWORK_MONITOR=base",
+						"   gsettings reset org.gnome.evolution-data-server network-monitor-gio-name",
 						"",
-						"	LINES=$(gdbus call --session --dest org.freedesktop.DBus --object-path /org/freedesktop/DBus --method org.freedesktop.DBus.ListNames | grep @SOURCES_SERVICE@ | wc -l)",
-						"	if [ \"${LINES}\" = \"0\" ]; then",
-						"		/app/libexec/evolution-source-registry &",
-						"		gdbus wait --session --timeout=1@TIMEOUTMULT@ @SOURCES_SERVICE@",
-						"	fi",
+                                                "	gpg-agent --homedir ~/.gnupg --daemon --pinentry-program=/app/bin/pinentry",
 						"",
-						"	LINES=$(gdbus call --session --dest org.freedesktop.DBus --object-path /org/freedesktop/DBus --method org.freedesktop.DBus.ListNames | grep @ADDRESSBOOK_SERVICE@ | wc -l)",
-						"	if [ \"${LINES}\" = \"0\" ]; then",
-						"		/app/libexec/evolution-addressbook-factory -r &",
-						"		gdbus wait --session --timeout=1@TIMEOUTMULT@ @ADDRESSBOOK_SERVICE@",
-						"	fi",
+						"   LINES=$(gdbus call --session --dest org.freedesktop.DBus --object-path /org/freedesktop/DBus --method org.freedesktop.DBus.ListNames | grep @SOURCES_SERVICE@ | wc -l)",
+						"   if [ \"${LINES}\" = \"0\" ]; then",
+						"      /app/libexec/evolution-source-registry &",
+						"      gdbus wait --session --timeout=1@TIMEOUTMULT@ @SOURCES_SERVICE@",
+						"   fi",
 						"",
-						"	LINES=$(gdbus call --session --dest org.freedesktop.DBus --object-path /org/freedesktop/DBus --method org.freedesktop.DBus.ListNames | grep @CALENDAR_SERVICE@ | wc -l)",
-						"	if [ \"${LINES}\" = \"0\" ]; then",
-						"		/app/libexec/evolution-calendar-factory -r &",
-						"		gdbus wait --session --timeout=1@TIMEOUTMULT@ @CALENDAR_SERVICE@",
-						"	fi",
+						"   LINES=$(gdbus call --session --dest org.freedesktop.DBus --object-path /org/freedesktop/DBus --method org.freedesktop.DBus.ListNames | grep @ADDRESSBOOK_SERVICE@ | wc -l)",
+						"   if [ \"${LINES}\" = \"0\" ]; then",
+						"      /app/libexec/evolution-addressbook-factory -r &",
+						"      gdbus wait --session --timeout=1@TIMEOUTMULT@ @ADDRESSBOOK_SERVICE@",
+						"   fi",
 						"",
-						"	/app/bin/evolution.bin \"$@\"",
+						"   LINES=$(gdbus call --session --dest org.freedesktop.DBus --object-path /org/freedesktop/DBus --method org.freedesktop.DBus.ListNames | grep @CALENDAR_SERVICE@ | wc -l)",
+						"   if [ \"${LINES}\" = \"0\" ]; then",
+						"      /app/libexec/evolution-calendar-factory -r &",
+						"      gdbus wait --session --timeout=1@TIMEOUTMULT@ @CALENDAR_SERVICE@",
+						"   fi",
+						"",
+						"   /app/bin/evolution.bin \"$@\"",
 						"fi"
 					],
 					"dest-filename": "flatpak-evolution-wrapper.sh.in"
@@ -294,9 +330,9 @@
 						"(`pkg-config --atleast-version 2.60.1 gio-2.0` || `pkg-config --atleast-version 2.61.0 gio-2.0`) && TIMEOUTMULT= || TIMEOUTMULT=000",
 						"",
 						"sed -e \"s|\\@SOURCES_SERVICE\\@|$(pkg-config --variable=sourcesdbusservicename evolution-data-server-1.2)|\" \\",
-						"	-e \"s|\\@ADDRESSBOOK_SERVICE\\@|$(pkg-config --variable=addressbookdbusservicename evolution-data-server-1.2)|\" \\",
-						"	-e \"s|\\@CALENDAR_SERVICE\\@|$(pkg-config --variable=calendardbusservicename evolution-data-server-1.2)|\" \\",
-						"	-e \"s|\\@TIMEOUTMULT\\@|${TIMEOUTMULT}|\""
+						"   -e \"s|\\@ADDRESSBOOK_SERVICE\\@|$(pkg-config --variable=addressbookdbusservicename evolution-data-server-1.2)|\" \\",
+						"   -e \"s|\\@CALENDAR_SERVICE\\@|$(pkg-config --variable=calendardbusservicename evolution-data-server-1.2)|\" \\",
+						"   -e \"s|\\@TIMEOUTMULT\\@|${TIMEOUTMULT}|\""
 					],
 					"dest-filename": "flatpak-evolution-fix-service-names.sh"
 				}
