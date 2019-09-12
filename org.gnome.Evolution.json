@@ -53,7 +53,22 @@
                     }
                 ]
             },
-     
+
+            {
+			"name": "gspell",
+			"config-opts": [
+				"--disable-gtk-doc",
+				"--disable-introspection"
+                        ],
+			"sources": [
+				{
+					"type": "archive",
+					"url": "https://download.gnome.org/sources/gspell/1.8/gspell-1.8.1.tar.xz",
+					"sha256": "819a1d23c7603000e73f5e738bdd284342e0cd345fb0c7650999c31ec741bbe5"
+				}
+			]               
+            },
+          
             {
                 "name": "liboauth",
                 "config-opts": [ "--enable-nss" ],
@@ -200,8 +215,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.32/evolution-data-server-3.32.4.tar.xz",
-                        "sha256": "83f67cb4b680e892b22b51bcde64c788b7ac63e92a99de401fb347e3794f4c7f"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.34/evolution-data-server-3.34.0.tar.xz",
+                        "sha256": "fb9db0a824ae01ecc63c82cf8e503fecdcba7118b919f04bda7d8d91f3e486cf"
                     }
                 ]
             },
@@ -286,8 +301,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.32/evolution-3.32.4.tar.xz",
-                        "sha256": "10af2af919bc0b5e7f6acbd1231ad573f6101ff095469613ce485b07c9ab1502"
+                        "url": "https://download.gnome.org/sources/evolution/3.34/evolution-3.34.0.tar.xz",
+                        "sha256": "d9d04567d953d74ad67603e65be869700fd64837949eaec08b87a993448dd28c"
                     },
 				{
 					"type": "script",
@@ -368,8 +383,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.32/evolution-ews-3.32.2.tar.xz",
-                        "sha256": "ffe88351494a7834a5768e55f98d685d06a7103c6cdffab33506c781c62efd83"
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.34/evolution-ews-3.34.0.tar.xz",
+                        "sha256": "30a7991e6ef7e62a199c27c3bd01d14426b9868b3368f40f753ddb02c3e544b8"
                     }
                 ]
             }
