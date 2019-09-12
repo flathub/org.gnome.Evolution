@@ -314,7 +314,7 @@
 						"   export GIO_USE_NETWORK_MONITOR=base",
 						"   gsettings reset org.gnome.evolution-data-server network-monitor-gio-name",
 						"",
-                                                "	gpg-agent --homedir ~/.gnupg --daemon --pinentry-program=/app/bin/pinentry",
+                                                "   gpg-agent --homedir ~/.gnupg --daemon --pinentry-program=/app/bin/pinentry",
 						"",
 						"   LINES=$(gdbus call --session --dest org.freedesktop.DBus --object-path /org/freedesktop/DBus --method org.freedesktop.DBus.ListNames | grep @SOURCES_SERVICE@ | wc -l)",
 						"   if [ \"${LINES}\" = \"0\" ]; then",
