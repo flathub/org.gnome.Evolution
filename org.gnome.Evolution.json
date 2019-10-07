@@ -63,8 +63,8 @@
 			"sources": [
 				{
 					"type": "archive",
-					"url": "https://download.gnome.org/sources/gspell/1.8/gspell-1.8.1.tar.xz",
-					"sha256": "819a1d23c7603000e73f5e738bdd284342e0cd345fb0c7650999c31ec741bbe5"
+					"url": "https://download.gnome.org/sources/gspell/1.8/gspell-1.8.2.tar.xz",
+					"sha256": "bb9195c3a95bacf556d0203e9691f7489e0d3bc5ae1e5a440c89b2f2435d3ed6"
 				}
 			]               
             },
@@ -95,21 +95,21 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/gnome-online-accounts/3.32/gnome-online-accounts-3.32.0.tar.xz",
-                        "sha256": "1c19e65771c8d16fa0016ab70d9a1ee2b75a84aeeedd24527a4e41b132e8d4aa"
+                        "url": "https://download.gnome.org/sources/gnome-online-accounts/3.34/gnome-online-accounts-3.34.0.tar.xz",
+                        "sha256": "c44fbce4eeb54703a2ab4954d54f11eb29666f9cf61b5275b9fe0fc033377f57"
                     }
                 ]
             },
      
             {
                 "name": "libgdata",
+                "buildsystem": "meson",
                 "config-opts": [
-                    "--disable-always-build-tests",
-                    "--disable-goa",
-                    "--disable-gtk-doc",
-                    "--disable-introspection",
-                    "--disable-installed-tests",
-                    "--disable-vala"
+                    "-Dalways_build_tests=false",
+                    "-Dgoa=disabled",
+                    "-Dgtk_doc=false",
+                    "-Dintrospection=false",
+                    "-Dinstalled-tests=false"
                 ],
                 "cleanup": [
                     "/share/gtk-doc"
@@ -117,8 +117,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/libgdata/0.17/libgdata-0.17.9.tar.xz",
-                        "sha256": "85c4f7674c0098ffaf060ae01b6b832cb277b3673d54ace3bdedaad6b127453a"
+                        "url": "https://download.gnome.org/sources/libgdata/0.17/libgdata-0.17.11.tar.xz",
+                        "sha256": "6b9917122e4def6e6f78bcb660e49e146540832e296abcb5cde99829a04ea986"
                     }
                 ]
             },
@@ -176,8 +176,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "http://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.4.47.tgz",
-                        "sha256": "f54c5877865233d9ada77c60c0f69b3e0bfd8b1b55889504c650047cc305520b"
+                        "url": "http://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.4.48.tgz",
+                        "sha256": "d9523ffcab5cd14b709fcf3cb4d04e8bc76bb8970113255f372bc74954c6074d"
                     },
      
                     {
@@ -215,8 +215,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.34/evolution-data-server-3.34.0.tar.xz",
-                        "sha256": "fb9db0a824ae01ecc63c82cf8e503fecdcba7118b919f04bda7d8d91f3e486cf"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.34/evolution-data-server-3.34.1.tar.xz",
+                        "sha256": "6ff56ba04cb639e627fe9d6e0ada106a10cadd68a0d53b8ec72b4e285df53abe"
                     }
                 ]
             },
@@ -301,8 +301,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.34/evolution-3.34.0.tar.xz",
-                        "sha256": "d9d04567d953d74ad67603e65be869700fd64837949eaec08b87a993448dd28c"
+                        "url": "https://download.gnome.org/sources/evolution/3.34/evolution-3.34.1.tar.xz",
+                        "sha256": "656a92dd7f3e1afb6eef4f824fd17ae307c0904a67587ca5bb14ab9bd6f8bd42"
                     },
 				{
 					"type": "script",
@@ -383,8 +383,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.34/evolution-ews-3.34.0.tar.xz",
-                        "sha256": "30a7991e6ef7e62a199c27c3bd01d14426b9868b3368f40f753ddb02c3e544b8"
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.34/evolution-ews-3.34.1.tar.xz",
+                        "sha256": "b7479de9eca74dfb99ba0303da830c4b9e21cba89e904ea6f5d158eaea3d5316"
                     }
                 ]
             }
