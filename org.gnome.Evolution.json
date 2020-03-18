@@ -1,7 +1,7 @@
 {
         "app-id": "org.gnome.Evolution",
         "runtime": "org.gnome.Platform",
-        "runtime-version": "3.32",
+        "runtime-version": "3.36",
         "sdk": "org.gnome.Sdk",
         "command": "evolution",
         "rename-icon": "evolution",
@@ -36,6 +36,18 @@
             "--filesystem=~/.gnupg:rw"
         ],
         "modules": [
+            {
+			"name": "intltool",
+			"cleanup": [ "*" ],
+			"sources": [
+				{
+					"type": "archive",
+					"url": "https://launchpad.net/intltool/trunk/0.51.0/+download/intltool-0.51.0.tar.gz",
+					"sha256": "67c74d94196b153b774ab9f89b2fa6c6ba79352407037c8c14d5aeb334e959cd"
+				}
+			]
+            },
+
             {
                 "name": "libical",
                 "cleanup": [ "/lib/cmake" ],
