@@ -188,8 +188,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.4.50.tgz",
-                        "sha256": "5cb57d958bf5c55a678c6a0f06821e0e5504d5a92e6a33240841fbca1db586b8"
+                        "url": "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.4.53.tgz",
+                        "sha256": "035860e2fb812f2e294ea3e9914944691e4e4f52521b8945a5aacdcd088d8ae8"
                     },
      
                     {
@@ -227,8 +227,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.36/evolution-data-server-3.36.5.tar.xz",
-                        "sha256": "c555528c546d457be0dc0eaca5d766d4dfef7c408276cb05f9724c463bfe7fd9"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.38/evolution-data-server-3.38.0.tar.xz",
+                        "sha256": "13689a7b55765806c4d5f3b05ef6c24b0bf9957b9ed9240c2dd09a2cdb13b0af"
                     }
                 ]
             },
@@ -313,8 +313,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.36/evolution-3.36.5.tar.xz",
-                        "sha256": "3dd40ebd097da547dda5d95b9d68355e747b3dfae5c1c098645d943f5a69f2c2"
+                        "url": "https://download.gnome.org/sources/evolution/3.38/evolution-3.38.0.tar.xz",
+                        "sha256": "f81cc40f54aa2d059da4f3a94eb09362e81513306c974a41ca7895b9c8957c5d"
                     },
 				{
 					"type": "script",
@@ -395,8 +395,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.36/evolution-ews-3.36.5.tar.xz",
-                        "sha256": "7485154908fcf68c38c3c0be01cce1d229a2e6afb62bbd7783512bdd21f93c40"
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.38/evolution-ews-3.38.0.tar.xz",
+                        "sha256": "59bf59cabb9d193d91076972dd8a6e71ebf34c7bfad01cd6954297347a3077b3"
                     }
                 ]
             }
