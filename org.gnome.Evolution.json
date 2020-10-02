@@ -1,7 +1,7 @@
 {
         "app-id": "org.gnome.Evolution",
         "runtime": "org.gnome.Platform",
-        "runtime-version": "3.36",
+        "runtime-version": "3.38",
         "sdk": "org.gnome.Sdk",
         "command": "evolution",
         "rename-icon": "evolution",
@@ -31,6 +31,7 @@
             "--talk-name=org.gnome.keyring.SystemPrompter",
             "--filesystem=xdg-run/dconf",
             "--filesystem=~/.config/dconf:ro",
+            "--filesystem=/run/.heim_org.h5l.kcm-socket",
             "--talk-name=ca.desrt.dconf",
             "--env=DCONF_USER_CONFIG_DIR=.config/dconf",
             "--filesystem=~/.gnupg:rw"
@@ -201,7 +202,35 @@
                     }
                 ]
             }, 
-     
+            
+            {
+			"name": "libcanberra",
+			"config-opts": [
+				"--disable-gtk",
+				"--disable-oss",
+				"--enable-alsa",
+				"--enable-gtk3",
+				"--enable-null",
+				"--without-systemdsystemunitdir",
+				"--with-builtin=dso",
+				"--disable-gtk-doc",
+				"--disable-gtk-doc-html"
+			],
+			"cleanup": [ "/bin", "/share/gtk-doc" ],
+			"sources": [
+				{
+					"type": "archive",
+					"url": "http://0pointer.de/lennart/projects/libcanberra/libcanberra-0.30.tar.xz",
+					"sha256": "c2b671e67e0c288a69fc33dc1b6f1b534d07882c2aceed37004bf48c601afa72"
+				}
+			]
+		},
+
+		{
+			"name": "libical",
+			"cleanup": [ "/lib/cmake" ]
+            },
+                 
             {
                 "name": "evolution-data-server",
                 "buildsystem": "cmake-ninja",
@@ -227,8 +256,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.38/evolution-data-server-3.38.0.tar.xz",
-                        "sha256": "13689a7b55765806c4d5f3b05ef6c24b0bf9957b9ed9240c2dd09a2cdb13b0af"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.38/evolution-data-server-3.38.1.tar.xz",
+                        "sha256": "8ff278e9c334f185236182709ba46ab727db2830d0b4e09485c1e582e1f2e4b7"
                     }
                 ]
             },
@@ -313,8 +342,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.38/evolution-3.38.0.tar.xz",
-                        "sha256": "f81cc40f54aa2d059da4f3a94eb09362e81513306c974a41ca7895b9c8957c5d"
+                        "url": "https://download.gnome.org/sources/evolution/3.38/evolution-3.38.1.tar.xz",
+                        "sha256": "d0f95e19701fe0d872ff8c864ff2e7f78a6f0bd12db34f7a5764548b17dcc8fc"
                     },
 				{
 					"type": "script",
@@ -396,7 +425,7 @@
                     {
                         "type": "archive",
                         "url": "https://download.gnome.org/sources/evolution-ews/3.38/evolution-ews-3.38.0.tar.xz",
-                        "sha256": "59bf59cabb9d193d91076972dd8a6e71ebf34c7bfad01cd6954297347a3077b3"
+                        "sha256": "d6fc7469fda270d95a157b158ffd82070a6bdb0c2ab0c4e5fbcdb59f8a251874"
                     }
                 ]
             }
