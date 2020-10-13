@@ -29,11 +29,8 @@
             "--talk-name=org.freedesktop.Notifications",
             "--talk-name=org.freedesktop.secrets",
             "--talk-name=org.gnome.keyring.SystemPrompter",
-            "--filesystem=xdg-run/dconf",
-            "--filesystem=~/.config/dconf:ro",
             "--filesystem=/run/.heim_org.h5l.kcm-socket",
-            "--talk-name=ca.desrt.dconf",
-            "--env=DCONF_USER_CONFIG_DIR=.config/dconf",
+            "--metadata=X-DConf=migrate-path=/org/gnome/evolution/",
             "--filesystem=~/.gnupg:rw"
         ],
         "modules": [
