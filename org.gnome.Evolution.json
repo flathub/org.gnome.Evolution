@@ -29,26 +29,12 @@
             "--talk-name=org.freedesktop.Notifications",
             "--talk-name=org.freedesktop.secrets",
             "--talk-name=org.gnome.keyring.SystemPrompter",
-            "--filesystem=xdg-run/dconf",
-            "--filesystem=~/.config/dconf:ro",
             "--filesystem=/run/.heim_org.h5l.kcm-socket",
-            "--talk-name=ca.desrt.dconf",
-            "--env=DCONF_USER_CONFIG_DIR=.config/dconf",
-            "--filesystem=~/.gnupg:rw"
+            "--metadata=X-DConf=migrate-path=/org/gnome/evolution/",
+            "--filesystem=~/.gnupg:rw",
+            "--filesystem=xdg-config/gnupg:rw"
         ],
         "modules": [
-            {
-			"name": "intltool",
-			"cleanup": [ "*" ],
-			"sources": [
-				{
-					"type": "archive",
-					"url": "https://launchpad.net/intltool/trunk/0.51.0/+download/intltool-0.51.0.tar.gz",
-					"sha256": "67c74d94196b153b774ab9f89b2fa6c6ba79352407037c8c14d5aeb334e959cd"
-				}
-			]
-            },
-
             {
                 "name": "libical",
                 "cleanup": [ "/lib/cmake" ],
@@ -56,7 +42,10 @@
                 "config-opts": [
                     "-DBUILD_SHARED_LIBS:BOOL=ON",
                     "-DGOBJECT_INTROSPECTION:BOOL=OFF",
-                    "-DCMAKE_INSTALL_LIBDIR:PATH=/app/lib"
+                    "-DCMAKE_INSTALL_LIBDIR:PATH=/app/lib",
+                    "-DICAL_BUILD_DOCS:BOOL=OFF",
+                    "-DICAL_GLIB_VAPI:BOOL=OFF",
+                    "-DICAL_GLIB:BOOL=ON"
                 ],
                 "sources": [
                     {
@@ -76,8 +65,8 @@
 			"sources": [
 				{
 					"type": "archive",
-					"url": "https://download.gnome.org/sources/gspell/1.8/gspell-1.8.3.tar.xz",
-					"sha256": "5ae514dd0216be069176accf6d0049d6a01cfa6a50df4bc06be85f7080b62de8"
+					"url": "https://download.gnome.org/sources/gspell/1.9/gspell-1.9.1.tar.xz",
+					"sha256": "dcbb769dfdde8e3c0a8ed3102ce7e661abbf7ddf85df08b29915e92cd723abdd"
 				}
 			]               
             },
@@ -108,8 +97,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/gnome-online-accounts/3.36/gnome-online-accounts-3.36.0.tar.xz",
-                        "sha256": "1c8f62990833ca41188dbb80c5e99d99b57a62608ca675bbcd37bc2244742f2e"
+                        "url": "https://download.gnome.org/sources/gnome-online-accounts/3.38/gnome-online-accounts-3.38.0.tar.xz",
+                        "sha256": "3760ea78729b3038dda0c416b57bc2cbaafcc619eec6c5109654d747fad2418c"
                     }
                 ]
             },
@@ -130,8 +119,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/libgdata/0.17/libgdata-0.17.12.tar.xz",
-                        "sha256": "a0fd6f8820e8bae019c1f6ffab5af7fcd6d7f147915bb968b56df3ad61b42318"
+                        "url": "https://download.gnome.org/sources/libgdata/0.17/libgdata-0.17.13.tar.xz",
+                        "sha256": "eab9ef792c3c2b9ece19d45aea15225aba8df2521bc12785b1b2d3318d8c472e"
                     }
                 ]
             },
@@ -164,8 +153,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/libgweather/3.36/libgweather-3.36.0.tar.xz",
-                        "sha256": "d2ffeec01788d03d1bbf35113fc2f054c6c3600721088f827bcc31e5c603a32d"
+                        "url": "https://download.gnome.org/sources/libgweather/3.36/libgweather-3.36.1.tar.xz",
+                        "sha256": "de2709f0ee233b20116d5fa9861d406071798c4aa37830ca25f5ef2c0083e450"
                     }
                 ]
             },
@@ -189,8 +178,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.4.53.tgz",
-                        "sha256": "035860e2fb812f2e294ea3e9914944691e4e4f52521b8945a5aacdcd088d8ae8"
+                        "url": "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.4.56.tgz",
+                        "sha256": "25520e0363c93f3bcb89802a4aa3db33046206039436e0c7c9262db5a61115e0"
                     },
      
                     {
@@ -203,6 +192,18 @@
                 ]
             }, 
             
+            {
+			"name": "intltool",
+			"cleanup": [ "*" ],
+			"sources": [
+				{
+					"type": "archive",
+					"url": "https://launchpad.net/intltool/trunk/0.51.0/+download/intltool-0.51.0.tar.gz",
+					"sha256": "67c74d94196b153b774ab9f89b2fa6c6ba79352407037c8c14d5aeb334e959cd"
+				}
+			]
+            },
+
             {
 			"name": "libcanberra",
 			"config-opts": [
@@ -225,11 +226,6 @@
 				}
 			]
 		},
-
-		{
-			"name": "libical",
-			"cleanup": [ "/lib/cmake" ]
-            },
                  
             {
                 "name": "evolution-data-server",
@@ -256,8 +252,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.38/evolution-data-server-3.38.1.tar.xz",
-                        "sha256": "8ff278e9c334f185236182709ba46ab727db2830d0b4e09485c1e582e1f2e4b7"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.38/evolution-data-server-3.38.2.tar.xz",
+                        "sha256": "bf20785963efe3afa9d3b3a229cb61d1c60fa2fc11e29d632e050b3714cad455"
                     }
                 ]
             },
@@ -342,8 +338,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.38/evolution-3.38.1.tar.xz",
-                        "sha256": "d0f95e19701fe0d872ff8c864ff2e7f78a6f0bd12db34f7a5764548b17dcc8fc"
+                        "url": "https://download.gnome.org/sources/evolution/3.38/evolution-3.38.2.tar.xz",
+                        "sha256": "1d8b8175cfbd994f26b1f13301b6333cdf1dcebe6861bf21f465ddcea07b12f2"
                     },
 				{
 					"type": "script",
@@ -353,6 +349,7 @@
 						"else",
 						"   export BOGOFILTER_DIR=\"${XDG_DATA_HOME}/bogofilter/\"",
 						"   export GIO_USE_NETWORK_MONITOR=base",
+						"   export WEBKIT_FORCE_SANDBOX=0",
 						"   gsettings reset org.gnome.evolution-data-server network-monitor-gio-name",
 						"",
                                                 "   gpg-agent --homedir ~/.gnupg --daemon --pinentry-program=/app/bin/pinentry",
@@ -424,8 +421,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.38/evolution-ews-3.38.1.tar.xz",
-                        "sha256": "d6fc7469fda270d95a157b158ffd82070a6bdb0c2ab0c4e5fbcdb59f8a251874"
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.38/evolution-ews-3.38.2.tar.xz",
+                        "sha256": "a5767b4c4b9c678bd17fa8d221d60e0433c86a71a0f8196e2957b3ba691f1fa1"
                     }
                 ]
             }
