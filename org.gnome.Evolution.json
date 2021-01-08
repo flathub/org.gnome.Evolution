@@ -51,7 +51,11 @@
                     {
                         "type": "git",
                         "url": "https://github.com/libical/libical.git",
-                        "branch": "07dc84fb0d5e50fb493005e10fa41930111da48f"
+                        "branch": "d1e97f40ab48b9251601c9c0ab866d23d9768930"
+                    },
+                    {
+		"type": "patch",
+		"path": "libical.patch"
                     }
                 ]
             },
@@ -252,8 +256,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.38/evolution-data-server-3.38.2.tar.xz",
-                        "sha256": "bf20785963efe3afa9d3b3a229cb61d1c60fa2fc11e29d632e050b3714cad455"
+                        "url": "https://ftp.acc.umu.se/pub/GNOME/sources/evolution-data-server/3.39/evolution-data-server-3.39.1.tar.xz",
+                        "sha256": "ecdf0400cc876dce3845061d8a821321601f3e3f1710bf145600bcf97437eb4d"
                     }
                 ]
             },
@@ -338,8 +342,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.38/evolution-3.38.2.tar.xz",
-                        "sha256": "1d8b8175cfbd994f26b1f13301b6333cdf1dcebe6861bf21f465ddcea07b12f2"
+                        "url": "https://ftp.acc.umu.se/pub/GNOME/sources/evolution/3.39/evolution-3.39.1.tar.xz",
+                        "sha256": "8f1bbd5041a5bcdb35f082053acef6fe98659bfe5ce7afbb4e87207133f652c5"
                     },
 				{
 					"type": "script",
@@ -421,8 +425,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.38/evolution-ews-3.38.2.tar.xz",
-                        "sha256": "a5767b4c4b9c678bd17fa8d221d60e0433c86a71a0f8196e2957b3ba691f1fa1"
+                        "url": "https://ftp.acc.umu.se/pub/GNOME/sources/evolution-ews/3.39/evolution-ews-3.39.1.tar.xz",
+                        "sha256": "da24dc6d7caeedf55d6842f7fd722301381a20fa42d01681f1e34460fa7a67a1"
                     }
                 ]
             }
