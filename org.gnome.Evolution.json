@@ -49,9 +49,13 @@
                 ],
                 "sources": [
                     {
-                        "type": "archive",
-                        "url": "https://github.com/libical/libical/releases/download/v3.0.8/libical-3.0.8.tar.gz",
-                        "sha256": "09fecacaf75ba5a242159e3a9758a5446b5ce4d0ab684f98a7040864e1d1286f"
+                        "type": "git",
+                        "url": "https://github.com/libical/libical.git",
+                        "branch": "d1e97f40ab48b9251601c9c0ab866d23d976893"
+                    },
+                    {
+		"type": "patch",
+		"path": "libical.patch"
                     }
                 ]
             },
@@ -252,8 +256,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.38/evolution-data-server-3.38.2.tar.xz",
-                        "sha256": "bf20785963efe3afa9d3b3a229cb61d1c60fa2fc11e29d632e050b3714cad455"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.38/evolution-data-server-3.38.3.tar.xz",
+                        "sha256": "9732f690b252aa7c0932c761740b5098a19705d1b6e4a5de2fad3a16e57e3ca7"
                     }
                 ]
             },
@@ -338,8 +342,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.38/evolution-3.38.2.tar.xz",
-                        "sha256": "1d8b8175cfbd994f26b1f13301b6333cdf1dcebe6861bf21f465ddcea07b12f2"
+                        "url": "https://download.gnome.org/sources/evolution/3.38/evolution-3.38.3.tar.xz",
+                        "sha256": "7fac6226c5626f290b4bdeebd85b1e2c822a250ede53998b4970ddb92585dacd"
                     },
 				{
 					"type": "script",
@@ -421,8 +425,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.38/evolution-ews-3.38.2.tar.xz",
-                        "sha256": "a5767b4c4b9c678bd17fa8d221d60e0433c86a71a0f8196e2957b3ba691f1fa1"
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.38/evolution-ews-3.38.3.tar.xz",
+                        "sha256": "11f67fa989abd9a2bcb380d92c9c0866b0a1de29ac2138af85f5ab48e3be52e8"
                     }
                 ]
             }
