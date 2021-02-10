@@ -3,6 +3,9 @@
         "runtime": "org.gnome.Platform",
         "runtime-version": "3.38",
         "sdk": "org.gnome.Sdk",
+        "sdk-extensions" : [
+		"org.freedesktop.Sdk.Extension.rust-stable"
+	],
         "command": "evolution",
         "rename-icon": "evolution",
         "copy-icon": true,
@@ -12,6 +15,7 @@
         },
         "cleanup": [
             "/include",
+            "/lib/cmake",
             "/lib/pkgconfig",
             "/share/pkgconfig",
             "/share/aclocal",
@@ -25,6 +29,7 @@
             "--socket=wayland",
             "--socket=pulseaudio",
             "--device=dri",
+            "--socket=pcsc",
             "--talk-name=org.gnome.OnlineAccounts",
             "--talk-name=org.freedesktop.Notifications",
             "--talk-name=org.freedesktop.secrets",
@@ -32,7 +37,9 @@
             "--filesystem=/run/.heim_org.h5l.kcm-socket",
             "--metadata=X-DConf=migrate-path=/org/gnome/evolution/",
             "--filesystem=~/.gnupg:rw",
-            "--filesystem=xdg-config/gnupg:rw"
+            "--filesystem=xdg-config/gnupg:rw",
+            "--filesystem=~/.pki:rw",
+            "--filesystem=xdg-config/pki:rw"
         ],
         "modules": [
             {
@@ -49,13 +56,9 @@
                 ],
                 "sources": [
                     {
-                        "type": "git",
-                        "url": "https://github.com/libical/libical.git",
-                        "branch": "d1e97f40ab48b9251601c9c0ab866d23d9768930"
-                    },
-                    {
-		"type": "patch",
-		"path": "libical.patch"
+                        "type": "archive",
+                        "url": "https://github.com/libical/libical/releases/download/v3.0.9/libical-3.0.9.tar.gz",
+                        "sha256": "bd26d98b7fcb2eb0cd5461747bbb02024ebe38e293ca53a7dfdcb2505265a728"
                     }
                 ]
             },
@@ -427,6 +430,40 @@
                         "type": "archive",
                         "url": "https://ftp.acc.umu.se/pub/GNOME/sources/evolution-ews/3.39/evolution-ews-3.39.1.tar.xz",
                         "sha256": "da24dc6d7caeedf55d6842f7fd722301381a20fa42d01681f1e34460fa7a67a1"
+                    }
+                ]
+            },
+            
+            {
+                "name": "libetebase",
+                "buildsystem": "simple",
+                "build-commands": [
+                    "mkdir .cargo",
+                    "cp cargo/config .cargo/",
+                    "source /usr/lib/sdk/rust-stable/enable.sh && cargo --offline fetch --manifest-path Cargo.toml",
+                    "source /usr/lib/sdk/rust-stable/enable.sh && cargo --offline build --release",
+                    "PREFIX=/app make V=1 VERBOSE=1 pkgconfig",
+                    "PREFIX=/app make V=1 VERBOSE=1 install",
+                    "mv /app/lib/libetebase.so /app/lib/libetebase.so.0",
+                    "ln -s /app/lib/libetebase.so.0 /app/lib/libetebase.so"
+                ],
+                "sources": [
+                    {
+                        "type": "archive",
+                        "url": "https://github.com/etesync/libetebase/archive/v0.4.1.tar.gz",
+                        "sha256": "ac8a64c16d2233a53cb97866ca8e2cf154c02622584676a90170e91e5fc3af08"
+                    },
+                    "libetebase-cargo-sources.json"
+                ]
+            },
+            {
+                "name": "evolution-etesync",
+                "buildsystem": "cmake-ninja",
+                "sources": [
+                    {
+                        "type": "git",
+                        "url": "https://gitlab.gnome.org/GNOME/evolution-etesync.git",
+                        "branch": "master"
                     }
                 ]
             }
