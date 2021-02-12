@@ -126,8 +126,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/libgdata/0.17/libgdata-0.17.13.tar.xz",
-                        "sha256": "eab9ef792c3c2b9ece19d45aea15225aba8df2521bc12785b1b2d3318d8c472e"
+                        "url": "https://download.gnome.org/sources/libgdata/0.18/libgdata-0.18.0.tar.xz",
+                        "sha256": "f0c20112fa5372b62c01256f268aef5131a161dfc23868f393ecf7b8b3752580"
                     }
                 ]
             },
@@ -185,8 +185,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.4.56.tgz",
-                        "sha256": "25520e0363c93f3bcb89802a4aa3db33046206039436e0c7c9262db5a61115e0"
+                        "url": "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.4.57.tgz",
+                        "sha256": "c7ba47e1e6ecb5b436f3d43281df57abeffa99262141aec822628bc220f6b45a"
                     },
      
                     {
@@ -259,8 +259,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://ftp.acc.umu.se/pub/GNOME/sources/evolution-data-server/3.39/evolution-data-server-3.39.1.tar.xz",
-                        "sha256": "ecdf0400cc876dce3845061d8a821321601f3e3f1710bf145600bcf97437eb4d"
+                        "url": "https://ftp.acc.umu.se/pub/GNOME/sources/evolution-data-server/3.39/evolution-data-server-3.39.2.tar.xz",
+                        "sha256": "ef805b2f16785e0981430b76e7c28ea7617a725b9d1f9cb258e30ac4156598e6"
                     }
                 ]
             },
@@ -291,7 +291,7 @@
 				{
 					"type": "git",
 					"url": "https://git.code.sf.net/p/bogofilter/git",
-					"branch": "f31bcf3579bfb29c367f9e186c9494e88624edb2"
+					"branch": "26cac0a458214ef34d57f23ab056122524475bd9"
 				}
 			]
 		},
@@ -345,8 +345,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://ftp.acc.umu.se/pub/GNOME/sources/evolution/3.39/evolution-3.39.1.tar.xz",
-                        "sha256": "8f1bbd5041a5bcdb35f082053acef6fe98659bfe5ce7afbb4e87207133f652c5"
+                        "url": "https://ftp.acc.umu.se/pub/GNOME/sources/evolution/3.39/evolution-3.39.2.tar.xz",
+                        "sha256": "0f20d3e6d2f38e2efc03545d56e3979070a9590b7cca201eed5c1a5a60cef02d"
                     },
 				{
 					"type": "script",
@@ -428,8 +428,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://ftp.acc.umu.se/pub/GNOME/sources/evolution-ews/3.39/evolution-ews-3.39.1.tar.xz",
-                        "sha256": "da24dc6d7caeedf55d6842f7fd722301381a20fa42d01681f1e34460fa7a67a1"
+                        "url": "https://ftp.acc.umu.se/pub/GNOME/sources/evolution-ews/3.39/evolution-ews-3.39.2.tar.xz",
+                        "sha256": "6407763c531d2b075cab2aa061132e9040e0ebf91f7fbb987552454fcf455680"
                     }
                 ]
             },
