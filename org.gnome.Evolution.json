@@ -42,6 +42,7 @@
             "--filesystem=xdg-config/pki:rw"
         ],
         "modules": [
+            "shared-modules/libcanberra/libcanberra.json",
             {
                 "name": "libical",
                 "cleanup": [ "/lib/cmake" ],
@@ -126,8 +127,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/libgdata/0.18/libgdata-0.18.0.tar.xz",
-                        "sha256": "f0c20112fa5372b62c01256f268aef5131a161dfc23868f393ecf7b8b3752580"
+                        "url": "https://download.gnome.org/sources/libgdata/0.18/libgdata-0.18.1.tar.xz",
+                        "sha256": "dd8592eeb6512ad0a8cf5c8be8c72e76f74bfe6b23e4dd93f0756ee0716804c7"
                     }
                 ]
             },
@@ -210,29 +211,6 @@
 				}
 			]
             },
-
-            {
-			"name": "libcanberra",
-			"config-opts": [
-				"--disable-gtk",
-				"--disable-oss",
-				"--enable-alsa",
-				"--enable-gtk3",
-				"--enable-null",
-				"--without-systemdsystemunitdir",
-				"--with-builtin=dso",
-				"--disable-gtk-doc",
-				"--disable-gtk-doc-html"
-			],
-			"cleanup": [ "/bin", "/share/gtk-doc" ],
-			"sources": [
-				{
-					"type": "archive",
-					"url": "http://0pointer.de/lennart/projects/libcanberra/libcanberra-0.30.tar.xz",
-					"sha256": "c2b671e67e0c288a69fc33dc1b6f1b534d07882c2aceed37004bf48c601afa72"
-				}
-			]
-		},
                  
             {
                 "name": "evolution-data-server",
@@ -259,8 +237,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://ftp.acc.umu.se/pub/GNOME/sources/evolution-data-server/3.39/evolution-data-server-3.39.2.tar.xz",
-                        "sha256": "ef805b2f16785e0981430b76e7c28ea7617a725b9d1f9cb258e30ac4156598e6"
+                        "url": "https://ftp.fau.de/gnome/sources/evolution-data-server/3.39/evolution-data-server-3.39.3.tar.xz",
+                        "sha256": "a9455dc82d780c10af337375a4971c2454f7ecd8c1e25ded89d5151bb3fcb890"
                     }
                 ]
             },
@@ -318,8 +296,6 @@
 				}
 			]
 		},
-
-
      
             {
                 "name": "evolution",
@@ -345,8 +321,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://ftp.acc.umu.se/pub/GNOME/sources/evolution/3.39/evolution-3.39.2.tar.xz",
-                        "sha256": "0f20d3e6d2f38e2efc03545d56e3979070a9590b7cca201eed5c1a5a60cef02d"
+                        "url": "https://download.gnome.org/sources/evolution/3.39/evolution-3.39.3.tar.xz",
+                        "sha256": "04b2c0bd2e7333df53c442795a7d5ece3af47cf9b7c043623cf88e176a8f75f4"
                     },
 				{
 					"type": "script",
@@ -428,8 +404,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://ftp.acc.umu.se/pub/GNOME/sources/evolution-ews/3.39/evolution-ews-3.39.2.tar.xz",
-                        "sha256": "6407763c531d2b075cab2aa061132e9040e0ebf91f7fbb987552454fcf455680"
+                        "url": "https://ftp.acc.umu.se/pub/GNOME/sources/evolution-ews/3.39/evolution-ews-3.39.3.tar.xz",
+                        "sha256": "9631d99f6d3c7f593fe3d5d7bd2c45cd66ab6c3006e048cc4c130cdda9207c60"
                     }
                 ]
             },
