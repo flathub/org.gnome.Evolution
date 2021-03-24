@@ -1,7 +1,7 @@
 {
         "app-id": "org.gnome.Evolution",
         "runtime": "org.gnome.Platform",
-        "runtime-version": "3.38",
+        "runtime-version": "40",
         "sdk": "org.gnome.Sdk",
         "sdk-extensions" : [
 		"org.freedesktop.Sdk.Extension.rust-stable"
@@ -237,8 +237,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://ftp.fau.de/gnome/sources/evolution-data-server/3.39/evolution-data-server-3.39.3.tar.xz",
-                        "sha256": "a9455dc82d780c10af337375a4971c2454f7ecd8c1e25ded89d5151bb3fcb890"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.40/evolution-data-server-3.40.0.tar.xz",
+                        "sha256": "ed572f0cb6a2365809943449a8ccbee652681e2d9a1a7f4a54b60cbb53d87445"
                     }
                 ]
             },
@@ -321,8 +321,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.39/evolution-3.39.3.tar.xz",
-                        "sha256": "04b2c0bd2e7333df53c442795a7d5ece3af47cf9b7c043623cf88e176a8f75f4"
+                        "url": "https://download.gnome.org/sources/evolution/3.40/evolution-3.40.0.tar.xz",
+                        "sha256": "030a27b46c971835821c1b04d9023f9ff8f4113e1a411633dee403112033d51b"
                     },
 				{
 					"type": "script",
@@ -404,8 +404,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://ftp.acc.umu.se/pub/GNOME/sources/evolution-ews/3.39/evolution-ews-3.39.3.tar.xz",
-                        "sha256": "9631d99f6d3c7f593fe3d5d7bd2c45cd66ab6c3006e048cc4c130cdda9207c60"
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.40/evolution-ews-3.40.0.tar.xz",
+                        "sha256": "e078782c6fc90b5105bbc643418b95b4818fc4334d37d6c2cda63ad5974a5f53"
                     }
                 ]
             },
