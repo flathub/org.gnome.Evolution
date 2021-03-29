@@ -42,6 +42,7 @@
             "--filesystem=xdg-config/pki:rw"
         ],
         "modules": [
+            "shared-modules/libcanberra/libcanberra.json",
             {
                 "name": "libical",
                 "cleanup": [ "/lib/cmake" ],
@@ -126,8 +127,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/libgdata/0.17/libgdata-0.17.13.tar.xz",
-                        "sha256": "eab9ef792c3c2b9ece19d45aea15225aba8df2521bc12785b1b2d3318d8c472e"
+                        "url": "https://download.gnome.org/sources/libgdata/0.18/libgdata-0.18.1.tar.xz",
+                        "sha256": "dd8592eeb6512ad0a8cf5c8be8c72e76f74bfe6b23e4dd93f0756ee0716804c7"
                     }
                 ]
             },
@@ -185,8 +186,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.4.56.tgz",
-                        "sha256": "25520e0363c93f3bcb89802a4aa3db33046206039436e0c7c9262db5a61115e0"
+                        "url": "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.4.57.tgz",
+                        "sha256": "c7ba47e1e6ecb5b436f3d43281df57abeffa99262141aec822628bc220f6b45a"
                     },
      
                     {
@@ -210,29 +211,6 @@
 				}
 			]
             },
-
-            {
-			"name": "libcanberra",
-			"config-opts": [
-				"--disable-gtk",
-				"--disable-oss",
-				"--enable-alsa",
-				"--enable-gtk3",
-				"--enable-null",
-				"--without-systemdsystemunitdir",
-				"--with-builtin=dso",
-				"--disable-gtk-doc",
-				"--disable-gtk-doc-html"
-			],
-			"cleanup": [ "/bin", "/share/gtk-doc" ],
-			"sources": [
-				{
-					"type": "archive",
-					"url": "http://0pointer.de/lennart/projects/libcanberra/libcanberra-0.30.tar.xz",
-					"sha256": "c2b671e67e0c288a69fc33dc1b6f1b534d07882c2aceed37004bf48c601afa72"
-				}
-			]
-		},
                  
             {
                 "name": "evolution-data-server",
@@ -259,8 +237,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.38/evolution-data-server-3.38.4.tar.xz",
-                        "sha256": "ac53f16b2d51f3e7ff8025f9ca19f4a2d4ce3841d72ae9fe2bb897dc8099d705"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.40/evolution-data-server-3.40.0.tar.xz",
+                        "sha256": "ed572f0cb6a2365809943449a8ccbee652681e2d9a1a7f4a54b60cbb53d87445"
                     }
                 ]
             },
@@ -291,7 +269,7 @@
 				{
 					"type": "git",
 					"url": "https://git.code.sf.net/p/bogofilter/git",
-					"branch": "f31bcf3579bfb29c367f9e186c9494e88624edb2"
+					"branch": "26cac0a458214ef34d57f23ab056122524475bd9"
 				}
 			]
 		},
@@ -318,8 +296,6 @@
 				}
 			]
 		},
-
-
      
             {
                 "name": "evolution",
@@ -345,8 +321,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.38/evolution-3.38.4.tar.xz",
-                        "sha256": "341f92d24e2b44c2789b0037f1a894ff165487daa4b00b80fae3138a2e05afd4"
+                        "url": "https://download.gnome.org/sources/evolution/3.40/evolution-3.40.0.tar.xz",
+                        "sha256": "030a27b46c971835821c1b04d9023f9ff8f4113e1a411633dee403112033d51b"
                     },
 				{
 					"type": "script",
@@ -428,8 +404,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.38/evolution-ews-3.38.4.tar.xz",
-                        "sha256": "fd90bcefe4f9d46947ddacf9cd400b67df02803fe8faaeb285da22ce7f72fd98"
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.40/evolution-ews-3.40.0.tar.xz",
+                        "sha256": "e078782c6fc90b5105bbc643418b95b4818fc4334d37d6c2cda63ad5974a5f53"
                     }
                 ]
             },
