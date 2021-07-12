@@ -25,7 +25,7 @@
         "finish-args": [
             "--share=ipc",
             "--share=network",
-            "--socket=x11",
+            "--socket=fallback-x11",
             "--socket=wayland",
             "--socket=pulseaudio",
             "--device=dri",
@@ -237,8 +237,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.40/evolution-data-server-3.40.2.tar.xz",
-                        "sha256": "ec82951639f32a5cece80a8b0b9aa3f66b7d318e3ee2c1c35234f2e2bde8a418"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.40/evolution-data-server-3.40.3.tar.xz",
+                        "sha256": "4ebb3917d6beb54ad596de5d8a5c46f0fb57249ed9db81f05c7a94a730c1d921"
                     }
                 ]
             },
@@ -321,8 +321,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.40/evolution-3.40.2.tar.xz",
-                        "sha256": "9b4c31352332fb9dc0ff23625ba1552c13808f1c9ba019496b750be87e07a5fd"
+                        "url": "https://download.gnome.org/sources/evolution/3.40/evolution-3.40.3.tar.xz",
+                        "sha256": "fd2923a2610d7bfeb6d76f8530ba4026404e21fd273ab28a2c5b5008921e0d5c"
                     },
 				{
 					"type": "script",
@@ -404,8 +404,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.40/evolution-ews-3.40.2.tar.xz",
-                        "sha256": "d54c20e8cdc984bc6142094e0d6d06a4b6b3dd3e6b95bf6ea576a809363bbcf6"
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.40/evolution-ews-3.40.3.tar.xz",
+                        "sha256": "640204e6ba4f3b2653dd548f60e475e376cff0d6bb2afd0d411850fa9da8c496"
                     }
                 ]
             },
