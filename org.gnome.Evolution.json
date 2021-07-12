@@ -25,7 +25,7 @@
         "finish-args": [
             "--share=ipc",
             "--share=network",
-            "--socket=x11",
+            "--socket=fallback-x11",
             "--socket=wayland",
             "--socket=pulseaudio",
             "--device=dri",
@@ -237,8 +237,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.40/evolution-data-server-3.40.2.tar.xz",
-                        "sha256": "ec82951639f32a5cece80a8b0b9aa3f66b7d318e3ee2c1c35234f2e2bde8a418"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.41/evolution-data-server-3.41.1.tar.xz",
+                        "sha256": "7dc1db6fb262da002bf3695b97ec361760b8683dfaa8f713e59c42ac08c22337"
                     }
                 ]
             },
@@ -321,8 +321,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.40/evolution-3.40.2.tar.xz",
-                        "sha256": "9b4c31352332fb9dc0ff23625ba1552c13808f1c9ba019496b750be87e07a5fd"
+                        "url": "https://download.gnome.org/sources/evolution/3.41/evolution-3.41.1.tar.xz",
+                        "sha256": "cf8fff45277f3c61acce2b0884eacdc115e46a3c8f480896197df8756a6b2207"
                     },
 				{
 					"type": "script",
@@ -404,8 +404,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.40/evolution-ews-3.40.2.tar.xz",
-                        "sha256": "d54c20e8cdc984bc6142094e0d6d06a4b6b3dd3e6b95bf6ea576a809363bbcf6"
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.41/evolution-ews-3.41.1.tar.xz",
+                        "sha256": "4bbcd09998e8b35377c1cb2877f7bc4ec4a3269bbca683d767bf38bb1a411b7a"
                     }
                 ]
             },
