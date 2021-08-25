@@ -58,8 +58,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://github.com/libical/libical/releases/download/v3.0.9/libical-3.0.9.tar.gz",
-                        "sha256": "bd26d98b7fcb2eb0cd5461747bbb02024ebe38e293ca53a7dfdcb2505265a728"
+                        "url": "https://github.com/libical/libical/releases/download/v3.0.10/libical-3.0.10.tar.gz",
+                        "sha256": "f933b3e6cf9d56a35bb5625e8e4a9c3a50239a85aea05ed842932c1a1dc336b4"
                     }
                 ]
             },
@@ -237,8 +237,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.40/evolution-data-server-3.40.3.tar.xz",
-                        "sha256": "4ebb3917d6beb54ad596de5d8a5c46f0fb57249ed9db81f05c7a94a730c1d921"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.40/evolution-data-server-3.40.4.tar.xz",
+                        "sha256": "87c185f18c37270e3611981f19bd9221ac974c807462c8dce90bea08712c5800"
                     }
                 ]
             },
@@ -321,8 +321,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.40/evolution-3.40.3.tar.xz",
-                        "sha256": "fd2923a2610d7bfeb6d76f8530ba4026404e21fd273ab28a2c5b5008921e0d5c"
+                        "url": "https://download.gnome.org/sources/evolution/3.40/evolution-3.40.4.tar.xz",
+                        "sha256": "0585e9dfa55040ec923535a0448762465d89e3313509ac326bbe846a5d660374"
                     },
 				{
 					"type": "script",
@@ -404,8 +404,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.40/evolution-ews-3.40.3.tar.xz",
-                        "sha256": "640204e6ba4f3b2653dd548f60e475e376cff0d6bb2afd0d411850fa9da8c496"
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.40/evolution-ews-3.40.4.tar.xz",
+                        "sha256": "d1e0236fc816862ca3a9a393e6eafd80fa10bfa5b6bb7eeedbca8025532e5015"
                     }
                 ]
             },
