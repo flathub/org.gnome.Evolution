@@ -58,8 +58,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://github.com/libical/libical/releases/download/v3.0.9/libical-3.0.9.tar.gz",
-                        "sha256": "bd26d98b7fcb2eb0cd5461747bbb02024ebe38e293ca53a7dfdcb2505265a728"
+                        "url": "https://github.com/libical/libical/releases/download/v3.0.10/libical-3.0.10.tar.gz",
+                        "sha256": "f933b3e6cf9d56a35bb5625e8e4a9c3a50239a85aea05ed842932c1a1dc336b4"
                     }
                 ]
             },
@@ -186,8 +186,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.5.5.tgz",
-                        "sha256": "74ecefda2afc0e054d2c7dc29166be6587fa9de7a4087a80183bc9c719dbf6b3"
+                        "url": "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.5.7.tgz",
+                        "sha256": "ea9757001bc36295037f0030ede16810a1bb7438bbe8f871a35cc2a2b439d9ab"
                     },
      
                     {
@@ -237,8 +237,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.41/evolution-data-server-3.41.1.tar.xz",
-                        "sha256": "7dc1db6fb262da002bf3695b97ec361760b8683dfaa8f713e59c42ac08c22337"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.41/evolution-data-server-3.41.2.tar.xz",
+                        "sha256": "61b434d81346493bfb7340a5113dfb71ea15ab84db94ae474f703b4fcb5a184e"
                     }
                 ]
             },
@@ -321,8 +321,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.41/evolution-3.41.1.tar.xz",
-                        "sha256": "cf8fff45277f3c61acce2b0884eacdc115e46a3c8f480896197df8756a6b2207"
+                        "url": "https://download.gnome.org/sources/evolution/3.41/evolution-3.41.2.tar.xz",
+                        "sha256": "da886e717897749a3b831bf910e0a8cf25a45f3a82d34384b3d436fd15d735c1"
                     },
 				{
 					"type": "script",
@@ -404,8 +404,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.41/evolution-ews-3.41.1.tar.xz",
-                        "sha256": "4bbcd09998e8b35377c1cb2877f7bc4ec4a3269bbca683d767bf38bb1a411b7a"
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.41/evolution-ews-3.41.2.tar.xz",
+                        "sha256": "2f797b97b4da9b3ee7f53bbc26a80f41c5ea8d0c0978b2d40146e385e08ce249"
                     }
                 ]
             },
