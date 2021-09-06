@@ -237,8 +237,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.41/evolution-data-server-3.41.2.tar.xz",
-                        "sha256": "61b434d81346493bfb7340a5113dfb71ea15ab84db94ae474f703b4fcb5a184e"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.41/evolution-data-server-3.41.3.tar.xz",
+                        "sha256": "a9d40f0af78fae3fa410b64d4c0dc3fdea95baa297b3f3e43dddbd1a21c2a82b"
                     }
                 ]
             },
@@ -321,8 +321,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.41/evolution-3.41.2.tar.xz",
-                        "sha256": "da886e717897749a3b831bf910e0a8cf25a45f3a82d34384b3d436fd15d735c1"
+                        "url": "https://download.gnome.org/sources/evolution/3.41/evolution-3.41.3.tar.xz",
+                        "sha256": "3ac42ccfde9faca74432d997b601374883ebfc958d5d1371a712b386b18ee520"
                     },
 				{
 					"type": "script",
@@ -404,8 +404,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.41/evolution-ews-3.41.2.tar.xz",
-                        "sha256": "2f797b97b4da9b3ee7f53bbc26a80f41c5ea8d0c0978b2d40146e385e08ce249"
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.41/evolution-ews-3.41.3.tar.xz",
+                        "sha256": "d95cb491aa5d39323a6f5878b04a1389bbed3756abcd9e53adc03a8e0e2400d8"
                     }
                 ]
             },
