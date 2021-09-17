@@ -237,8 +237,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.41/evolution-data-server-3.41.3.tar.xz",
-                        "sha256": "a9d40f0af78fae3fa410b64d4c0dc3fdea95baa297b3f3e43dddbd1a21c2a82b"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.42/evolution-data-server-3.42.0.tar.xz",
+                        "sha256": "e8fdd3bc47a07d6f8a3052bbcae880f20f6dbc4f6973a8e90d00169bb99b1635"
                     }
                 ]
             },
@@ -312,7 +312,8 @@
                     "-DENABLE_YTNEF=OFF",
                     "-DWITH_BOGOFILTER=/app/bin/bogofilter",
                     "-DWITH_GLADE_CATALOG=OFF",
-                    "-DWITH_HELP=ON"
+                    "-DWITH_HELP=ON",
+                    "-DWITH_WMCLASS_OVERRIDE=evolution.bin"
                 ],
                 "cleanup": [
                     "/etc/xdg",
@@ -321,8 +322,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.41/evolution-3.41.3.tar.xz",
-                        "sha256": "3ac42ccfde9faca74432d997b601374883ebfc958d5d1371a712b386b18ee520"
+                        "url": "https://download.gnome.org/sources/evolution/3.42/evolution-3.42.0.tar.xz",
+                        "sha256": "6845ba56ffc76c1772a35118aee926842463513bc04e9d8a67a2161d5d84427a"
                     },
 				{
 					"type": "script",
@@ -404,8 +405,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.41/evolution-ews-3.41.3.tar.xz",
-                        "sha256": "d95cb491aa5d39323a6f5878b04a1389bbed3756abcd9e53adc03a8e0e2400d8"
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.42/evolution-ews-3.42.0.tar.xz",
+                        "sha256": "585336df7829cbf965a2858d4594a2b8d8910111b2dcae1a68ccaf1af50cd1af"
                     }
                 ]
             },
