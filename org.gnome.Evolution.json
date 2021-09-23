@@ -59,7 +59,13 @@
                     {
                         "type": "archive",
                         "url": "https://github.com/libical/libical/releases/download/v3.0.10/libical-3.0.10.tar.gz",
-                        "sha256": "f933b3e6cf9d56a35bb5625e8e4a9c3a50239a85aea05ed842932c1a1dc336b4"
+                        "sha256": "f933b3e6cf9d56a35bb5625e8e4a9c3a50239a85aea05ed842932c1a1dc336b4",
+                        "x-checker-data": {
+                            "type": "anitya",
+                            "project-id": 1637,
+                            "stable-only": true,
+                            "url-template": "https://github.com/libical/libical/releases/download/v$version/libical-$version.tar.gz"
+                        }
                     }
                 ]
             },
@@ -74,9 +80,14 @@
 				{
 					"type": "archive",
 					"url": "https://download.gnome.org/sources/gspell/1.9/gspell-1.9.1.tar.xz",
-					"sha256": "dcbb769dfdde8e3c0a8ed3102ce7e661abbf7ddf85df08b29915e92cd723abdd"
+					"sha256": "dcbb769dfdde8e3c0a8ed3102ce7e661abbf7ddf85df08b29915e92cd723abdd",
+                    "x-checker-data": {
+                        "type": "gnome",
+                        "name": "gspell",
+                        "stable-only": true
+                    }
 				}
-			]               
+			]
             },
           
             {
@@ -106,7 +117,12 @@
                     {
                         "type": "archive",
                         "url": "https://download.gnome.org/sources/gnome-online-accounts/3.40/gnome-online-accounts-3.40.0.tar.xz",
-                        "sha256": "585c4f979f6f543b77bfdb4fb01eb18ba25c2aec5b7866c676d929616fb2c3fa"
+                        "sha256": "585c4f979f6f543b77bfdb4fb01eb18ba25c2aec5b7866c676d929616fb2c3fa",
+                        "x-checker-data": {
+                            "type": "gnome",
+                            "name": "gnome-online-accounts",
+                            "stable-only": true
+                        }
                     }
                 ]
             },
@@ -128,7 +144,12 @@
                     {
                         "type": "archive",
                         "url": "https://download.gnome.org/sources/libgdata/0.18/libgdata-0.18.1.tar.xz",
-                        "sha256": "dd8592eeb6512ad0a8cf5c8be8c72e76f74bfe6b23e4dd93f0756ee0716804c7"
+                        "sha256": "dd8592eeb6512ad0a8cf5c8be8c72e76f74bfe6b23e4dd93f0756ee0716804c7",
+                        "x-checker-data": {
+                            "type": "gnome",
+                            "name": "libgdata",
+                            "stable-only": true
+                        }
                     }
                 ]
             },
@@ -147,7 +168,12 @@
                     {
                         "type": "archive",
                         "url": "https://download.gnome.org/sources/geocode-glib/3.26/geocode-glib-3.26.2.tar.xz",
-                        "sha256": "01fe84cfa0be50c6e401147a2bc5e2f1574326e2293b55c69879be3e82030fd1"
+                        "sha256": "01fe84cfa0be50c6e401147a2bc5e2f1574326e2293b55c69879be3e82030fd1",
+                        "x-checker-data": {
+                            "type": "gnome",
+                            "name": "geocode-glib",
+                            "stable-only": true
+                        }
                     }
                 ]
             },
@@ -162,7 +188,12 @@
                     {
                         "type": "archive",
                         "url": "https://download.gnome.org/sources/libgweather/3.36/libgweather-3.36.1.tar.xz",
-                        "sha256": "de2709f0ee233b20116d5fa9861d406071798c4aa37830ca25f5ef2c0083e450"
+                        "sha256": "de2709f0ee233b20116d5fa9861d406071798c4aa37830ca25f5ef2c0083e450",
+                        "x-checker-data": {
+                            "type": "gnome",
+                            "name": "libgweather",
+                            "stable-only": true
+                        }
                     }
                 ]
             },
@@ -187,7 +218,13 @@
                     {
                         "type": "archive",
                         "url": "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.5.5.tgz",
-                        "sha256": "74ecefda2afc0e054d2c7dc29166be6587fa9de7a4087a80183bc9c719dbf6b3"
+                        "sha256": "74ecefda2afc0e054d2c7dc29166be6587fa9de7a4087a80183bc9c719dbf6b3",
+                        "x-checker-data": {
+                            "type": "anitya",
+                            "project-id": 2551,
+                            "stable-only": true,
+                            "url-template": "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-$version.tgz"
+                        }
                     },
      
                     {
@@ -199,19 +236,9 @@
                     }
                 ]
             }, 
-            
-            {
-			"name": "intltool",
-			"cleanup": [ "*" ],
-			"sources": [
-				{
-					"type": "archive",
-					"url": "https://launchpad.net/intltool/trunk/0.51.0/+download/intltool-0.51.0.tar.gz",
-					"sha256": "67c74d94196b153b774ab9f89b2fa6c6ba79352407037c8c14d5aeb334e959cd"
-				}
-			]
-            },
-                 
+
+            "shared-modules/intltool/intltool-0.51.json",
+
             {
                 "name": "evolution-data-server",
                 "buildsystem": "cmake-ninja",
@@ -238,27 +265,16 @@
                     {
                         "type": "archive",
                         "url": "https://download.gnome.org/sources/evolution-data-server/3.40/evolution-data-server-3.40.4.tar.xz",
-                        "sha256": "87c185f18c37270e3611981f19bd9221ac974c807462c8dce90bea08712c5800"
+                        "sha256": "87c185f18c37270e3611981f19bd9221ac974c807462c8dce90bea08712c5800",
+                        "x-checker-data": {
+                            "type": "gnome",
+                            "name": "evolution-data-server",
+                            "stable-only": true
+                        }
                     }
                 ]
             },
-     
-            {
-                "name": "gtkspell3",
-                "config-opts": [
-                    "--disable-gtk-doc",
-                    "--disable-introspection",
-                    "--disable-vala"
-                ],
-                "cleanup": [ "/share/gtk-doc" ],
-                "sources": [
-                    {
-                        "type": "archive",
-                        "url": "https://downloads.sourceforge.net/project/gtkspell/3.0.10/gtkspell3-3.0.10.tar.xz",
-                        "sha256": "b040f63836b347eb344f5542443dc254621805072f7141d49c067ecb5a375732"
-                    }
-                ]
-            },
+
             {
 			"name": "bogofilter",
 			"buildsystem": "simple",
@@ -268,8 +284,8 @@
 			"sources": [
 				{
 					"type": "git",
-					"url": "https://git.code.sf.net/p/bogofilter/git",
-					"branch": "26cac0a458214ef34d57f23ab056122524475bd9"
+					"url": "https://gitlab.com/bogofilter/bogofilter.git",
+					"commit": "26cac0a458214ef34d57f23ab056122524475bd9"
 				}
 			]
 		},
@@ -292,7 +308,13 @@
 				{
 					"type": "archive",
 					"url": "https://www.gnupg.org/ftp/gcrypt/pinentry/pinentry-1.1.0.tar.bz2",
-					"sha256": "68076686fa724a290ea49cdf0d1c0c1500907d1b759a3bcbfbec0293e8f56570"
+					"sha256": "68076686fa724a290ea49cdf0d1c0c1500907d1b759a3bcbfbec0293e8f56570",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 3643,
+                        "stable-only": true,
+                        "url-template": "https://www.gnupg.org/ftp/gcrypt/pinentry/pinentry-$version.tar.bz2"
+                    }
 				}
 			]
 		},
@@ -322,7 +344,12 @@
                     {
                         "type": "archive",
                         "url": "https://download.gnome.org/sources/evolution/3.40/evolution-3.40.4.tar.xz",
-                        "sha256": "0585e9dfa55040ec923535a0448762465d89e3313509ac326bbe846a5d660374"
+                        "sha256": "0585e9dfa55040ec923535a0448762465d89e3313509ac326bbe846a5d660374",
+                        "x-checker-data": {
+                            "type": "gnome",
+                            "name": "evolution",
+                            "stable-only": true
+                        }
                     },
 				{
 					"type": "script",
@@ -405,7 +432,12 @@
                     {
                         "type": "archive",
                         "url": "https://download.gnome.org/sources/evolution-ews/3.40/evolution-ews-3.40.4.tar.xz",
-                        "sha256": "d1e0236fc816862ca3a9a393e6eafd80fa10bfa5b6bb7eeedbca8025532e5015"
+                        "sha256": "d1e0236fc816862ca3a9a393e6eafd80fa10bfa5b6bb7eeedbca8025532e5015",
+                        "x-checker-data": {
+                            "type": "gnome",
+                            "name": "evolution-ews",
+                            "stable-only": true
+                        }
                     }
                 ]
             },
@@ -427,7 +459,13 @@
                     {
                         "type": "archive",
                         "url": "https://github.com/etesync/libetebase/archive/v0.4.1.tar.gz",
-                        "sha256": "ac8a64c16d2233a53cb97866ca8e2cf154c02622584676a90170e91e5fc3af08"
+                        "sha256": "ac8a64c16d2233a53cb97866ca8e2cf154c02622584676a90170e91e5fc3af08",
+                        "x-checker-data": {
+                            "type": "anitya",
+                            "project-id": 235050,
+                            "stable-only": true,
+                            "url-template": "https://github.com/etesync/libetebase/archive/v$version.tar.gz"
+                        }
                     },
                     "libetebase-cargo-sources.json"
                 ]
