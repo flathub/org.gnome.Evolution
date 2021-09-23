@@ -1,485 +1,480 @@
 {
-        "app-id": "org.gnome.Evolution",
-        "runtime": "org.gnome.Platform",
-        "runtime-version": "40",
-        "sdk": "org.gnome.Sdk",
-        "sdk-extensions" : [
-		"org.freedesktop.Sdk.Extension.rust-stable"
-	],
-        "command": "evolution",
-        "rename-icon": "evolution",
-        "copy-icon": true,
-        "build-options" : {
-            "cflags": "-O2 -g -Wno-deprecated-declarations",
-            "cxxflags": "-O2 -g -Wno-deprecated-declarations"
-        },
-        "cleanup": [
-            "/include",
-            "/lib/cmake",
-            "/lib/pkgconfig",
-            "/share/pkgconfig",
-            "/share/aclocal",
-            "*.la",
-            "*.a"
-        ],
-        "finish-args": [
-            "--share=ipc",
-            "--share=network",
-            "--socket=fallback-x11",
-            "--socket=wayland",
-            "--socket=pulseaudio",
-            "--device=dri",
-            "--socket=pcsc",
-            "--talk-name=org.gnome.OnlineAccounts",
-            "--talk-name=org.freedesktop.Notifications",
-            "--talk-name=org.freedesktop.secrets",
-            "--talk-name=org.gnome.keyring.SystemPrompter",
-            "--filesystem=/run/.heim_org.h5l.kcm-socket",
-            "--metadata=X-DConf=migrate-path=/org/gnome/evolution/",
-            "--filesystem=~/.gnupg:rw",
-            "--filesystem=xdg-config/gnupg:rw",
-            "--filesystem=~/.pki:rw",
-            "--filesystem=xdg-config/pki:rw"
-        ],
-        "modules": [
-            "shared-modules/libcanberra/libcanberra.json",
-            {
-                "name": "libical",
-                "cleanup": [ "/lib/cmake" ],
-                "buildsystem": "cmake-ninja",
-                "config-opts": [
-                    "-DBUILD_SHARED_LIBS:BOOL=ON",
-                    "-DGOBJECT_INTROSPECTION:BOOL=OFF",
-                    "-DCMAKE_INSTALL_LIBDIR:PATH=/app/lib",
-                    "-DICAL_BUILD_DOCS:BOOL=OFF",
-                    "-DICAL_GLIB_VAPI:BOOL=OFF",
-                    "-DICAL_GLIB:BOOL=ON"
-                ],
-                "sources": [
-                    {
-                        "type": "archive",
-                        "url": "https://github.com/libical/libical/releases/download/v3.0.10/libical-3.0.10.tar.gz",
-                        "sha256": "f933b3e6cf9d56a35bb5625e8e4a9c3a50239a85aea05ed842932c1a1dc336b4",
-                        "x-checker-data": {
-                            "type": "anitya",
-                            "project-id": 1637,
-                            "stable-only": true,
-                            "url-template": "https://github.com/libical/libical/releases/download/v$version/libical-$version.tar.gz"
-                        }
+    "app-id": "org.gnome.Evolution",
+    "runtime": "org.gnome.Platform",
+    "runtime-version": "40",
+    "sdk": "org.gnome.Sdk",
+    "sdk-extensions": [
+        "org.freedesktop.Sdk.Extension.rust-stable"
+    ],
+    "command": "evolution",
+    "rename-icon": "evolution",
+    "copy-icon": true,
+    "build-options": {
+        "cflags": "-O2 -g -Wno-deprecated-declarations",
+        "cxxflags": "-O2 -g -Wno-deprecated-declarations"
+    },
+    "cleanup": [
+        "/include",
+        "/lib/cmake",
+        "/lib/pkgconfig",
+        "/share/pkgconfig",
+        "/share/aclocal",
+        "*.la",
+        "*.a"
+    ],
+    "finish-args": [
+        "--share=ipc",
+        "--share=network",
+        "--socket=fallback-x11",
+        "--socket=wayland",
+        "--socket=pulseaudio",
+        "--device=dri",
+        "--socket=pcsc",
+        "--talk-name=org.gnome.OnlineAccounts",
+        "--talk-name=org.freedesktop.Notifications",
+        "--talk-name=org.freedesktop.secrets",
+        "--talk-name=org.gnome.keyring.SystemPrompter",
+        "--filesystem=/run/.heim_org.h5l.kcm-socket",
+        "--metadata=X-DConf=migrate-path=/org/gnome/evolution/",
+        "--filesystem=~/.gnupg:rw",
+        "--filesystem=xdg-config/gnupg:rw",
+        "--filesystem=~/.pki:rw",
+        "--filesystem=xdg-config/pki:rw"
+    ],
+    "modules": [
+        "shared-modules/libcanberra/libcanberra.json",
+        {
+            "name": "libical",
+            "cleanup": [
+                "/lib/cmake"
+            ],
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DBUILD_SHARED_LIBS:BOOL=ON",
+                "-DGOBJECT_INTROSPECTION:BOOL=OFF",
+                "-DCMAKE_INSTALL_LIBDIR:PATH=/app/lib",
+                "-DICAL_BUILD_DOCS:BOOL=OFF",
+                "-DICAL_GLIB_VAPI:BOOL=OFF",
+                "-DICAL_GLIB:BOOL=ON"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/libical/libical/releases/download/v3.0.10/libical-3.0.10.tar.gz",
+                    "sha256": "f933b3e6cf9d56a35bb5625e8e4a9c3a50239a85aea05ed842932c1a1dc336b4",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 1637,
+                        "stable-only": true,
+                        "url-template": "https://github.com/libical/libical/releases/download/v$version/libical-$version.tar.gz"
                     }
-                ]
-            },
-
-            {
-			"name": "gspell",
-			"config-opts": [
-				"--disable-gtk-doc",
-				"--disable-introspection"
-                        ],
-			"sources": [
-				{
-					"type": "archive",
-					"url": "https://download.gnome.org/sources/gspell/1.9/gspell-1.9.1.tar.xz",
-					"sha256": "dcbb769dfdde8e3c0a8ed3102ce7e661abbf7ddf85df08b29915e92cd723abdd",
+                }
+            ]
+        },
+        {
+            "name": "gspell",
+            "config-opts": [
+                "--disable-gtk-doc",
+                "--disable-introspection"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/gspell/1.8/gspell-1.8.4.tar.xz",
+                    "sha256": "cf4d16a716e813449bd631405dc1001ea89537b8cdae2b8abfb3999212bd43b4",
                     "x-checker-data": {
                         "type": "gnome",
                         "name": "gspell",
                         "stable-only": true
                     }
-				}
-			]
-            },
-          
-            {
-                "name": "liboauth",
-                "config-opts": [ "--enable-nss" ],
-                "cleanup": [ "/share/man" ],
-                "sources": [
-                    {
-                        "type": "archive",
-                        "url": "https://downloads.sourceforge.net/project/liboauth/liboauth-1.0.3.tar.gz",
-                        "sha256": "0df60157b052f0e774ade8a8bac59d6e8d4b464058cc55f9208d72e41156811f"
+                }
+            ]
+        },
+        {
+            "name": "liboauth",
+            "config-opts": [
+                "--enable-nss"
+            ],
+            "cleanup": [
+                "/share/man"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://downloads.sourceforge.net/project/liboauth/liboauth-1.0.3.tar.gz",
+                    "sha256": "0df60157b052f0e774ade8a8bac59d6e8d4b464058cc55f9208d72e41156811f"
+                }
+            ]
+        },
+        {
+            "name": "gnome-online-accounts",
+            "config-opts": [
+                "--disable-Werror",
+                "--disable-telepathy",
+                "--disable-documentation",
+                "--disable-backend"
+            ],
+            "cleanup": [
+                "/bin",
+                "/share/GConf"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/gnome-online-accounts/3.40/gnome-online-accounts-3.40.0.tar.xz",
+                    "sha256": "585c4f979f6f543b77bfdb4fb01eb18ba25c2aec5b7866c676d929616fb2c3fa",
+                    "x-checker-data": {
+                        "type": "gnome",
+                        "name": "gnome-online-accounts",
+                        "stable-only": true
                     }
-                ]
-            },
-     
-            {
-                "name": "gnome-online-accounts",
-                "config-opts": 
-		[
-                    "--disable-Werror",
-                    "--disable-telepathy",
-                    "--disable-documentation",
-                    "--disable-backend" 
-		],
-                "cleanup": [ "/bin", "/share/GConf" ],
-                "sources": [
-                    {
-                        "type": "archive",
-                        "url": "https://download.gnome.org/sources/gnome-online-accounts/3.40/gnome-online-accounts-3.40.0.tar.xz",
-                        "sha256": "585c4f979f6f543b77bfdb4fb01eb18ba25c2aec5b7866c676d929616fb2c3fa",
-                        "x-checker-data": {
-                            "type": "gnome",
-                            "name": "gnome-online-accounts",
-                            "stable-only": true
-                        }
+                }
+            ]
+        },
+        {
+            "name": "libgdata",
+            "buildsystem": "meson",
+            "config-opts": [
+                "-Dalways_build_tests=false",
+                "-Dgoa=disabled",
+                "-Dgtk_doc=false",
+                "-Dintrospection=false",
+                "-Dinstalled-tests=false"
+            ],
+            "cleanup": [
+                "/share/gtk-doc"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/libgdata/0.18/libgdata-0.18.1.tar.xz",
+                    "sha256": "dd8592eeb6512ad0a8cf5c8be8c72e76f74bfe6b23e4dd93f0756ee0716804c7",
+                    "x-checker-data": {
+                        "type": "gnome",
+                        "name": "libgdata",
+                        "stable-only": true
                     }
-                ]
-            },
-     
-            {
-                "name": "libgdata",
-                "buildsystem": "meson",
-                "config-opts": [
-                    "-Dalways_build_tests=false",
-                    "-Dgoa=disabled",
-                    "-Dgtk_doc=false",
-                    "-Dintrospection=false",
-                    "-Dinstalled-tests=false"
-                ],
-                "cleanup": [
-                    "/share/gtk-doc"
-                ],
-                "sources": [
-                    {
-                        "type": "archive",
-                        "url": "https://download.gnome.org/sources/libgdata/0.18/libgdata-0.18.1.tar.xz",
-                        "sha256": "dd8592eeb6512ad0a8cf5c8be8c72e76f74bfe6b23e4dd93f0756ee0716804c7",
-                        "x-checker-data": {
-                            "type": "gnome",
-                            "name": "libgdata",
-                            "stable-only": true
-                        }
+                }
+            ]
+        },
+        {
+            "name": "geocode-glib",
+            "buildsystem": "meson",
+            "config-opts": [
+                "-Denable-gtk-doc=false",
+                "-Denable-introspection=false"
+            ],
+            "cleanup": [
+                "/share/gtk-doc"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/geocode-glib/3.26/geocode-glib-3.26.2.tar.xz",
+                    "sha256": "01fe84cfa0be50c6e401147a2bc5e2f1574326e2293b55c69879be3e82030fd1",
+                    "x-checker-data": {
+                        "type": "gnome",
+                        "name": "geocode-glib",
+                        "stable-only": true
                     }
-                ]
-            },
-     
-            {
-                "name": "geocode-glib",
-                "buildsystem": "meson",
-                "config-opts": [
-                    "-Denable-gtk-doc=false",
-                    "-Denable-introspection=false"
-                ],
-                "cleanup": [
-                    "/share/gtk-doc"
-                ],
-                "sources": [
-                    {
-                        "type": "archive",
-                        "url": "https://download.gnome.org/sources/geocode-glib/3.26/geocode-glib-3.26.2.tar.xz",
-                        "sha256": "01fe84cfa0be50c6e401147a2bc5e2f1574326e2293b55c69879be3e82030fd1",
-                        "x-checker-data": {
-                            "type": "gnome",
-                            "name": "geocode-glib",
-                            "stable-only": true
-                        }
+                }
+            ]
+        },
+        {
+            "name": "libgweather",
+            "buildsystem": "meson",
+            "cleanup": [
+                "/share/gtk-doc"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/libgweather/40/libgweather-40.0.tar.xz",
+                    "sha256": "ca4e8f2a4baaa9fc6d75d8856adb57056ef1cd6e55c775ba878ae141b6276ee6",
+                    "x-checker-data": {
+                        "type": "gnome",
+                        "name": "libgweather",
+                        "stable-only": true
                     }
-                ]
-            },
-     
-            {
-                "name": "libgweather",
-                "buildsystem": "meson",
-                "cleanup": [
-                    "/share/gtk-doc"
-                ],
-                "sources": [
-                    {
-                        "type": "archive",
-                        "url": "https://download.gnome.org/sources/libgweather/3.36/libgweather-3.36.1.tar.xz",
-                        "sha256": "de2709f0ee233b20116d5fa9861d406071798c4aa37830ca25f5ef2c0083e450",
-                        "x-checker-data": {
-                            "type": "gnome",
-                            "name": "libgweather",
-                            "stable-only": true
-                        }
+                }
+            ]
+        },
+        {
+            "name": "openldap",
+            "rm-configure": true,
+            "cleanup": [
+                "/bin",
+                "/share/man"
+            ],
+            "config-opts": [
+                "--disable-backends",
+                "--disable-overlays",
+                "--disable-slapd",
+                "--disable-debug",
+                "--enable-dynamic",
+                "--without-threads",
+                "--with-tls=gnutls"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.5.7.tgz",
+                    "sha256": "ea9757001bc36295037f0030ede16810a1bb7438bbe8f871a35cc2a2b439d9ab",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 2551,
+                        "stable-only": true,
+                        "url-template": "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-$version.tgz"
                     }
-                ]
-            },
-     
-            {
-                "name": "openldap",
-                "rm-configure": true,
-                "cleanup": [
-                    "/bin",
-                    "/share/man"
-                ],
-                "config-opts": [
-                    "--disable-backends",
-                    "--disable-overlays",
-                    "--disable-slapd",
-                    "--disable-debug",
-                    "--enable-dynamic",
-                    "--without-threads",
-                    "--with-tls=gnutls"
-                ],
-                "sources": [
-                    {
-                        "type": "archive",
-                        "url": "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.5.5.tgz",
-                        "sha256": "74ecefda2afc0e054d2c7dc29166be6587fa9de7a4087a80183bc9c719dbf6b3",
-                        "x-checker-data": {
-                            "type": "anitya",
-                            "project-id": 2551,
-                            "stable-only": true,
-                            "url-template": "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-$version.tgz"
-                        }
-                    },
-     
-                    {
-                        "type": "script",
-                        "dest-filename": "autogen.sh",
-                        "commands": [
-                            "AUTOMAKE=\"/bin/true\" autoreconf -vfi"
-                        ]
+                },
+                {
+                    "type": "script",
+                    "dest-filename": "autogen.sh",
+                    "commands": [
+                        "AUTOMAKE=\"/bin/true\" autoreconf -vfi"
+                    ]
+                }
+            ]
+        },
+        "shared-modules/intltool/intltool-0.51.json",
+        {
+            "name": "evolution-data-server",
+            "buildsystem": "cmake-ninja",
+            "cleanup": [
+                "/share/GConf"
+            ],
+            "config-opts": [
+                "-DDBUS_SERVICES_PREFIX=org.gnome.Evolution",
+                "-DENABLE_FILE_LOCKING=fcntl",
+                "-DENABLE_DOT_LOCKING=OFF",
+                "-DENABLE_OAUTH2=ON",
+                "-DENABLE_GTK=ON",
+                "-DENABLE_UOA=OFF",
+                "-DENABLE_GOA=ON",
+                "-DENABLE_EXAMPLES=OFF",
+                "-DENABLE_INTROSPECTION=OFF",
+                "-DENABLE_VALA_BINDINGS=OFF",
+                "-DENABLE_INSTALLED_TESTS=OFF",
+                "-DENABLE_GTK_DOC=OFF",
+                "-DWITH_PRIVATE_DOCS=OFF",
+                "-DWITH_PHONENUMBER=OFF",
+                "-DWITH_SYSTEMDUSERUNITDIR=OFF",
+                "-DWITH_LIBDB=OFF"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/evolution-data-server/3.42/evolution-data-server-3.42.0.tar.xz",
+                    "sha256": "e8fdd3bc47a07d6f8a3052bbcae880f20f6dbc4f6973a8e90d00169bb99b1635",
+                    "x-checker-data": {
+                        "type": "gnome",
+                        "name": "evolution-data-server",
+                        "stable-only": true
                     }
-                ]
-            }, 
-
-            "shared-modules/intltool/intltool-0.51.json",
-
-            {
-                "name": "evolution-data-server",
-                "buildsystem": "cmake-ninja",
-                "cleanup": [ "/share/GConf" ],
-                "config-opts": [
-                    "-DDBUS_SERVICES_PREFIX=org.gnome.Evolution",
-                    "-DENABLE_FILE_LOCKING=fcntl",
-                    "-DENABLE_DOT_LOCKING=OFF",
-                    "-DENABLE_OAUTH2=ON",
-                    "-DENABLE_GTK=ON",
-                    "-DENABLE_UOA=OFF",
-                    "-DENABLE_GOA=ON",
-                    "-DENABLE_EXAMPLES=OFF",
-                    "-DENABLE_INTROSPECTION=OFF",
-                    "-DENABLE_VALA_BINDINGS=OFF",
-                    "-DENABLE_INSTALLED_TESTS=OFF",
-                    "-DENABLE_GTK_DOC=OFF",
-                    "-DWITH_PRIVATE_DOCS=OFF",
-                    "-DWITH_PHONENUMBER=OFF",
-                    "-DWITH_SYSTEMDUSERUNITDIR=OFF",
-                    "-DWITH_LIBDB=OFF"
-                ],
-                "sources": [
-                    {
-                        "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.40/evolution-data-server-3.40.4.tar.xz",
-                        "sha256": "87c185f18c37270e3611981f19bd9221ac974c807462c8dce90bea08712c5800",
-                        "x-checker-data": {
-                            "type": "gnome",
-                            "name": "evolution-data-server",
-                            "stable-only": true
-                        }
-                    }
-                ]
-            },
-
-            {
-			"name": "bogofilter",
-			"buildsystem": "simple",
-			"build-commands": [
-			   "cd ./bogofilter/ && echo \"# Skip for Flatpak build\" > doc/Makefile.am && autoreconf -fi && ./configure --prefix=/app --disable-rpath --with-database=sqlite3 && make && make install"
-			],
-			"sources": [
-				{
-					"type": "git",
-					"url": "https://gitlab.com/bogofilter/bogofilter.git",
-					"commit": "26cac0a458214ef34d57f23ab056122524475bd9"
-				}
-			]
-		},
-
-            {
-			"name": "pinentry",
-			"config-opts": [
-				"--enable-pinentry-gnome3",
-				"--disable-ncurses",
-				"--disable-fallback-curses",
-				"--disable-pinentry-curses",
-				"--disable-pinentry-emacs",
-				"--disable-pinentry-gtk2",
-				"--disable-pinentry-qt5",
-				"--disable-pinentry-tty",
-				"--disable-pinentry-tqt",
-				"--disable-pinentry-fltk"
-			],
-			"sources": [
-				{
-					"type": "archive",
-					"url": "https://www.gnupg.org/ftp/gcrypt/pinentry/pinentry-1.1.0.tar.bz2",
-					"sha256": "68076686fa724a290ea49cdf0d1c0c1500907d1b759a3bcbfbec0293e8f56570",
+                }
+            ]
+        },
+        {
+            "name": "bogofilter",
+            "buildsystem": "simple",
+            "build-commands": [
+                "cd ./bogofilter/ && echo \"# Skip for Flatpak build\" > doc/Makefile.am && autoreconf -fi && ./configure --prefix=/app --disable-rpath --with-database=sqlite3 && make && make install"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://gitlab.com/bogofilter/bogofilter.git",
+                    "commit": "26cac0a458214ef34d57f23ab056122524475bd9"
+                }
+            ]
+        },
+        {
+            "name": "pinentry",
+            "config-opts": [
+                "--enable-pinentry-gnome3",
+                "--disable-ncurses",
+                "--disable-fallback-curses",
+                "--disable-pinentry-curses",
+                "--disable-pinentry-emacs",
+                "--disable-pinentry-gtk2",
+                "--disable-pinentry-qt5",
+                "--disable-pinentry-tty",
+                "--disable-pinentry-tqt",
+                "--disable-pinentry-fltk"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://www.gnupg.org/ftp/gcrypt/pinentry/pinentry-1.1.0.tar.bz2",
+                    "sha256": "68076686fa724a290ea49cdf0d1c0c1500907d1b759a3bcbfbec0293e8f56570",
                     "x-checker-data": {
                         "type": "anitya",
                         "project-id": 3643,
                         "stable-only": true,
                         "url-template": "https://www.gnupg.org/ftp/gcrypt/pinentry/pinentry-$version.tar.bz2"
                     }
-				}
-			]
-		},
-     
-            {
-                "name": "evolution",
-                "buildsystem": "cmake-ninja",
-                "config-opts": [
-                    "-DVERSION_SUBSTRING= (by Flathub.org)",
-                    "-DENABLE_AUTOAR=OFF",
-                    "-DENABLE_CONTACT_MAPS=OFF",
-                    "-DENABLE_GNOME_DESKTOP=OFF",
-                    "-DENABLE_GTK_DOC=OFF",
-                    "-DENABLE_INSTALLED_TESTS=OFF",
-                    "-DENABLE_PST_IMPORT=OFF",
-                    "-DENABLE_TEXT_HIGHLIGHT=OFF",
-                    "-DENABLE_YTNEF=OFF",
-                    "-DWITH_BOGOFILTER=/app/bin/bogofilter",
-                    "-DWITH_GLADE_CATALOG=OFF",
-                    "-DWITH_HELP=ON"
-                ],
-                "cleanup": [
-                    "/etc/xdg",
-                    "/share/GConf"
-                ],
-                "sources": [
-                    {
-                        "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.40/evolution-3.40.4.tar.xz",
-                        "sha256": "0585e9dfa55040ec923535a0448762465d89e3313509ac326bbe846a5d660374",
-                        "x-checker-data": {
-                            "type": "gnome",
-                            "name": "evolution",
-                            "stable-only": true
-                        }
-                    },
-				{
-					"type": "script",
-					"commands": [
-						"if [ \"$1\" = \"--quit\" -o \"$1\" = \"--force-shutdown\" ]; then",
-						"   /app/bin/evolution.bin \"$@\"",
-						"else",
-						"   export BOGOFILTER_DIR=\"${XDG_DATA_HOME}/bogofilter/\"",
-						"   export GIO_USE_NETWORK_MONITOR=base",
-						"   export WEBKIT_FORCE_SANDBOX=0",
-						"   gsettings reset org.gnome.evolution-data-server network-monitor-gio-name",
-						"",
-                                                "   gpg-agent --homedir ~/.gnupg --daemon --pinentry-program=/app/bin/pinentry",
-						"",
-						"   LINES=$(gdbus call --session --dest org.freedesktop.DBus --object-path /org/freedesktop/DBus --method org.freedesktop.DBus.ListNames | grep @SOURCES_SERVICE@ | wc -l)",
-						"   if [ \"${LINES}\" = \"0\" ]; then",
-						"      /app/libexec/evolution-source-registry &",
-						"      gdbus wait --session --timeout=1@TIMEOUTMULT@ @SOURCES_SERVICE@",
-						"   fi",
-						"",
-						"   LINES=$(gdbus call --session --dest org.freedesktop.DBus --object-path /org/freedesktop/DBus --method org.freedesktop.DBus.ListNames | grep @ADDRESSBOOK_SERVICE@ | wc -l)",
-						"   if [ \"${LINES}\" = \"0\" ]; then",
-						"      /app/libexec/evolution-addressbook-factory -r &",
-						"      gdbus wait --session --timeout=1@TIMEOUTMULT@ @ADDRESSBOOK_SERVICE@",
-						"   fi",
-						"",
-						"   LINES=$(gdbus call --session --dest org.freedesktop.DBus --object-path /org/freedesktop/DBus --method org.freedesktop.DBus.ListNames | grep @CALENDAR_SERVICE@ | wc -l)",
-						"   if [ \"${LINES}\" = \"0\" ]; then",
-						"      /app/libexec/evolution-calendar-factory -r &",
-						"      gdbus wait --session --timeout=1@TIMEOUTMULT@ @CALENDAR_SERVICE@",
-						"   fi",
-						"",
-						"   /app/bin/evolution.bin \"$@\"",
-						"",
-						"   pkill -TERM gpg-agent",
-						"fi"
-					],
-					"dest-filename": "flatpak-evolution-wrapper.sh.in"
-				},
-				{
-					"type": "script",
-					"commands": [
-						"# see https://gitlab.gnome.org/GNOME/glib/issues/1737",
-						"# previous versions used milliseconds instead of seconds as the timeout argument",
-						"(`pkg-config --atleast-version 2.60.1 gio-2.0` || `pkg-config --atleast-version 2.61.0 gio-2.0`) && TIMEOUTMULT= || TIMEOUTMULT=000",
-						"",
-						"sed -e \"s|\\@SOURCES_SERVICE\\@|$(pkg-config --variable=sourcesdbusservicename evolution-data-server-1.2)|\" \\",
-						"   -e \"s|\\@ADDRESSBOOK_SERVICE\\@|$(pkg-config --variable=addressbookdbusservicename evolution-data-server-1.2)|\" \\",
-						"   -e \"s|\\@CALENDAR_SERVICE\\@|$(pkg-config --variable=calendardbusservicename evolution-data-server-1.2)|\" \\",
-						"   -e \"s|\\@TIMEOUTMULT\\@|${TIMEOUTMULT}|\""
-					],
-					"dest-filename": "flatpak-evolution-fix-service-names.sh"
-				}
-			],
-			"post-install": [
-				"./flatpak-evolution-fix-service-names.sh <flatpak-evolution-wrapper.sh.in >flatpak-evolution-wrapper.sh",
-				"chmod a+x flatpak-evolution-wrapper.sh",
-				"mv /app/bin/evolution /app/bin/evolution.bin",
-				"cp flatpak-evolution-wrapper.sh /app/bin/evolution"
-			]
-		},
-     
-                   
-            {
-                "name": "libmspack",
-                "cleanup": [ "/bin" ],
-                "sources": [
-                    {
-                        "type": "archive",
-                        "url": "https://www.cabextract.org.uk/libmspack/libmspack-0.10.1alpha.tar.gz",
-                        "sha256": "bac862dee6e0fc10d92c70212441d9f8ad9b0222edc9a708c3ead4adb1b24a8e"
+                }
+            ]
+        },
+        {
+            "name": "evolution",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DVERSION_SUBSTRING= (by Flathub.org)",
+                "-DENABLE_AUTOAR=OFF",
+                "-DENABLE_CONTACT_MAPS=OFF",
+                "-DENABLE_GNOME_DESKTOP=OFF",
+                "-DENABLE_GTK_DOC=OFF",
+                "-DENABLE_INSTALLED_TESTS=OFF",
+                "-DENABLE_PST_IMPORT=OFF",
+                "-DENABLE_TEXT_HIGHLIGHT=OFF",
+                "-DENABLE_YTNEF=OFF",
+                "-DWITH_BOGOFILTER=/app/bin/bogofilter",
+                "-DWITH_GLADE_CATALOG=OFF",
+                "-DWITH_HELP=ON"
+            ],
+            "cleanup": [
+                "/etc/xdg",
+                "/share/GConf"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/evolution/3.42/evolution-3.42.0.tar.xz",
+                    "sha256": "6845ba56ffc76c1772a35118aee926842463513bc04e9d8a67a2161d5d84427a",
+                    "x-checker-data": {
+                        "type": "gnome",
+                        "name": "evolution",
+                        "stable-only": true
                     }
-                ]
-            },
-     
-            {
-                "name": "evolution-ews",
-                "buildsystem": "cmake-ninja",
-                "sources": [
-                    {
-                        "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.40/evolution-ews-3.40.4.tar.xz",
-                        "sha256": "d1e0236fc816862ca3a9a393e6eafd80fa10bfa5b6bb7eeedbca8025532e5015",
-                        "x-checker-data": {
-                            "type": "gnome",
-                            "name": "evolution-ews",
-                            "stable-only": true
-                        }
+                },
+                {
+                    "type": "script",
+                    "commands": [
+                        "if [ \"$1\" = \"--quit\" -o \"$1\" = \"--force-shutdown\" ]; then",
+                        "   /app/bin/evolution.bin \"$@\"",
+                        "else",
+                        "   export BOGOFILTER_DIR=\"${XDG_DATA_HOME}/bogofilter/\"",
+                        "   export GIO_USE_NETWORK_MONITOR=base",
+                        "   export WEBKIT_FORCE_SANDBOX=0",
+                        "   gsettings reset org.gnome.evolution-data-server network-monitor-gio-name",
+                        "",
+                        "   gpg-agent --homedir ~/.gnupg --daemon --pinentry-program=/app/bin/pinentry",
+                        "",
+                        "   LINES=$(gdbus call --session --dest org.freedesktop.DBus --object-path /org/freedesktop/DBus --method org.freedesktop.DBus.ListNames | grep @SOURCES_SERVICE@ | wc -l)",
+                        "   if [ \"${LINES}\" = \"0\" ]; then",
+                        "      /app/libexec/evolution-source-registry &",
+                        "      gdbus wait --session --timeout=1@TIMEOUTMULT@ @SOURCES_SERVICE@",
+                        "   fi",
+                        "",
+                        "   LINES=$(gdbus call --session --dest org.freedesktop.DBus --object-path /org/freedesktop/DBus --method org.freedesktop.DBus.ListNames | grep @ADDRESSBOOK_SERVICE@ | wc -l)",
+                        "   if [ \"${LINES}\" = \"0\" ]; then",
+                        "      /app/libexec/evolution-addressbook-factory -r &",
+                        "      gdbus wait --session --timeout=1@TIMEOUTMULT@ @ADDRESSBOOK_SERVICE@",
+                        "   fi",
+                        "",
+                        "   LINES=$(gdbus call --session --dest org.freedesktop.DBus --object-path /org/freedesktop/DBus --method org.freedesktop.DBus.ListNames | grep @CALENDAR_SERVICE@ | wc -l)",
+                        "   if [ \"${LINES}\" = \"0\" ]; then",
+                        "      /app/libexec/evolution-calendar-factory -r &",
+                        "      gdbus wait --session --timeout=1@TIMEOUTMULT@ @CALENDAR_SERVICE@",
+                        "   fi",
+                        "",
+                        "   /app/bin/evolution.bin \"$@\"",
+                        "",
+                        "   pkill -TERM gpg-agent",
+                        "fi"
+                    ],
+                    "dest-filename": "flatpak-evolution-wrapper.sh.in"
+                },
+                {
+                    "type": "script",
+                    "commands": [
+                        "# see https://gitlab.gnome.org/GNOME/glib/issues/1737",
+                        "# previous versions used milliseconds instead of seconds as the timeout argument",
+                        "(`pkg-config --atleast-version 2.60.1 gio-2.0` || `pkg-config --atleast-version 2.61.0 gio-2.0`) && TIMEOUTMULT= || TIMEOUTMULT=000",
+                        "",
+                        "sed -e \"s|\\@SOURCES_SERVICE\\@|$(pkg-config --variable=sourcesdbusservicename evolution-data-server-1.2)|\" \\",
+                        "   -e \"s|\\@ADDRESSBOOK_SERVICE\\@|$(pkg-config --variable=addressbookdbusservicename evolution-data-server-1.2)|\" \\",
+                        "   -e \"s|\\@CALENDAR_SERVICE\\@|$(pkg-config --variable=calendardbusservicename evolution-data-server-1.2)|\" \\",
+                        "   -e \"s|\\@TIMEOUTMULT\\@|${TIMEOUTMULT}|\""
+                    ],
+                    "dest-filename": "flatpak-evolution-fix-service-names.sh"
+                }
+            ],
+            "post-install": [
+                "./flatpak-evolution-fix-service-names.sh <flatpak-evolution-wrapper.sh.in >flatpak-evolution-wrapper.sh",
+                "chmod a+x flatpak-evolution-wrapper.sh",
+                "mv /app/bin/evolution /app/bin/evolution.bin",
+                "cp flatpak-evolution-wrapper.sh /app/bin/evolution"
+            ]
+        },
+        {
+            "name": "libmspack",
+            "cleanup": [
+                "/bin"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://www.cabextract.org.uk/libmspack/libmspack-0.10.1alpha.tar.gz",
+                    "sha256": "bac862dee6e0fc10d92c70212441d9f8ad9b0222edc9a708c3ead4adb1b24a8e"
+                }
+            ]
+        },
+        {
+            "name": "evolution-ews",
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/evolution-ews/3.42/evolution-ews-3.42.0.tar.xz",
+                    "sha256": "585336df7829cbf965a2858d4594a2b8d8910111b2dcae1a68ccaf1af50cd1af",
+                    "x-checker-data": {
+                        "type": "gnome",
+                        "name": "evolution-ews",
+                        "stable-only": true
                     }
-                ]
-            },
-            
-            {
-                "name": "libetebase",
-                "buildsystem": "simple",
-                "build-commands": [
-                    "mkdir .cargo",
-                    "cp cargo/config .cargo/",
-                    "source /usr/lib/sdk/rust-stable/enable.sh && cargo --offline fetch --manifest-path Cargo.toml",
-                    "source /usr/lib/sdk/rust-stable/enable.sh && cargo --offline build --release",
-                    "PREFIX=/app make V=1 VERBOSE=1 pkgconfig",
-                    "PREFIX=/app make V=1 VERBOSE=1 install",
-                    "mv /app/lib/libetebase.so /app/lib/libetebase.so.0",
-                    "ln -s /app/lib/libetebase.so.0 /app/lib/libetebase.so"
-                ],
-                "sources": [
-                    {
-                        "type": "archive",
-                        "url": "https://github.com/etesync/libetebase/archive/v0.4.1.tar.gz",
-                        "sha256": "ac8a64c16d2233a53cb97866ca8e2cf154c02622584676a90170e91e5fc3af08",
-                        "x-checker-data": {
-                            "type": "anitya",
-                            "project-id": 235050,
-                            "stable-only": true,
-                            "url-template": "https://github.com/etesync/libetebase/archive/v$version.tar.gz"
-                        }
-                    },
-                    "libetebase-cargo-sources.json"
-                ]
-            },
-            {
-                "name": "evolution-etesync",
-                "buildsystem": "cmake-ninja",
-                "sources": [
-                    {
-                        "type": "git",
-                        "url": "https://gitlab.gnome.org/GNOME/evolution-etesync.git",
-                        "branch": "master"
+                }
+            ]
+        },
+        {
+            "name": "libetebase",
+            "buildsystem": "simple",
+            "build-commands": [
+                "mkdir .cargo",
+                "cp cargo/config .cargo/",
+                "source /usr/lib/sdk/rust-stable/enable.sh && cargo --offline fetch --manifest-path Cargo.toml",
+                "source /usr/lib/sdk/rust-stable/enable.sh && cargo --offline build --release",
+                "PREFIX=/app make V=1 VERBOSE=1 pkgconfig",
+                "PREFIX=/app make V=1 VERBOSE=1 install",
+                "mv /app/lib/libetebase.so /app/lib/libetebase.so.0",
+                "ln -s /app/lib/libetebase.so.0 /app/lib/libetebase.so"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/etesync/libetebase/archive/v0.5.0.tar.gz",
+                    "sha256": "448f677bd24bb4315d0d29ae95f29b7841cb64c0af049952ecb634ab683eea9c",
+                    "x-checker-data": {
+                        "type": "anitya",
+                        "project-id": 235050,
+                        "stable-only": true,
+                        "url-template": "https://github.com/etesync/libetebase/archive/v$version.tar.gz"
                     }
-                ]
-            }
-        ]
+                },
+                "libetebase-cargo-sources.json"
+            ]
+        },
+        {
+            "name": "evolution-etesync",
+            "buildsystem": "cmake-ninja",
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://gitlab.gnome.org/GNOME/evolution-etesync.git",
+                    "branch": "master"
+                }
+            ]
+        }
+    ]
 }
