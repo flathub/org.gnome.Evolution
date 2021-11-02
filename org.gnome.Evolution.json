@@ -58,8 +58,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://github.com/libical/libical/releases/download/v3.0.10/libical-3.0.10.tar.gz",
-                        "sha256": "f933b3e6cf9d56a35bb5625e8e4a9c3a50239a85aea05ed842932c1a1dc336b4",
+                        "url": "https://github.com/libical/libical/releases/download/v3.0.11/libical-3.0.11.tar.gz",
+                        "sha256": "1e6c5e10c5a48f7a40c68958055f0e2759d9ab3563aca17273fe35a5df7dbbf1",
                         "x-checker-data": {
                             "type": "anitya",
                             "project-id": 1637,
@@ -116,8 +116,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/gnome-online-accounts/3.40/gnome-online-accounts-3.40.0.tar.xz",
-                        "sha256": "585c4f979f6f543b77bfdb4fb01eb18ba25c2aec5b7866c676d929616fb2c3fa",
+                        "url": "https://download.gnome.org/sources/gnome-online-accounts/3.40/gnome-online-accounts-3.40.1.tar.xz",
+                        "sha256": "955a03128d0e87855d34d7c534e088f6286ed7ac01baa4ef824ef42a2cb39aad",
                         "x-checker-data": {
                             "type": "gnome",
                             "name": "gnome-online-accounts",
@@ -187,8 +187,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/libgweather/3.36/libgweather-3.36.1.tar.xz",
-                        "sha256": "de2709f0ee233b20116d5fa9861d406071798c4aa37830ca25f5ef2c0083e450",
+                        "url": "https://download.gnome.org/sources/libgweather/40/libgweather-40.0.tar.xz",
+                        "sha256": "ca4e8f2a4baaa9fc6d75d8856adb57056ef1cd6e55c775ba878ae141b6276ee6",
                         "x-checker-data": {
                             "type": "gnome",
                             "name": "libgweather",
@@ -217,8 +217,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.5.5.tgz",
-                        "sha256": "74ecefda2afc0e054d2c7dc29166be6587fa9de7a4087a80183bc9c719dbf6b3",
+                        "url": "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.0.tgz",
+                        "sha256": "b71c580eac573e9aba15d95f33dd4dd08f2ed4f0d7fc09e08ad4be7ed1e41a4f",
                         "x-checker-data": {
                             "type": "anitya",
                             "project-id": 2551,
@@ -264,8 +264,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.42/evolution-data-server-3.42.0.tar.xz",
-                        "sha256": "e8fdd3bc47a07d6f8a3052bbcae880f20f6dbc4f6973a8e90d00169bb99b1635",
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.42/evolution-data-server-3.42.1.tar.xz",
+                        "sha256": "e6e67f2a77d0ff3e6da50b03dc5fa266e716626bcda2ef44144e317e35f2f528",
                         "x-checker-data": {
                             "type": "gnome",
                             "name": "evolution-data-server",
@@ -344,8 +344,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.42/evolution-3.42.0.tar.xz",
-                        "sha256": "6845ba56ffc76c1772a35118aee926842463513bc04e9d8a67a2161d5d84427a",
+                        "url": "https://download.gnome.org/sources/evolution/3.42/evolution-3.42.1.tar.xz",
+                        "sha256": "46532ae3a13a6885771ad12234b94141167aec74723a7eed13ddbdddaefaee45",
                         "x-checker-data": {
                             "type": "gnome",
                             "name": "evolution",
@@ -432,8 +432,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.42/evolution-ews-3.42.0.tar.xz",
-                        "sha256": "585336df7829cbf965a2858d4594a2b8d8910111b2dcae1a68ccaf1af50cd1af",
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.42/evolution-ews-3.42.1.tar.xz",
+                        "sha256": "9c2bc63127c34b419441f17cce8995abe80a7fd1fbd97f3deb3a6d472f7f5f2d",
                         "x-checker-data": {
                             "type": "gnome",
                             "name": "evolution-ews",
@@ -459,8 +459,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://github.com/etesync/libetebase/archive/v0.4.1.tar.gz",
-                        "sha256": "ac8a64c16d2233a53cb97866ca8e2cf154c02622584676a90170e91e5fc3af08",
+                        "url": "https://github.com/etesync/libetebase/archive/v0.5.0.tar.gz",
+                        "sha256": "448f677bd24bb4315d0d29ae95f29b7841cb64c0af049952ecb634ab683eea9c",
                         "x-checker-data": {
                             "type": "anitya",
                             "project-id": 235050,
