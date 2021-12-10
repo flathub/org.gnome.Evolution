@@ -264,15 +264,19 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.42/evolution-data-server-3.42.1.tar.xz",
-                        "sha256": "e6e67f2a77d0ff3e6da50b03dc5fa266e716626bcda2ef44144e317e35f2f528",
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.42/evolution-data-server-3.42.2.tar.xz",
+                        "sha256": "1c14d86e7a0d8e6e4f1a96137e31a619d2bcfbfc80ad1f0eac38dee2c0247abc",
                         "x-checker-data": {
                             "type": "gnome",
                             "name": "evolution-data-server",
                             "stable-only": true
                         }
                     }
-                ]
+                ],
+                "post-install": [
+				"cp NEWS /app/share/NEWS.eds"
+			]
+
             },
 
             {
@@ -344,14 +348,34 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.42/evolution-3.42.1.tar.xz",
-                        "sha256": "46532ae3a13a6885771ad12234b94141167aec74723a7eed13ddbdddaefaee45",
+                        "url": "https://download.gnome.org/sources/evolution/3.42/evolution-3.42.2.tar.xz",
+                        "sha256": "0be413f16dd68ec8d4342a4f269565af2a74a19a5bfa1c5cbf663523a5b5ba38",
                         "x-checker-data": {
                             "type": "gnome",
                             "name": "evolution",
                             "stable-only": true
                         }
                     },
+                    {
+					"type": "shell",
+					"commands": [
+						"cp config.h.in config.h.in.orig",
+						"cat config.h.in.orig | sed -e \"s|\\@VERSION_SUBSTRING\\@| \\(flatpak git$(git log --pretty=format:%h --max-count=1)\\)|\" >config.h.in",
+						"cp data/org.gnome.Evolution.appdata.xml.in.in data/org.gnome.Evolution.appdata.xml.in.in.orig",
+						"cat data/org.gnome.Evolution.appdata.xml.in.in.orig | sed -e \"s|\\@APPDATA_RELEASES\\@|APPDATA_RELEASES|\" >data/org.gnome.Evolution.appdata.xml.in.in"
+					]
+				}
+			],
+			"post-install": [
+				"cp NEWS /app/share/NEWS.evo",
+				"cp news-to-appdata.c /app/share/",
+				"mv /app/share/metainfo/org.gnome.Evolution.appdata.xml /app/share/"
+			]
+		},
+			{
+			"name": "flatpak-evolution-wrapper",
+			"buildsystem": "simple",
+			"sources": [
 				{
 					"type": "script",
 					"commands": [
@@ -363,7 +387,7 @@
 						"   export WEBKIT_FORCE_SANDBOX=0",
 						"   gsettings reset org.gnome.evolution-data-server network-monitor-gio-name",
 						"",
-                                                "   gpg-agent --homedir ~/.gnupg --daemon --pinentry-program=/app/bin/pinentry",
+						"   gpg-agent --homedir ~/.gnupg --daemon --pinentry-program=/app/bin/pinentry",
 						"",
 						"   LINES=$(gdbus call --session --dest org.freedesktop.DBus --object-path /org/freedesktop/DBus --method org.freedesktop.DBus.ListNames | grep @SOURCES_SERVICE@ | wc -l)",
 						"   if [ \"${LINES}\" = \"0\" ]; then",
@@ -398,14 +422,14 @@
 						"(`pkg-config --atleast-version 2.60.1 gio-2.0` || `pkg-config --atleast-version 2.61.0 gio-2.0`) && TIMEOUTMULT= || TIMEOUTMULT=000",
 						"",
 						"sed -e \"s|\\@SOURCES_SERVICE\\@|$(pkg-config --variable=sourcesdbusservicename evolution-data-server-1.2)|\" \\",
-						"   -e \"s|\\@ADDRESSBOOK_SERVICE\\@|$(pkg-config --variable=addressbookdbusservicename evolution-data-server-1.2)|\" \\",
-						"   -e \"s|\\@CALENDAR_SERVICE\\@|$(pkg-config --variable=calendardbusservicename evolution-data-server-1.2)|\" \\",
-						"   -e \"s|\\@TIMEOUTMULT\\@|${TIMEOUTMULT}|\""
+						"    -e \"s|\\@ADDRESSBOOK_SERVICE\\@|$(pkg-config --variable=addressbookdbusservicename evolution-data-server-1.2)|\" \\",
+						"    -e \"s|\\@CALENDAR_SERVICE\\@|$(pkg-config --variable=calendardbusservicename evolution-data-server-1.2)|\" \\",
+						"    -e \"s|\\@TIMEOUTMULT\\@|${TIMEOUTMULT}|\""
 					],
 					"dest-filename": "flatpak-evolution-fix-service-names.sh"
 				}
 			],
-			"post-install": [
+			"build-commands": [
 				"./flatpak-evolution-fix-service-names.sh <flatpak-evolution-wrapper.sh.in >flatpak-evolution-wrapper.sh",
 				"chmod a+x flatpak-evolution-wrapper.sh",
 				"mv /app/bin/evolution /app/bin/evolution.bin",
@@ -413,7 +437,41 @@
 			]
 		},
      
-                   
+             {
+			"name": "news-to-appdata",
+			"buildsystem": "simple",
+			"sources": [
+				{
+					"type": "script",
+					"commands": [
+						"gcc /app/share/news-to-appdata.c -g -O0 -o news-to-appdata `pkg-config --cflags --libs glib-2.0`",
+						"TYPE=${1}",
+						"VER=$(pkg-config --modversion evolution-shell-3.0)",
+						"if [ \"${VER}\" = \"\" ]; then",
+						"   echo \"Failed to get evolution version\" 1>&2",
+						"   exit 1",
+						"fi",
+						"VER=${VER%.*}",
+						"APPDATA_RELEASES=`./news-to-appdata \"\" ${TYPE} ${VER} /app/share/NEWS.evo ${VER} /app/share/NEWS.eds ${VER} /app/share/NEWS.ews`",
+						"APPDATA=`cat /app/share/org.gnome.Evolution.appdata.xml`",
+						"if [ \"${APPDATA_RELEASES}\" = \"\" ]; then",
+						"    APPDATA_RELEASES=\"<release version=\\\"$(pkg-config --modversion evolution-shell-3.0)\\\" date=\\\"$(date +%Y-%m-%d)\\\" type=\\\"${TYPE}\\\"/>\"",
+						"fi",
+						"echo \"${APPDATA%APPDATA_RELEASES*}${APPDATA_RELEASES}${APPDATA#*APPDATA_RELEASES}\">/app/share/metainfo/org.gnome.Evolution.appdata.xml",
+						"rm /app/share/NEWS.eds",
+						"rm /app/share/NEWS.evo",
+						"rm /app/share/NEWS.ews",
+						"rm /app/share/news-to-appdata.c",
+						"rm /app/share/org.gnome.Evolution.appdata.xml"
+					],
+					"dest-filename": "update-appdata.sh"
+				}
+			],
+			"build-commands": [
+				"./update-appdata.sh stable"
+			]
+		},
+      
             {
                 "name": "libmspack",
                 "cleanup": [ "/bin" ],
@@ -439,7 +497,10 @@
                             "name": "evolution-ews",
                             "stable-only": true
                         }
-                    }
+                    }    
+                    ],
+                "post-install": [
+				"cp NEWS /app/share/NEWS.ews"
                 ]
             },
             
@@ -481,6 +542,27 @@
                         "branch": "master"
                     }
                 ]
-            }
-        ]
-}
+            },
+            {
+            	"name": "libsecret",
+            	"buildsystem": "meson",
+            	"config-opts": [
+				"-Dmanpage=false",
+				"-Dvapi=false",
+				"-Dgtk_doc=false"
+				],
+            	"sources": [
+            	    {
+            	    	"type": "archive",
+            	    	"url": "https://download.gnome.org/core/41/41.2/sources/libsecret-0.20.4.tar.xz",
+            	    	"sha256": "325a4c54db320c406711bf2b55e5cb5b6c29823426aa82596a907595abb39d28",
+            	    	"x-checker-data": {
+                            "type": "gnome",
+                            "name": "libsecret",
+                            "stable-only": true
+                        }
+            	    }	
+        	]
+	}
+	]
+}	
