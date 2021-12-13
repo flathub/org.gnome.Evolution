@@ -554,8 +554,8 @@
             	"sources": [
             	    {
             	    	"type": "archive",
-            	    	"url": "https://download.gnome.org/core/41/41.2/sources/libsecret-0.20.4.tar.xz",
-            	    	"sha256": "325a4c54db320c406711bf2b55e5cb5b6c29823426aa82596a907595abb39d28",
+            	    	"url": "https://download.gnome.org/sources/libsecret/0.19/libsecret-0.19.1.tar.xz",
+            	    	"sha256": "8583e10179456ae2c83075d95455f156dc08db6278b32bf4bd61819335a30e3a",
             	    	"x-checker-data": {
                             "type": "gnome",
                             "name": "libsecret",
