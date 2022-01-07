@@ -1,7 +1,7 @@
 {
         "app-id": "org.gnome.Evolution",
         "runtime": "org.gnome.Platform",
-        "runtime-version": "40",
+        "runtime-version": "41",
         "sdk": "org.gnome.Sdk",
         "sdk-extensions" : [
 		"org.freedesktop.Sdk.Extension.rust-stable"
@@ -58,8 +58,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://github.com/libical/libical/releases/download/v3.0.11/libical-3.0.11.tar.gz",
-                        "sha256": "1e6c5e10c5a48f7a40c68958055f0e2759d9ab3563aca17273fe35a5df7dbbf1",
+                        "url": "https://github.com/libical/libical/releases/download/v3.0.12/libical-3.0.12.tar.gz",
+                        "sha256": "35095a4cc1a061a3de0f332c2dc728226cf127fa0baa818e9f8856cee6d35830",
                         "x-checker-data": {
                             "type": "anitya",
                             "project-id": 1637,
@@ -264,8 +264,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.42/evolution-data-server-3.42.2.tar.xz",
-                        "sha256": "1c14d86e7a0d8e6e4f1a96137e31a619d2bcfbfc80ad1f0eac38dee2c0247abc",
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.43/evolution-data-server-3.43.1.1.tar.xz",
+                        "sha256": "ca5664e5560703ad6d4bb747afb1aedab3b42ab744eb40f2508dc483616f3bc3",
                         "x-checker-data": {
                             "type": "gnome",
                             "name": "evolution-data-server",
@@ -339,7 +339,8 @@
                     "-DWITH_BOGOFILTER=/app/bin/bogofilter",
                     "-DWITH_GLADE_CATALOG=OFF",
                     "-DWITH_HELP=ON",
-                    "-DWITH_WMCLASS_OVERRIDE=evolution.bin"
+                    "-DWITH_WMCLASS_OVERRIDE=evolution.bin",
+                    "-DENABLE_MARKDOWN=OFF"
                 ],
                 "cleanup": [
                     "/etc/xdg",
@@ -348,8 +349,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.42/evolution-3.42.2.tar.xz",
-                        "sha256": "0be413f16dd68ec8d4342a4f269565af2a74a19a5bfa1c5cbf663523a5b5ba38",
+                        "url": "https://download.gnome.org/sources/evolution/3.43/evolution-3.43.1.tar.xz",
+                        "sha256": "e0fe1d8827db5fc0f84e394e6afe6f1884585525e03999e75bf461be959d9fcc",
                         "x-checker-data": {
                             "type": "gnome",
                             "name": "evolution",
@@ -490,8 +491,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.42/evolution-ews-3.42.1.tar.xz",
-                        "sha256": "9c2bc63127c34b419441f17cce8995abe80a7fd1fbd97f3deb3a6d472f7f5f2d",
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.43/evolution-ews-3.43.1.tar.xz",
+                        "sha256": "47688014b2e88fa44345b354b451897ce00c4fbc18fab46c4ff9cb2a1701d79a",
                         "x-checker-data": {
                             "type": "gnome",
                             "name": "evolution-ews",
