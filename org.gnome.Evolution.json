@@ -348,7 +348,7 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.42/evolution-3.42.3.tar.xz",
+                        "url": "https://download.gnome.org/sources/evolution/3.42/evolution-3.42.4.tar.xz",
                         "sha256": "fa8a6b7a6d46b229db5df22fde764254522357fe1becd7b18e536dfe98890a65",
                         "x-checker-data": {
                             "type": "gnome",
@@ -360,7 +360,7 @@
 					"type": "shell",
 					"commands": [
 						"cp config.h.in config.h.in.orig",
-						"cat config.h.in.orig | sed -e \"s|\\@VERSION_SUBSTRING\\@| \\(flatpak git$(git log --pretty=format:%h --max-count=1)\\)|\" >config.h.in",
+						"cat config.h.in.orig | sed -e \"s|\\@VERSION_SUBSTRING\\@| \\(by Flathub.org)\\)|\" >config.h.in",
 						"cp data/org.gnome.Evolution.appdata.xml.in.in data/org.gnome.Evolution.appdata.xml.in.in.orig",
 						"cat data/org.gnome.Evolution.appdata.xml.in.in.orig | sed -e \"s|\\@APPDATA_RELEASES\\@|APPDATA_RELEASES|\" >data/org.gnome.Evolution.appdata.xml.in.in"
 					]
