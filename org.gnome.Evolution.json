@@ -58,8 +58,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://github.com/libical/libical/releases/download/v3.0.12/libical-3.0.12.tar.gz",
-                        "sha256": "35095a4cc1a061a3de0f332c2dc728226cf127fa0baa818e9f8856cee6d35830",
+                        "url": "https://github.com/libical/libical/releases/download/v3.0.14/libical-3.0.14.tar.gz",
+                        "sha256": "4284b780356f1dc6a01f16083e7b836e63d3815e27ed0eaaad684712357ccc8f",
                         "x-checker-data": {
                             "type": "anitya",
                             "project-id": 1637,
@@ -264,8 +264,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.42/evolution-data-server-3.42.3.tar.xz",
-                        "sha256": "6f5847a1234799073e9585db861c21381a09ed550dc0a2125f00ba5f90bd361d",
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.42/evolution-data-server-3.42.4.tar.xz",
+                        "sha256": "7dfb41b3e6c05811d449a8de4dfc77ab9b19f8edf20b32fdd85791866226d252",
                         "x-checker-data": {
                             "type": "gnome",
                             "name": "evolution-data-server",
@@ -349,7 +349,7 @@
                     {
                         "type": "archive",
                         "url": "https://download.gnome.org/sources/evolution/3.42/evolution-3.42.3.tar.xz",
-                        "sha256": "44629e6a02288ec100a66fd59413a068b6b9cd624bed3255aa29a166ea26d0b6",
+                        "sha256": "fa8a6b7a6d46b229db5df22fde764254522357fe1becd7b18e536dfe98890a65",
                         "x-checker-data": {
                             "type": "gnome",
                             "name": "evolution",
@@ -490,8 +490,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.42/evolution-ews-3.42.3.tar.xz",
-                        "sha256": "aa08b6c9c5a5cd8e0f6a210c1eed117776cdd9aa8570bb7190823533365796ce",
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.42/evolution-ews-3.42.4.tar.xz",
+                        "sha256": "829216e060574f4182b55ed0f047dd11e2b9ea00800a2f8f27f8dbc1091541b9",
                         "x-checker-data": {
                             "type": "gnome",
                             "name": "evolution-ews",
