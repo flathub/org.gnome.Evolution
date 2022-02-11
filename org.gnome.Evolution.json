@@ -58,8 +58,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://github.com/libical/libical/releases/download/v3.0.12/libical-3.0.12.tar.gz",
-                        "sha256": "35095a4cc1a061a3de0f332c2dc728226cf127fa0baa818e9f8856cee6d35830",
+                        "url": "https://github.com/libical/libical/releases/download/v3.0.14/libical-3.0.14.tar.gz",
+                        "sha256": "4284b780356f1dc6a01f16083e7b836e63d3815e27ed0eaaad684712357ccc8f",
                         "x-checker-data": {
                             "type": "anitya",
                             "project-id": 1637,
@@ -264,8 +264,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.43/evolution-data-server-3.43.1.1.tar.xz",
-                        "sha256": "ca5664e5560703ad6d4bb747afb1aedab3b42ab744eb40f2508dc483616f3bc3",
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.43/evolution-data-server-3.43.2.tar.xz",
+                        "sha256": "8e65781c640fa0d9b4f8010ff50e82a68d75553656ad50d93f1311275cbb441c",
                         "x-checker-data": {
                             "type": "gnome",
                             "name": "evolution-data-server",
@@ -349,8 +349,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.43/evolution-3.43.1.tar.xz",
-                        "sha256": "e0fe1d8827db5fc0f84e394e6afe6f1884585525e03999e75bf461be959d9fcc",
+                        "url": "https://download.gnome.org/sources/evolution/3.43/evolution-3.43.2.tar.xz",
+                        "sha256": "9c1010b413864f97c4e1507de8c59a351f4b3174f70d22228a0f9d5e39b3de98",
                         "x-checker-data": {
                             "type": "gnome",
                             "name": "evolution",
@@ -361,7 +361,7 @@
 					"type": "shell",
 					"commands": [
 						"cp config.h.in config.h.in.orig",
-						"cat config.h.in.orig | sed -e \"s|\\@VERSION_SUBSTRING\\@| \\(flatpak git$(git log --pretty=format:%h --max-count=1)\\)|\" >config.h.in",
+						"cat config.h.in.orig | sed -e \"s|\\@VERSION_SUBSTRING\\@| \\(by Flathub.org)\\)|\" >config.h.in",
 						"cp data/org.gnome.Evolution.appdata.xml.in.in data/org.gnome.Evolution.appdata.xml.in.in.orig",
 						"cat data/org.gnome.Evolution.appdata.xml.in.in.orig | sed -e \"s|\\@APPDATA_RELEASES\\@|APPDATA_RELEASES|\" >data/org.gnome.Evolution.appdata.xml.in.in"
 					]
@@ -491,8 +491,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.43/evolution-ews-3.43.1.tar.xz",
-                        "sha256": "47688014b2e88fa44345b354b451897ce00c4fbc18fab46c4ff9cb2a1701d79a",
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.43/evolution-ews-3.43.2.tar.xz",
+                        "sha256": "9ba3f6e9a6b70e02b48475d02daa23e5bda211065072e3980652f59e0786c5ff",
                         "x-checker-data": {
                             "type": "gnome",
                             "name": "evolution-ews",
