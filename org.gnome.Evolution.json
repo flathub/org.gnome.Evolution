@@ -264,8 +264,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.43/evolution-data-server-3.43.2.tar.xz",
-                        "sha256": "8e65781c640fa0d9b4f8010ff50e82a68d75553656ad50d93f1311275cbb441c",
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.44/evolution-data-server-3.44.0.tar.xz",
+                        "sha256": "0d8881b5c51e1b91761b1945db264a46aabf54a73eea1ca8f448b207815d582e",
                         "x-checker-data": {
                             "type": "gnome",
                             "name": "evolution-data-server",
@@ -349,8 +349,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.43/evolution-3.43.2.tar.xz",
-                        "sha256": "9c1010b413864f97c4e1507de8c59a351f4b3174f70d22228a0f9d5e39b3de98",
+                        "url": "https://download.gnome.org/sources/evolution/3.44/evolution-3.44.0.tar.xz",
+                        "sha256": "df21d3df5224dfa842ea290effcd902afd4b1418608a4dfb6907a3b7d4d994f9",
                         "x-checker-data": {
                             "type": "gnome",
                             "name": "evolution",
@@ -491,8 +491,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.43/evolution-ews-3.43.2.tar.xz",
-                        "sha256": "9ba3f6e9a6b70e02b48475d02daa23e5bda211065072e3980652f59e0786c5ff",
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.44/evolution-ews-3.44.0.tar.xz",
+                        "sha256": "ab80a0e9e2ce767fb9e84aee065d0eb5ef502cd79b2e2ca451eca84292297a80",
                         "x-checker-data": {
                             "type": "gnome",
                             "name": "evolution-ews",
