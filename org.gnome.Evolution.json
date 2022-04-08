@@ -296,6 +296,9 @@
             {
                 "name": "evolution",
                 "buildsystem": "cmake-ninja",
+                "build-options": {
+                     "cflags": "-DTEMP_HOME=1"
+                 },
                 "config-opts": [
                     "-DVERSION_SUBSTRING= (by Flathub.org)",
                     "-DENABLE_AUTOAR=OFF",
