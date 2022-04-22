@@ -1,7 +1,7 @@
 {
         "app-id": "org.gnome.Evolution",
         "runtime": "org.gnome.Platform",
-        "runtime-version": "41",
+        "runtime-version": "42",
         "sdk": "org.gnome.Sdk",
         "sdk-extensions" : [
 		"org.freedesktop.Sdk.Extension.rust-stable"
@@ -227,8 +227,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.44/evolution-data-server-3.44.0.tar.xz",
-                        "sha256": "0d8881b5c51e1b91761b1945db264a46aabf54a73eea1ca8f448b207815d582e"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.44/evolution-data-server-3.44.1.tar.xz",
+                        "sha256": "6e05a90204a276f99d932097f1032cc17dd1d8e265c7c56727c63240fd4c0ccf"
                     }
                 ],
                 "post-install": [
@@ -321,8 +321,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.44/evolution-3.44.0.tar.xz",
-                        "sha256": "df21d3df5224dfa842ea290effcd902afd4b1418608a4dfb6907a3b7d4d994f9"
+                        "url": "https://download.gnome.org/sources/evolution/3.44/evolution-3.44.1.tar.xz",
+                        "sha256": "744c7e08ad11e1b6103ceeb4bbfd89a3b628e126ce3867bb008f3417cc049ea9"
                     },
                     {
 					"type": "shell",
@@ -458,8 +458,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.44/evolution-ews-3.44.0.tar.xz",
-                        "sha256": "ab80a0e9e2ce767fb9e84aee065d0eb5ef502cd79b2e2ca451eca84292297a80"
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.44/evolution-ews-3.44.1.tar.xz",
+                        "sha256": "2c936275e7f09d0b4eb5680c55bff85f0d80d255384761a6d19dd77ce694fe83"
                     }    
                     ],
                 "post-install": [
