@@ -186,8 +186,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.0.tgz",
-                        "sha256": "b71c580eac573e9aba15d95f33dd4dd08f2ed4f0d7fc09e08ad4be7ed1e41a4f"
+                        "url": "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.2.tgz",
+                        "sha256": "81d09345232eb62486ecf5acacd2c56c0c45b4a6c8c066612e7f421a23a1cf87"
                     },
      
                     {
@@ -227,8 +227,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.44/evolution-data-server-3.44.1.tar.xz",
-                        "sha256": "6e05a90204a276f99d932097f1032cc17dd1d8e265c7c56727c63240fd4c0ccf"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.44/evolution-data-server-3.44.2.tar.xz",
+                        "sha256": "2ed72afe4d6bb170f8728faea0907fee10212dfde7a9fab82fbcc83d0f22f028"
                     }
                 ],
                 "post-install": [
@@ -321,8 +321,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.44/evolution-3.44.1.tar.xz",
-                        "sha256": "744c7e08ad11e1b6103ceeb4bbfd89a3b628e126ce3867bb008f3417cc049ea9"
+                        "url": "https://download.gnome.org/sources/evolution/3.44/evolution-3.44.2.tar.xz",
+                        "sha256": "fac706ce7a573f8d967737f15ad0ebeba43a87fe3ca757f8541203d991be0633"
                     },
                     {
 					"type": "shell",
@@ -458,8 +458,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.44/evolution-ews-3.44.1.tar.xz",
-                        "sha256": "2c936275e7f09d0b4eb5680c55bff85f0d80d255384761a6d19dd77ce694fe83"
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.44/evolution-ews-3.44.2.tar.xz",
+                        "sha256": "c573f397103c1726f24be4f3f9fd20cebbc9b445ba0b2b0eb7c948fd8415061a"
                     }    
                     ],
                 "post-install": [
