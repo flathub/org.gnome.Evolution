@@ -328,7 +328,7 @@
 					"type": "shell",
 					"commands": [
 						"cp config.h.in config.h.in.orig",
-						"cat config.h.in.orig | sed -e \"s|\\@VERSION_SUBSTRING\\@| \\(by Flathub.org)\\)|\" >config.h.in",
+						"cat config.h.in.orig | sed -e \"s|\\@VERSION_SUBSTRING\\@| \\(by Flathub.org\\)|\" >config.h.in",
 						"cp data/org.gnome.Evolution.appdata.xml.in.in data/org.gnome.Evolution.appdata.xml.in.in.orig",
 						"cat data/org.gnome.Evolution.appdata.xml.in.in.orig | sed -e \"s|\\@APPDATA_RELEASES\\@|APPDATA_RELEASES|\" >data/org.gnome.Evolution.appdata.xml.in.in"
 					]
