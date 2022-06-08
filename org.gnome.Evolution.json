@@ -496,7 +496,7 @@
                     {
                         "type": "git",
                         "url": "https://gitlab.gnome.org/GNOME/evolution-etesync.git",
-                        "branch": "master"
+                        "commit": "8e8ba089bbafe4de05e95225b00fc284e0a47e60"
                     }
                 ]
             },
