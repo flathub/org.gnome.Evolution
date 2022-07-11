@@ -146,8 +146,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/geocode-glib/3.26/geocode-glib-3.26.2.tar.xz",
-                        "sha256": "01fe84cfa0be50c6e401147a2bc5e2f1574326e2293b55c69879be3e82030fd1"
+                        "url": "https://download.gnome.org/sources/geocode-glib/3.26/geocode-glib-3.26.3.tar.xz",
+                        "sha256": "1dfeae83b90eccca1b6cf7dcf7c5e3b317828cf0b56205c4471ef0f911999766"
                     }
                 ]
             },
@@ -222,13 +222,14 @@
                     "-DWITH_PRIVATE_DOCS=OFF",
                     "-DWITH_PHONENUMBER=OFF",
                     "-DWITH_SYSTEMDUSERUNITDIR=OFF",
-                    "-DWITH_LIBDB=OFF"
+                    "-DWITH_LIBDB=OFF",
+                    "-DENABLE_GTK=OFF"
                 ],
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.44/evolution-data-server-3.44.2.tar.xz",
-                        "sha256": "2ed72afe4d6bb170f8728faea0907fee10212dfde7a9fab82fbcc83d0f22f028"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.45/evolution-data-server-3.45.1.tar.xz",
+                        "sha256": "334b76411f210f3704603b12a42c14fc3298fa12ffe9a6e4fbfb9879e3fe4b22"
                     }
                 ],
                 "post-install": [
@@ -321,8 +322,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.44/evolution-3.44.2.tar.xz",
-                        "sha256": "fac706ce7a573f8d967737f15ad0ebeba43a87fe3ca757f8541203d991be0633"
+                        "url": "https://download.gnome.org/sources/evolution/3.45/evolution-3.45.1.tar.xz",
+                        "sha256": "fe2459ab90dd67ce8976d5aebba7a43faf60aaf04931e4d69f1c46d747a7b16e"
                     },
                     {
 					"type": "shell",
@@ -458,8 +459,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.44/evolution-ews-3.44.2.tar.xz",
-                        "sha256": "c573f397103c1726f24be4f3f9fd20cebbc9b445ba0b2b0eb7c948fd8415061a"
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.45/evolution-ews-3.45.1.tar.xz",
+                        "sha256": "442d5629eb4ab33fd509061abb550388b85f5bd72900cb3034ab03107638e7ac"
                     }    
                     ],
                 "post-install": [
