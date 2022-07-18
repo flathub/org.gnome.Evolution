@@ -64,6 +64,25 @@
                 ]
             },
 
+{
+			"name": "libsoup3",
+			"buildsystem": "meson",
+			"config-opts": [
+				"-Dintrospection=disabled",
+				"-Dvapi=disabled",
+				"-Ddocs=disabled",
+				"-Dtests=false",
+				"-Dautobahn=disabled"
+			],
+			"sources": [
+				{
+					"type": "git",
+					"url": "https://gitlab.gnome.org/GNOME/libsoup.git",
+					"branch": "master"
+				}
+			]
+		},
+
             {
 			"name": "gspell",
 			"config-opts": [
@@ -91,6 +110,23 @@
                     }
                 ]
             },
+            
+            {
+			"name": "librest",
+			"buildsystem": "meson",
+			"config-opts": [
+				"-Dexamples=false",
+				"-Dgtk_doc=false",
+				"-Dtests=false"
+			],
+			"sources": [
+				{
+					"type": "git",
+					"url": "https://gitlab.gnome.org/GNOME/librest.git",
+					"branch": "master"
+				}
+			]
+		},
      
             {
                 "name": "gnome-online-accounts",
@@ -138,7 +174,9 @@
                 "buildsystem": "meson",
                 "config-opts": [
                     "-Denable-gtk-doc=false",
-                    "-Denable-introspection=false"
+                    "-Denable-introspection=false",
+                    "-Denable-installed-tests=false",
+                    "-Dsoup2=false"
                 ],
                 "cleanup": [
                     "/share/gtk-doc"
@@ -153,19 +191,28 @@
             },
      
             {
-                "name": "libgweather",
-                "buildsystem": "meson",
-                "cleanup": [
-                    "/share/gtk-doc"
-                ],
-                "sources": [
-                    {
-                        "type": "archive",
-                        "url": "https://download.gnome.org/sources/libgweather/40/libgweather-40.0.tar.xz",
-                        "sha256": "ca4e8f2a4baaa9fc6d75d8856adb57056ef1cd6e55c775ba878ae141b6276ee6"
-                    }
-                ]
-            },
+			"name": "libgweather4",
+			"buildsystem": "meson",
+			"config-opts": [
+				"-Dglade_catalog=false",
+				"-Denable_vala=false",
+				"-Dgtk_doc=false",
+				"-Dintrospection=false",
+				"-Dtests=false"
+			],
+			"cleanup": [
+				"/lib/girepository-1.0",
+				"/share/gtk-doc",
+				"/share/gir-1.0"
+			],
+			"sources": [
+				{
+					"type": "git",
+					"url": "https://gitlab.gnome.org/GNOME/libgweather.git",
+					"branch": "main"
+				}
+			]
+		},
      
             {
                 "name": "openldap",
@@ -212,6 +259,7 @@
                     "-DENABLE_DOT_LOCKING=OFF",
                     "-DENABLE_OAUTH2=ON",
                     "-DENABLE_GTK=ON",
+                    "-DENABLE_GTK4=OFF",
                     "-DENABLE_UOA=OFF",
                     "-DENABLE_GOA=ON",
                     "-DENABLE_EXAMPLES=OFF",
@@ -276,6 +324,48 @@
 			]
 		},
 		
+		{
+			"name": "gcr",
+			"buildsystem": "meson",
+			"config-opts": [
+				"-Dintrospection=false",
+				"-Dvapi=false",
+				"-Dgtk4=false",
+				"-Dgtk_doc=false"
+			],
+			"sources": [
+				{
+					"type": "git",
+					"url": "https://gitlab.gnome.org/GNOME/gcr.git",
+					"branch": "master"
+				}
+			]
+		},
+
+		{
+			"name": "webkit2gtk3",
+			"buildsystem": "cmake-ninja",
+			"config-opts": [
+				"-DCMAKE_BUILD_TYPE=Release",
+				"-DPORT=GTK",
+				"-DENABLE_BUBBLEWRAP_SANDBOX=OFF",
+				"-DENABLE_INTROSPECTION=OFF",
+				"-DUSE_LCMS=OFF"
+			],
+			"build-options" : {
+				"cflags": "-O2 -g -Wno-deprecated-declarations",
+				"cxxflags": "-O2 -g -Wno-deprecated-declarations",
+				"make-args": [ "-j2" ]
+			},
+			"sources": [
+				{
+					"type": "archive",
+					"url": "https://webkitgtk.org/releases/webkitgtk-2.36.3.tar.xz",
+					"sha256": "732fcf8c4ec644b8ed28b46ebbd7c1ebab9d9e0afea9bdf5e5d12786afc478d1"
+				}
+			]
+		},
+
 	    {
 			"name": "cmark",
 			"buildsystem": "cmake-ninja",
@@ -405,8 +495,35 @@
 				"cp flatpak-evolution-wrapper.sh /app/bin/evolution"
 			]
 		},
+      
+            {
+                "name": "libmspack",
+                "cleanup": [ "/bin" ],
+                "sources": [
+                    {
+                        "type": "archive",
+                        "url": "https://www.cabextract.org.uk/libmspack/libmspack-0.10.1alpha.tar.gz",
+                        "sha256": "bac862dee6e0fc10d92c70212441d9f8ad9b0222edc9a708c3ead4adb1b24a8e"
+                    }
+                ]
+            },
      
-             {
+            {
+                "name": "evolution-ews",
+                "buildsystem": "cmake-ninja",
+                "sources": [
+                    {
+                        "type": "archive",
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.45/evolution-ews-3.45.1.tar.xz",
+                        "sha256": "442d5629eb4ab33fd509061abb550388b85f5bd72900cb3034ab03107638e7ac"
+                    }    
+                    ],
+                "post-install": [
+				"cp NEWS /app/share/NEWS.ews"
+                ]
+            },
+            
+            {
 			"name": "news-to-appdata",
 			"buildsystem": "simple",
 			"sources": [
@@ -439,35 +556,8 @@
 			"build-commands": [
 				"./update-appdata.sh stable"
 			]
-		},
-      
-            {
-                "name": "libmspack",
-                "cleanup": [ "/bin" ],
-                "sources": [
-                    {
-                        "type": "archive",
-                        "url": "https://www.cabextract.org.uk/libmspack/libmspack-0.10.1alpha.tar.gz",
-                        "sha256": "bac862dee6e0fc10d92c70212441d9f8ad9b0222edc9a708c3ead4adb1b24a8e"
-                    }
-                ]
-            },
-     
-            {
-                "name": "evolution-ews",
-                "buildsystem": "cmake-ninja",
-                "sources": [
-                    {
-                        "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.45/evolution-ews-3.45.1.tar.xz",
-                        "sha256": "442d5629eb4ab33fd509061abb550388b85f5bd72900cb3034ab03107638e7ac"
-                    }    
-                    ],
-                "post-install": [
-				"cp NEWS /app/share/NEWS.ews"
-                ]
-            },
-            
+		},  
+		
             {
                 "name": "libetebase",
                 "buildsystem": "simple",
