@@ -146,8 +146,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/geocode-glib/3.26/geocode-glib-3.26.3.tar.xz",
-                        "sha256": "1dfeae83b90eccca1b6cf7dcf7c5e3b317828cf0b56205c4471ef0f911999766"
+                        "url": "https://download.gnome.org/sources/geocode-glib/3.26/geocode-glib-3.26.4.tar.xz",
+                        "sha256": "2d9a6826d158470449a173871221596da0f83ebdcff98b90c7049089056a37aa"
                     }
                 ]
             },
@@ -186,8 +186,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.2.tgz",
-                        "sha256": "81d09345232eb62486ecf5acacd2c56c0c45b4a6c8c066612e7f421a23a1cf87"
+                        "url": "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.3.tgz",
+                        "sha256": "d2a2a1d71df3d77396b1c16ad7502e674df446e06072b0e5a4e941c3d06c0d46"
                     },
      
                     {
@@ -227,8 +227,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.44/evolution-data-server-3.44.3.tar.xz",
-                        "sha256": "9043ab53f341da10315c550384a6b320430193fc8d7861dd25c4e9b2e0be425b"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.44/evolution-data-server-3.44.4.tar.xz",
+                        "sha256": "c0c6658838d58ba46042a4b9e50a3bb1129691e4cdb84b5eba0bf330b2ccb2eb"
                     }
                 ],
                 "post-install": [
@@ -321,8 +321,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.44/evolution-3.44.3.tar.xz",
-                        "sha256": "536b11f4133df6f216f27af9a2481a19ed7ae08be2d4a13b128061c262a36499"
+                        "url": "https://download.gnome.org/sources/evolution/3.44/evolution-3.44.4.tar.xz",
+                        "sha256": "f0b16e7abad3c7945a29c322f17dab4a08d61e99bd7cc91b8df35053c5c12e8c"
                     },
                     {
 					"type": "shell",
@@ -340,6 +340,33 @@
 				"mv /app/share/metainfo/org.gnome.Evolution.appdata.xml /app/share/"
 			]
 		},
+		
+		       {
+                "name": "libmspack",
+                "cleanup": [ "/bin" ],
+                "sources": [
+                    {
+                        "type": "archive",
+                        "url": "https://www.cabextract.org.uk/libmspack/libmspack-0.10.1alpha.tar.gz",
+                        "sha256": "bac862dee6e0fc10d92c70212441d9f8ad9b0222edc9a708c3ead4adb1b24a8e"
+                    }
+                ]
+            },
+		
+		   {
+                "name": "evolution-ews",
+                "buildsystem": "cmake-ninja",
+                "sources": [
+                    {
+                        "type": "archive",
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.44/evolution-ews-3.44.4.tar.xz",
+                        "sha256": "4f182b05a13ac1b7b33b08fb066e8395caa95ba7da808886aa91b1429d6d7db3"
+                    }    
+                    ],
+                "post-install": [
+				"cp NEWS /app/share/NEWS.ews"
+                ]
+            },
 			{
 			"name": "flatpak-evolution-wrapper",
 			"buildsystem": "simple",
@@ -439,33 +466,6 @@
 				"./update-appdata.sh stable"
 			]
 		},
-      
-            {
-                "name": "libmspack",
-                "cleanup": [ "/bin" ],
-                "sources": [
-                    {
-                        "type": "archive",
-                        "url": "https://www.cabextract.org.uk/libmspack/libmspack-0.10.1alpha.tar.gz",
-                        "sha256": "bac862dee6e0fc10d92c70212441d9f8ad9b0222edc9a708c3ead4adb1b24a8e"
-                    }
-                ]
-            },
-     
-            {
-                "name": "evolution-ews",
-                "buildsystem": "cmake-ninja",
-                "sources": [
-                    {
-                        "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.44/evolution-ews-3.44.3.tar.xz",
-                        "sha256": "85ccaca2887af85bf048e473c7b6c42c5f5641ab05a5bc4cfcea34e2b6f5be17"
-                    }    
-                    ],
-                "post-install": [
-				"cp NEWS /app/share/NEWS.ews"
-                ]
-            },
             
             {
                 "name": "libetebase",
