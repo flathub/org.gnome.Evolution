@@ -1,7 +1,7 @@
 {
         "app-id": "org.gnome.Evolution",
         "runtime": "org.gnome.Platform",
-        "runtime-version": "42",
+        "runtime-version": "43beta",
         "sdk": "org.gnome.Sdk",
         "sdk-extensions" : [
 		"org.freedesktop.Sdk.Extension.rust-stable"
@@ -63,25 +63,6 @@
                      }   
                 ]
             },
-
-{
-			"name": "libsoup3",
-			"buildsystem": "meson",
-			"config-opts": [
-				"-Dintrospection=disabled",
-				"-Dvapi=disabled",
-				"-Ddocs=disabled",
-				"-Dtests=false",
-				"-Dautobahn=disabled"
-			],
-			"sources": [
-				{
-					"type": "git",
-					"url": "https://gitlab.gnome.org/GNOME/libsoup.git",
-					"branch": "master"
-				}
-			]
-		},
 
             {
 			"name": "gspell",
@@ -148,28 +129,6 @@
             },
      
             {
-                "name": "libgdata",
-                "buildsystem": "meson",
-                "config-opts": [
-                    "-Dalways_build_tests=false",
-                    "-Dgoa=disabled",
-                    "-Dgtk_doc=false",
-                    "-Dintrospection=false",
-                    "-Dinstalled-tests=false"
-                ],
-                "cleanup": [
-                    "/share/gtk-doc"
-                ],
-                "sources": [
-                    {
-                        "type": "archive",
-                        "url": "https://download.gnome.org/sources/libgdata/0.18/libgdata-0.18.1.tar.xz",
-                        "sha256": "dd8592eeb6512ad0a8cf5c8be8c72e76f74bfe6b23e4dd93f0756ee0716804c7"
-                    }
-                ]
-            },
-     
-            {
                 "name": "geocode-glib",
                 "buildsystem": "meson",
                 "config-opts": [
@@ -194,7 +153,6 @@
 			"name": "libgweather4",
 			"buildsystem": "meson",
 			"config-opts": [
-				"-Dglade_catalog=false",
 				"-Denable_vala=false",
 				"-Dgtk_doc=false",
 				"-Dintrospection=false",
@@ -267,17 +225,16 @@
                     "-DENABLE_VALA_BINDINGS=OFF",
                     "-DENABLE_INSTALLED_TESTS=OFF",
                     "-DENABLE_GTK_DOC=OFF",
+                    "-DWITH_LIBDB=OFF",
                     "-DWITH_PRIVATE_DOCS=OFF",
                     "-DWITH_PHONENUMBER=OFF",
-                    "-DWITH_SYSTEMDUSERUNITDIR=OFF",
-                    "-DWITH_LIBDB=OFF",
-                    "-DENABLE_GTK=OFF"
+                    "-DWITH_SYSTEMDUSERUNITDIR=OFF"
                 ],
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.45/evolution-data-server-3.45.1.tar.xz",
-                        "sha256": "334b76411f210f3704603b12a42c14fc3298fa12ffe9a6e4fbfb9879e3fe4b22"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.45/evolution-data-server-3.45.3.tar.xz",
+                        "sha256": "eae00d39d574d65d049c96adf1ee3030878b2f330a67136ab2d1557cce4a4ffe"
                     }
                 ],
                 "post-install": [
@@ -342,30 +299,6 @@
 			]
 		},
 
-		{
-			"name": "webkit2gtk3",
-			"buildsystem": "cmake-ninja",
-			"config-opts": [
-				"-DCMAKE_BUILD_TYPE=Release",
-				"-DPORT=GTK",
-				"-DENABLE_BUBBLEWRAP_SANDBOX=OFF",
-				"-DENABLE_INTROSPECTION=OFF",
-				"-DUSE_LCMS=OFF"
-			],
-			"build-options" : {
-				"cflags": "-O2 -g -Wno-deprecated-declarations",
-				"cxxflags": "-O2 -g -Wno-deprecated-declarations",
-				"make-args": [ "-j2" ]
-			},
-			"sources": [
-				{
-					"type": "archive",
-					"url": "https://webkitgtk.org/releases/webkitgtk-2.36.3.tar.xz",
-					"sha256": "732fcf8c4ec644b8ed28b46ebbd7c1ebab9d9e0afea9bdf5e5d12786afc478d1"
-				}
-			]
-		},
-
 	    {
 			"name": "cmark",
 			"buildsystem": "cmake-ninja",
@@ -393,6 +326,7 @@
                 "config-opts": [
                     "-DVERSION_SUBSTRING= (by Flathub.org)",
                     "-DENABLE_AUTOAR=OFF",
+                    "-DENABLE_GTK4=OFF",
                     "-DENABLE_CONTACT_MAPS=OFF",
                     "-DENABLE_GNOME_DESKTOP=OFF",
                     "-DENABLE_GTK_DOC=OFF",
@@ -412,8 +346,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.45/evolution-3.45.1.tar.xz",
-                        "sha256": "fe2459ab90dd67ce8976d5aebba7a43faf60aaf04931e4d69f1c46d747a7b16e"
+                        "url": "https://download.gnome.org/sources/evolution/3.45/evolution-3.45.3.tar.xz",
+                        "sha256": "2631720e2fd7d62491a3849821eb385464d67fbd5a581ed3e82a837968518ee0"
                     },
                     {
 					"type": "shell",
@@ -514,8 +448,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.45/evolution-ews-3.45.1.tar.xz",
-                        "sha256": "442d5629eb4ab33fd509061abb550388b85f5bd72900cb3034ab03107638e7ac"
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.45/evolution-ews-3.45.3.tar.xz",
+                        "sha256": "600ca440eba93ef7ea2880f8985873c5980a484ed52a056e36bd3d98453e4017"
                     }    
                     ],
                 "post-install": [
@@ -558,39 +492,6 @@
 			]
 		},  
 		
-            {
-                "name": "libetebase",
-                "buildsystem": "simple",
-                "build-commands": [
-                    "mkdir .cargo",
-                    "cp cargo/config .cargo/",
-                    "source /usr/lib/sdk/rust-stable/enable.sh && cargo --offline fetch --manifest-path Cargo.toml",
-                    "source /usr/lib/sdk/rust-stable/enable.sh && cargo --offline build --release",
-                    "PREFIX=/app make V=1 VERBOSE=1 pkgconfig",
-                    "PREFIX=/app make V=1 VERBOSE=1 install",
-                    "mv /app/lib/libetebase.so /app/lib/libetebase.so.0",
-                    "ln -s /app/lib/libetebase.so.0 /app/lib/libetebase.so"
-                ],
-                "sources": [
-                    {
-                        "type": "archive",
-                        "url": "https://github.com/etesync/libetebase/archive/v0.5.0.tar.gz",
-                        "sha256": "448f677bd24bb4315d0d29ae95f29b7841cb64c0af049952ecb634ab683eea9c"
-                    },
-                    "libetebase-cargo-sources.json"
-                ]
-            },
-            {
-                "name": "evolution-etesync",
-                "buildsystem": "cmake-ninja",
-                "sources": [
-                    {
-                        "type": "git",
-                        "url": "https://gitlab.gnome.org/GNOME/evolution-etesync.git",
-                        "branch": "master"
-                    }
-                ]
-            },
             {
             	"name": "libsecret",
             	"buildsystem": "meson",
