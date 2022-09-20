@@ -484,7 +484,41 @@
 			"build-commands": [
 				"./update-appdata.sh stable"
 			]
-		},  
+		},
+		
+		{
+                "name": "libetebase",
+                "buildsystem": "simple",
+                "build-commands": [
+                    "mkdir .cargo",
+                    "cp cargo/config .cargo/",
+                    "source /usr/lib/sdk/rust-stable/enable.sh && cargo --offline fetch --manifest-path Cargo.toml",
+                    "source /usr/lib/sdk/rust-stable/enable.sh && cargo --offline build --release",
+                    "PREFIX=/app make V=1 VERBOSE=1 pkgconfig",
+                    "PREFIX=/app make V=1 VERBOSE=1 install",
+                    "mv /app/lib/libetebase.so /app/lib/libetebase.so.0",
+                    "ln -s /app/lib/libetebase.so.0 /app/lib/libetebase.so"
+                ],
+                "sources": [
+                    {
+                        "type": "archive",
+                        "url": "https://github.com/etesync/libetebase/archive/v0.5.3.tar.gz",
+                        "sha256": "78c79f72df40ae4ed85beca593d870159f923e8b9e0111c16e34b6142c634995"
+                    },
+                    "libetebase-cargo-sources.json"
+                ]
+            },
+            {
+                "name": "evolution-etesync",
+                "buildsystem": "cmake-ninja",
+                "sources": [
+                    {
+                        "type": "archive",
+                        "url": "https://download.gnome.org/sources/evolution-etesync/1.1/evolution-etesync-1.1.0.tar.xz",
+                        "sha256": "b8202e697741f774da17209689eef5b983b8a7e8b4c545552836539e5745e043"
+                    }
+                ]
+            },
 
             {
             	"name": "libsecret",
