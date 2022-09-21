@@ -4,12 +4,13 @@
         "runtime-version": "43beta",
         "sdk": "org.gnome.Sdk",
         "sdk-extensions" : [
-		"org.freedesktop.Sdk.Extension.rust-stable"
-	],
+            "org.freedesktop.Sdk.Extension.rust-stable"
+        ],
         "command": "evolution",
         "rename-icon": "evolution",
         "copy-icon": true,
         "build-options" : {
+            "append-path": "/usr/lib/sdk/rust-stable/bin",
             "cflags": "-O2 -g -Wno-deprecated-declarations",
             "cxxflags": "-O2 -g -Wno-deprecated-declarations"
         },
@@ -492,8 +493,8 @@
                 "build-commands": [
                     "mkdir .cargo",
                     "cp cargo/config .cargo/",
-                    "source /usr/lib/sdk/rust-stable/enable.sh && cargo --offline fetch --manifest-path Cargo.toml",
-                    "source /usr/lib/sdk/rust-stable/enable.sh && cargo --offline build --release",
+                    "cargo --offline fetch --manifest-path Cargo.toml",
+                    "cargo --offline build --release",
                     "PREFIX=/app make V=1 VERBOSE=1 pkgconfig",
                     "PREFIX=/app make V=1 VERBOSE=1 install",
                     "mv /app/lib/libetebase.so /app/lib/libetebase.so.0",
