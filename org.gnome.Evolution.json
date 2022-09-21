@@ -493,6 +493,7 @@
                 "build-commands": [
                     "mkdir .cargo",
                     "cp cargo/config .cargo/",
+                    "mv libetebase-Cargo.lock Cargo.lock",
                     "cargo --offline fetch --manifest-path Cargo.toml",
                     "cargo --offline build --release",
                     "PREFIX=/app make V=1 VERBOSE=1 pkgconfig",
@@ -505,6 +506,10 @@
                         "type": "archive",
                         "url": "https://github.com/etesync/libetebase/archive/v0.5.3.tar.gz",
                         "sha256": "78c79f72df40ae4ed85beca593d870159f923e8b9e0111c16e34b6142c634995"
+                    },
+                    {
+                        "type": "file",
+                        "path": "libetebase-Cargo.lock"
                     },
                     "libetebase-cargo-sources.json"
                 ]
