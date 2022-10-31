@@ -1,7 +1,7 @@
 {
         "app-id": "org.gnome.Evolution",
         "runtime": "org.gnome.Platform",
-        "runtime-version": "43beta",
+        "runtime-version": "43",
         "sdk": "org.gnome.Sdk",
         "sdk-extensions" : [
             "org.freedesktop.Sdk.Extension.rust-stable"
@@ -40,7 +40,8 @@
             "--filesystem=~/.gnupg:rw",
             "--filesystem=xdg-config/gnupg:rw",
             "--filesystem=~/.pki:rw",
-            "--filesystem=xdg-config/pki:rw"
+            "--filesystem=xdg-config/pki:rw",
+            "--filesystem=xdg-run/gvfsd:rw"
         ],
         "modules": [
             "shared-modules/libcanberra/libcanberra.json",
@@ -59,8 +60,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://github.com/libical/libical/releases/download/v3.0.14/libical-3.0.14.tar.gz",
-                        "sha256": "4284b780356f1dc6a01f16083e7b836e63d3815e27ed0eaaad684712357ccc8f"
+                        "url": "https://github.com/libical/libical/releases/download/v3.0.16/libical-3.0.16.tar.gz",
+                        "sha256": "b44705dd71ca4538c86fb16248483ab4b48978524fb1da5097bd76aa2e0f0c33"
                      }   
                 ]
             },
@@ -228,8 +229,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.46/evolution-data-server-3.46.0.tar.xz",
-                        "sha256": "e5fa28095a183f7ab5a928e35a828379b481ddef83ed4c7b51a2e3c4aef5cdab"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.46/evolution-data-server-3.46.1.tar.xz",
+                        "sha256": "c55e72cff4190b42e63dd6eabc6dce48a1a1f79040531f1af6d51c1efa4aa6eb"
                     }
                 ],
                 "post-install": [
@@ -275,25 +276,7 @@
 				}
 			]
 		},
-		
-		{
-			"name": "gcr",
-			"buildsystem": "meson",
-			"config-opts": [
-				"-Dintrospection=false",
-				"-Dvapi=false",
-				"-Dgtk4=false",
-				"-Dgtk_doc=false"
-			],
-			"sources": [
-				{
-					"type": "git",
-					"url": "https://gitlab.gnome.org/GNOME/gcr.git",
-					"branch": "master"
-				}
-			]
-		},
-
+    
 	    {
 			"name": "cmark",
 			"buildsystem": "cmake-ninja",
@@ -341,14 +324,14 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.46/evolution-3.46.0.tar.xz",
-                        "sha256": "e09e9276bc6b9abf0dad3a4e813eea1d025f4f6aaf1fac3b7b0f88895742913f"
+                        "url": "https://download.gnome.org/sources/evolution/3.46/evolution-3.46.1.tar.xz",
+                        "sha256": "1ac84583ed2caf897b074e99f93542ad1446fff0acfab86d5e679e033ae02c86"
                     },
                     {
 					"type": "shell",
 					"commands": [
 						"cp config.h.in config.h.in.orig",
-						"cat config.h.in.orig | sed -e \"s|\\@VERSION_SUBSTRING\\@| \\(by Flathub.org)\\)|\" >config.h.in",
+						"cat config.h.in.orig | sed -e \"s|\\@VERSION_SUBSTRING\\@| \\(by Flathub.org\\)|\" >config.h.in",
 						"cp data/org.gnome.Evolution.appdata.xml.in.in data/org.gnome.Evolution.appdata.xml.in.in.orig",
 						"cat data/org.gnome.Evolution.appdata.xml.in.in.orig | sed -e \"s|\\@APPDATA_RELEASES\\@|APPDATA_RELEASES|\" >data/org.gnome.Evolution.appdata.xml.in.in"
 					]
@@ -443,8 +426,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.46/evolution-ews-3.46.0.tar.xz",
-                        "sha256": "bd97ba205cc45bad12997bee1348a2f91d8b02d714583d79f4fae1794dac1b80"
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.46/evolution-ews-3.46.1.tar.xz",
+                        "sha256": "a79269ef09e8a80ba8f0ccbc643325d2bb05734d79f06f31f2501e8567cb8dbd"
                     }    
                     ],
                 "post-install": [
