@@ -229,8 +229,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.46/evolution-data-server-3.46.3.tar.xz",
-                        "sha256": "0938e2279e5cfbc2204766ca9d3fea570911699b07c10cbe01aca62a7e8b2bee"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.47/evolution-data-server-3.47.1.tar.xz",
+                        "sha256": "2c685f3a6ec4712ead8fc6c3a0f9cf54e3edbb20c1ee5833af7946301061cc31"
                     }
                 ],
                 "post-install": [
@@ -324,8 +324,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.46/evolution-3.46.3.tar.xz",
-                        "sha256": "ae22107425d30d17a3a34c356cda5f40aad7846d76bdb608344518b5d429c1f3"
+                        "url": "https://download.gnome.org/sources/evolution/3.47/evolution-3.47.1.tar.xz",
+                        "sha256": "e9a8338661bf0fab24ce7eb0bff81cf0533dbe364600856c7e0116c7173a8320"
                     },
                     {
 					"type": "shell",
@@ -426,8 +426,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.46/evolution-ews-3.46.3.tar.xz",
-                        "sha256": "0459ea40563638a5a594f42ddc1cc7191a2d3822c211ccfffbcd8b36d3264025"
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.47/evolution-ews-3.47.1.tar.xz",
+                        "sha256": "b64c2b2d26c1535d7387b2acad1053666b65cbe6abbbef65e5febfcc8b1c0695"
                     }    
                     ],
                 "post-install": [
