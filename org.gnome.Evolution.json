@@ -15,11 +15,6 @@
             "cxxflags": "-O2 -g -Wno-deprecated-declarations"
         },
         "cleanup": [
-            "/include",
-            "/lib/cmake",
-            "/lib/pkgconfig",
-            "/share/pkgconfig",
-            "/share/aclocal",
             "*.la",
             "*.a"
         ],
@@ -43,6 +38,16 @@
             "--filesystem=xdg-config/pki:rw",
             "--filesystem=xdg-run/gvfsd:rw"
         ],
+	"add-extensions": {
+		"org.gnome.Evolution.Extension": {
+			"directory": "evolution/extensions",
+			"add-ld-path": "lib",
+			"merge-dirs": "lib;share",
+			"subdirectories": true,
+			"no-autodownload": true,
+			"autodelete": true
+		}
+	},
         "modules": [
             "shared-modules/libcanberra/libcanberra.json",
             {
@@ -209,6 +214,7 @@
                 "cleanup": [ "/share/GConf" ],
                 "config-opts": [
                     "-DDBUS_SERVICES_PREFIX=org.gnome.Evolution",
+                    "-DEXTENSIONS_DIR=/app/evolution/extensions",
                     "-DENABLE_FILE_LOCKING=fcntl",
                     "-DENABLE_DOT_LOCKING=OFF",
                     "-DENABLE_OAUTH2=ON",
@@ -234,6 +240,7 @@
                     }
                 ],
                 "post-install": [
+				"install -d /app/evolution/extensions",
 				"cp NEWS /app/share/NEWS.eds"
 			]
 
