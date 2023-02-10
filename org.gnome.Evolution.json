@@ -187,8 +187,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.2.tgz",
-                        "sha256": "81d09345232eb62486ecf5acacd2c56c0c45b4a6c8c066612e7f421a23a1cf87"
+                        "url": "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.4.tgz",
+                        "sha256": "d51704e50178430c06cf3d8aa174da66badf559747a47d920bb54b2d4aa40991"
                     },
      
                     {
@@ -229,8 +229,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.47/evolution-data-server-3.47.1.tar.xz",
-                        "sha256": "2c685f3a6ec4712ead8fc6c3a0f9cf54e3edbb20c1ee5833af7946301061cc31"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.47/evolution-data-server-3.47.2.tar.xz",
+                        "sha256": "55144c1f33e6503e4130a01ddd8b28b75baf9a3e9769be0e27561dfeccbcdf46"
                     }
                 ],
                 "post-install": [
@@ -324,8 +324,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.47/evolution-3.47.1.tar.xz",
-                        "sha256": "e9a8338661bf0fab24ce7eb0bff81cf0533dbe364600856c7e0116c7173a8320"
+                        "url": "https://download.gnome.org/sources/evolution/3.47/evolution-3.47.2.tar.xz",
+                        "sha256": "ef14afd770f97b55340158318dc71b806c0e3df200fe6bd98542d243e14e35d5"
                     },
                     {
 					"type": "shell",
@@ -426,8 +426,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.47/evolution-ews-3.47.1.tar.xz",
-                        "sha256": "b64c2b2d26c1535d7387b2acad1053666b65cbe6abbbef65e5febfcc8b1c0695"
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.47/evolution-ews-3.47.2.tar.xz",
+                        "sha256": "1442b014aba697d6c39ab52626911f7b7aa5c645955d6d563a7d6a481f31035f"
                     }    
                     ],
                 "post-install": [
