@@ -119,8 +119,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/gnome-online-accounts/3.46/gnome-online-accounts-3.46.0.tar.xz",
-                        "sha256": "5e7859ce4858a6b99d3995ed70527d66e297bb90bbf75ec8780fe9da22c1fcaa"
+                        "url": "https://download.gnome.org/sources/gnome-online-accounts/3.47/gnome-online-accounts-3.47.1.tar.xz",
+                        "sha256": "ddef26cce25544433c7dc60e1f16d3f19362a1a3f99737429f3b1fdaa4c1ea63"
                     }
                 ]
             },
@@ -231,8 +231,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.47/evolution-data-server-3.47.2.tar.xz",
-                        "sha256": "55144c1f33e6503e4130a01ddd8b28b75baf9a3e9769be0e27561dfeccbcdf46"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.47/evolution-data-server-3.47.3.tar.xz",
+                        "sha256": "ab8d27496fc8ff413493366b590be013b693e36f3c88bf48735f154cd0f2e8ba"
                     }
                 ],
                 "post-install": [
@@ -327,8 +327,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.47/evolution-3.47.2.tar.xz",
-                        "sha256": "ef14afd770f97b55340158318dc71b806c0e3df200fe6bd98542d243e14e35d5"
+                        "url": "https://download.gnome.org/sources/evolution/3.47/evolution-3.47.3.tar.xz",
+                        "sha256": "ef5a392c04c30d6e94c0c970c754037750016ee36c79f6fe9c6869b06ba0a833"
                     },
                     {
 					"type": "shell",
@@ -417,8 +417,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://www.cabextract.org.uk/libmspack/libmspack-0.10.1alpha.tar.gz",
-                        "sha256": "bac862dee6e0fc10d92c70212441d9f8ad9b0222edc9a708c3ead4adb1b24a8e"
+                        "url": "https://www.cabextract.org.uk/libmspack/libmspack-0.11alpha.tar.gz",
+                        "sha256": "70dd1fb2f0aecc36791b71a1e1840e62173079eadaa081192d1c323a0eeea21b"
                     }
                 ]
             },
@@ -429,8 +429,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.47/evolution-ews-3.47.2.tar.xz",
-                        "sha256": "1442b014aba697d6c39ab52626911f7b7aa5c645955d6d563a7d6a481f31035f"
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.47/evolution-ews-3.47.3.tar.xz",
+                        "sha256": "0f69d49af8fc8fd8e099a020e12826e2b4a2120dfccebeba9be74288f91192ac"
                     }    
                     ],
                 "post-install": [
