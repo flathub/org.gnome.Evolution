@@ -1,7 +1,7 @@
 {
         "app-id": "org.gnome.Evolution",
         "runtime": "org.gnome.Platform",
-        "runtime-version": "44beta",
+        "runtime-version": "43",
         "sdk": "org.gnome.Sdk",
         "command": "evolution",
         "rename-icon": "evolution",
@@ -119,8 +119,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/gnome-online-accounts/3.47/gnome-online-accounts-3.47.1.tar.xz",
-                        "sha256": "ddef26cce25544433c7dc60e1f16d3f19362a1a3f99737429f3b1fdaa4c1ea63"
+                        "url": "https://download.gnome.org/sources/gnome-online-accounts/3.48/gnome-online-accounts-3.48.0.tar.xz",
+                        "sha256": "418bb9fcffdbd72a98205ad365137617fc1e3551a54de74f6a98d45d266175bf"
                     }
                 ]
             },
