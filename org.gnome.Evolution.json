@@ -3,23 +3,14 @@
         "runtime": "org.gnome.Platform",
         "runtime-version": "43",
         "sdk": "org.gnome.Sdk",
-        "sdk-extensions" : [
-            "org.freedesktop.Sdk.Extension.rust-stable"
-        ],
         "command": "evolution",
         "rename-icon": "evolution",
         "copy-icon": true,
         "build-options" : {
-            "append-path": "/usr/lib/sdk/rust-stable/bin",
             "cflags": "-O2 -g -Wno-deprecated-declarations",
             "cxxflags": "-O2 -g -Wno-deprecated-declarations"
         },
         "cleanup": [
-            "/include",
-            "/lib/cmake",
-            "/lib/pkgconfig",
-            "/share/pkgconfig",
-            "/share/aclocal",
             "*.la",
             "*.a"
         ],
@@ -43,6 +34,16 @@
             "--filesystem=xdg-config/pki:rw",
             "--filesystem=xdg-run/gvfsd:rw"
         ],
+	"add-extensions": {
+		"org.gnome.Evolution.Extension": {
+			"directory": "evolution/extensions",
+			"add-ld-path": "lib",
+			"merge-dirs": "lib;share",
+			"subdirectories": true,
+			"no-autodownload": true,
+			"autodelete": true
+		}
+	},
         "modules": [
             "shared-modules/libcanberra/libcanberra.json",
             {
@@ -118,8 +119,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/gnome-online-accounts/3.46/gnome-online-accounts-3.46.0.tar.xz",
-                        "sha256": "5e7859ce4858a6b99d3995ed70527d66e297bb90bbf75ec8780fe9da22c1fcaa"
+                        "url": "https://download.gnome.org/sources/gnome-online-accounts/3.48/gnome-online-accounts-3.48.0.tar.xz",
+                        "sha256": "418bb9fcffdbd72a98205ad365137617fc1e3551a54de74f6a98d45d266175bf"
                     }
                 ]
             },
@@ -209,6 +210,7 @@
                 "cleanup": [ "/share/GConf" ],
                 "config-opts": [
                     "-DDBUS_SERVICES_PREFIX=org.gnome.Evolution",
+                    "-DEXTENSIONS_DIR=/app/evolution/extensions",
                     "-DENABLE_FILE_LOCKING=fcntl",
                     "-DENABLE_DOT_LOCKING=OFF",
                     "-DENABLE_OAUTH2=ON",
@@ -229,11 +231,12 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.46/evolution-data-server-3.46.4.tar.xz",
-                        "sha256": "a59b254145c59facd7c7b5382db78dc5f0ed1f6a6e9b8fe7d5e75959f93c0cc8"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.48/evolution-data-server-3.48.0.tar.xz",
+                        "sha256": "0f25f73331edf53909be40f412b2a86939270327517616303f322de157083c35"
                     }
                 ],
                 "post-install": [
+				"install -d /app/evolution/extensions",
 				"cp NEWS /app/share/NEWS.eds"
 			]
 
@@ -324,8 +327,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.46/evolution-3.46.4.tar.xz",
-                        "sha256": "7a084231ced245a34b713d78d43a77660caca3bf52e6a4f5030a6a080c697b3d"
+                        "url": "https://download.gnome.org/sources/evolution/3.48/evolution-3.48.0.tar.xz",
+                        "sha256": "2d8472819589e92efcce4f2dc3bd124e93d379d3300978f69a9653c592a60ef6"
                     },
                     {
 					"type": "shell",
@@ -414,8 +417,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://www.cabextract.org.uk/libmspack/libmspack-0.10.1alpha.tar.gz",
-                        "sha256": "bac862dee6e0fc10d92c70212441d9f8ad9b0222edc9a708c3ead4adb1b24a8e"
+                        "url": "https://www.cabextract.org.uk/libmspack/libmspack-0.11alpha.tar.gz",
+                        "sha256": "70dd1fb2f0aecc36791b71a1e1840e62173079eadaa081192d1c323a0eeea21b"
                     }
                 ]
             },
@@ -426,8 +429,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.46/evolution-ews-3.46.4.tar.xz",
-                        "sha256": "6cb604f7d30a921ecc83103d64f28e8f5fb555c153f661d242f6b207ff47cb9f"
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.48/evolution-ews-3.48.0.tar.xz",
+                        "sha256": "166165bbea1441bb92f2a9348d9a7dec4882a0d31319cd2566571da6777ef2de"
                     }    
                     ],
                 "post-install": [
@@ -469,45 +472,6 @@
 				"./update-appdata.sh stable"
 			]
 		},
-		
-		{
-                "name": "libetebase",
-                "buildsystem": "simple",
-                "build-commands": [
-                    "mkdir .cargo",
-                    "cp cargo/config .cargo/",
-                    "mv libetebase-Cargo.lock Cargo.lock",
-                    "cargo --offline fetch --manifest-path Cargo.toml",
-                    "cargo --offline build --release",
-                    "PREFIX=/app make V=1 VERBOSE=1 pkgconfig",
-                    "PREFIX=/app make V=1 VERBOSE=1 install",
-                    "mv /app/lib/libetebase.so /app/lib/libetebase.so.0",
-                    "ln -s /app/lib/libetebase.so.0 /app/lib/libetebase.so"
-                ],
-                "sources": [
-                    {
-                        "type": "archive",
-                        "url": "https://github.com/etesync/libetebase/archive/v0.5.3.tar.gz",
-                        "sha256": "78c79f72df40ae4ed85beca593d870159f923e8b9e0111c16e34b6142c634995"
-                    },
-                    {
-                        "type": "file",
-                        "path": "libetebase-Cargo.lock"
-                    },
-                    "libetebase-cargo-sources.json"
-                ]
-            },
-            {
-                "name": "evolution-etesync",
-                "buildsystem": "cmake-ninja",
-                "sources": [
-                    {
-                        "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-etesync/1.1/evolution-etesync-1.1.0.tar.xz",
-                        "sha256": "b8202e697741f774da17209689eef5b983b8a7e8b4c545552836539e5745e043"
-                    }
-                ]
-            },
 
             {
             	"name": "libsecret",
