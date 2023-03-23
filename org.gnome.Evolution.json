@@ -431,6 +431,7 @@
                         "type": "archive",
                         "url": "https://download.gnome.org/sources/evolution-ews/3.48/evolution-ews-3.48.0.tar.xz",
                         "sha256": "166165bbea1441bb92f2a9348d9a7dec4882a0d31319cd2566571da6777ef2de"
+
                     }    
                     ],
                 "post-install": [
