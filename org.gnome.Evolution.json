@@ -1,7 +1,7 @@
 {
         "app-id": "org.gnome.Evolution",
         "runtime": "org.gnome.Platform",
-        "runtime-version": "43",
+        "runtime-version": "44",
         "sdk": "org.gnome.Sdk",
         "command": "evolution",
         "rename-icon": "evolution",
@@ -32,7 +32,8 @@
             "--filesystem=xdg-config/gnupg:rw",
             "--filesystem=~/.pki:rw",
             "--filesystem=xdg-config/pki:rw",
-            "--filesystem=xdg-run/gvfsd:rw"
+            "--filesystem=xdg-run/gvfsd:rw",
+            "--socket=gpg-agent"
         ],
 	"add-extensions": {
 		"org.gnome.Evolution.Extension": {
@@ -231,8 +232,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.48/evolution-data-server-3.48.0.tar.xz",
-                        "sha256": "0f25f73331edf53909be40f412b2a86939270327517616303f322de157083c35"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.48/evolution-data-server-3.48.1.tar.xz",
+                        "sha256": "5ce62c1e67f2789342a7f4a035b102f74e62ed85f60e81a5b7f3e04165404dff"
                     }
                 ],
                 "post-install": [
@@ -253,29 +254,6 @@
 					"type": "git",
 					"url": "https://gitlab.com/bogofilter/bogofilter.git",
 					"commit": "26cac0a458214ef34d57f23ab056122524475bd9"
-				}
-			]
-		},
-
-            {
-			"name": "pinentry",
-			"config-opts": [
-				"--enable-pinentry-gnome3",
-				"--disable-ncurses",
-				"--disable-fallback-curses",
-				"--disable-pinentry-curses",
-				"--disable-pinentry-emacs",
-				"--disable-pinentry-gtk2",
-				"--disable-pinentry-qt5",
-				"--disable-pinentry-tty",
-				"--disable-pinentry-tqt",
-				"--disable-pinentry-fltk"
-			],
-			"sources": [
-				{
-					"type": "archive",
-					"url": "https://www.gnupg.org/ftp/gcrypt/pinentry/pinentry-1.1.0.tar.bz2",
-					"sha256": "68076686fa724a290ea49cdf0d1c0c1500907d1b759a3bcbfbec0293e8f56570"
 				}
 			]
 		},
@@ -327,8 +305,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.48/evolution-3.48.0.tar.xz",
-                        "sha256": "2d8472819589e92efcce4f2dc3bd124e93d379d3300978f69a9653c592a60ef6"
+                        "url": "https://download.gnome.org/sources/evolution/3.48/evolution-3.48.1.tar.xz",
+                        "sha256": "b49a5adeedc91b1d3254f030f5a7df8e26182e3340cef77711ca1bf4553ee650"
                     },
                     {
 					"type": "shell",
@@ -360,8 +338,6 @@
 						"   export GIO_USE_NETWORK_MONITOR=base",
 						"   export WEBKIT_FORCE_SANDBOX=0",
 						"   gsettings reset org.gnome.evolution-data-server network-monitor-gio-name",
-						"",
-						"   gpg-agent --homedir ~/.gnupg --daemon --pinentry-program=/app/bin/pinentry",
 						"",
 						"   LINES=$(gdbus call --session --dest org.freedesktop.DBus --object-path /org/freedesktop/DBus --method org.freedesktop.DBus.ListNames | grep @SOURCES_SERVICE@ | wc -l)",
 						"   if [ \"${LINES}\" = \"0\" ]; then",
@@ -429,8 +405,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.48/evolution-ews-3.48.0.tar.xz",
-                        "sha256": "166165bbea1441bb92f2a9348d9a7dec4882a0d31319cd2566571da6777ef2de"
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.48/evolution-ews-3.48.1.tar.xz",
+                        "sha256": "bea6a411d6401d73aa4e1de81d43792f03c0439e03059c554a7f984c4a6d9ad8"
                     }    
                     ],
                 "post-install": [
