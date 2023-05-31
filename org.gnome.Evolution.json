@@ -309,6 +309,14 @@
                         "sha256": "ae2818cf10ba8f22ec1a0c0dff882455246430c32290dd5526f4e1fe2e62eab7"
                     },
                     {
+                        "type": "patch",
+                        "path": "0001-Mail-Preview-content-sometimes-grows-indefinitely.patch"
+                    },
+                    {
+                        "type": "patch",
+                        "path": "0002-I-2382-Mail-Workaround-recursion-in-iframe-height-co.patch"
+                    },
+                    {
 					"type": "shell",
 					"commands": [
 						"cp config.h.in config.h.in.orig",
