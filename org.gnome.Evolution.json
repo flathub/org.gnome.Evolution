@@ -232,8 +232,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.48/evolution-data-server-3.48.2.tar.xz",
-                        "sha256": "1f3243df12b4f1d3298c9977d6221a6565fd279efc984e1ccf255245d04cffd5"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.48/evolution-data-server-3.48.3.tar.xz",
+                        "sha256": "b71e412e52f567c83394b5926df92b4f4f6d2cddebad384a517c720671fad996"
                     }
                 ],
                 "post-install": [
@@ -305,16 +305,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.48/evolution-3.48.2.tar.xz",
-                        "sha256": "ae2818cf10ba8f22ec1a0c0dff882455246430c32290dd5526f4e1fe2e62eab7"
-                    },
-                    {
-                        "type": "patch",
-                        "path": "0001-Mail-Preview-content-sometimes-grows-indefinitely.patch"
-                    },
-                    {
-                        "type": "patch",
-                        "path": "0002-I-2382-Mail-Workaround-recursion-in-iframe-height-co.patch"
+                        "url": "https://download.gnome.org/sources/evolution/3.48/evolution-3.48.3.tar.xz",
+                        "sha256": "66125ec47fd770171174d0c085866effb6a83444015b7e2c76412952d6cb0e23"
                     },
                     {
 					"type": "shell",
