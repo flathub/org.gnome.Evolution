@@ -232,8 +232,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.48/evolution-data-server-3.48.3.tar.xz",
-                        "sha256": "b71e412e52f567c83394b5926df92b4f4f6d2cddebad384a517c720671fad996"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.48/evolution-data-server-3.48.4.tar.xz",
+                        "sha256": "997e3f93b17efb0affcc017bee8780ba5fa2c009e36551bbc91a08ae552d6d60"
                     }
                 ],
                 "post-install": [
@@ -305,8 +305,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.48/evolution-3.48.3.tar.xz",
-                        "sha256": "66125ec47fd770171174d0c085866effb6a83444015b7e2c76412952d6cb0e23"
+                        "url": "https://download.gnome.org/sources/evolution/3.48/evolution-3.48.4.tar.xz",
+                        "sha256": "a02f99eba050a771f2c47d43fc52e00b2260fc86d06320fbf52ebc7e8ce78bb7"
                     },
                     {
 					"type": "shell",
