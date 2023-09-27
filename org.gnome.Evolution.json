@@ -164,8 +164,8 @@
 			"sources": [
 				{
 					"type": "archive",
-					"url": "https://download.gnome.org/sources/libgweather/4.2/libgweather-4.2.0.tar.xz",
-					"sha256": "af8a812da0d8976a000e1d62572c256086a817323fbf35b066dbfdd8d2ca6203"
+					"url": "https://download.gnome.org/sources/libgweather/4.3/libgweather-4.3.2.tar.xz",
+					"sha256": "559da8150208be61af5f529d6712aa8836ccaef0866a165022d941a7d2fb3826"
 				}
 			]
 		},
@@ -189,8 +189,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.4.tgz",
-                        "sha256": "d51704e50178430c06cf3d8aa174da66badf559747a47d920bb54b2d4aa40991"
+                        "url": "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.6.tgz",
+                        "sha256": "082e998cf542984d43634442dbe11da860759e510907152ea579bdc42fe39ea0"
                     },
      
                     {
@@ -232,8 +232,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.48/evolution-data-server-3.48.4.tar.xz",
-                        "sha256": "997e3f93b17efb0affcc017bee8780ba5fa2c009e36551bbc91a08ae552d6d60"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.50/evolution-data-server-3.50.0.tar.xz",
+                        "sha256": "c9f793d99ba188ef8cf2891b8062d7e570e3cba22b8cfc46eb561c6cecc81d3a"
                     }
                 ],
                 "post-install": [
@@ -305,8 +305,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.48/evolution-3.48.4.tar.xz",
-                        "sha256": "a02f99eba050a771f2c47d43fc52e00b2260fc86d06320fbf52ebc7e8ce78bb7"
+                        "url": "https://download.gnome.org/sources/evolution/3.50/evolution-3.50.0.tar.xz",
+                        "sha256": "1eb1b78052caebe0ad1a6240044f36ba78c0881357eb3e4620bf3f27d94ade8a"
                     },
                     {
 					"type": "shell",
@@ -404,8 +404,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.48/evolution-ews-3.48.2.tar.xz",
-                        "sha256": "504d9800f5babcc5c170ef50c5464e4ebc1200e41902cda69fe8fabff2fb70c0"
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.50/evolution-ews-3.50.0.tar.xz",
+                        "sha256": "d7aa0de8a78fec8e48ed2d61ea3703a83c1ccb5ac00afffbab25ec0519c2bea4"
                     }    
                     ],
                 "post-install": [
