@@ -12,7 +12,12 @@
         },
         "cleanup": [
             "*.la",
-            "*.a"
+            "*.a",
+            "/include",
+            "/lib/pkgconfig",
+            "/share/gtk-doc",
+            "/share/man",
+            "/share/vala"
         ],
         "finish-args": [
             "--share=ipc",
