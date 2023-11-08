@@ -32,8 +32,7 @@
             "--filesystem=xdg-config/gnupg:rw",
             "--filesystem=~/.pki:rw",
             "--filesystem=xdg-config/pki:rw",
-            "--filesystem=xdg-run/gvfsd:rw",
-            "--socket=gpg-agent"
+            "--filesystem=xdg-run/gvfsd:rw"
         ],
 	"add-extensions": {
 		"org.gnome.Evolution.Extension": {
