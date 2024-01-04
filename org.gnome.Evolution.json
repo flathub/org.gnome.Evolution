@@ -30,6 +30,8 @@
             "--metadata=X-DConf=migrate-path=/org/gnome/evolution/",
             "--filesystem=~/.gnupg:rw",
             "--filesystem=~/.pki:rw",
+            "--filesystem=~/.config/gnupg:rw",
+            "--filesystem=~/.config/pki:rw",
             "--filesystem=xdg-run/gvfsd:rw"
         ],
 	"add-extensions": {
