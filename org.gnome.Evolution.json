@@ -1,7 +1,7 @@
 {
         "app-id": "org.gnome.Evolution",
         "runtime": "org.gnome.Platform",
-        "runtime-version": "44",
+        "runtime-version": "45",
         "sdk": "org.gnome.Sdk",
         "command": "evolution",
         "rename-icon": "evolution",
@@ -29,11 +29,10 @@
             "--filesystem=/run/.heim_org.h5l.kcm-socket",
             "--metadata=X-DConf=migrate-path=/org/gnome/evolution/",
             "--filesystem=~/.gnupg:rw",
-            "--filesystem=xdg-config/gnupg:rw",
             "--filesystem=~/.pki:rw",
-            "--filesystem=xdg-config/pki:rw",
-            "--filesystem=xdg-run/gvfsd:rw",
-            "--socket=gpg-agent"
+            "--filesystem=~/.config/gnupg:rw",
+            "--filesystem=~/.config/pki:rw",
+            "--filesystem=xdg-run/gvfsd:rw"
         ],
 	"add-extensions": {
 		"org.gnome.Evolution.Extension": {
@@ -63,8 +62,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://github.com/libical/libical/releases/download/v3.0.16/libical-3.0.16.tar.gz",
-                        "sha256": "b44705dd71ca4538c86fb16248483ab4b48978524fb1da5097bd76aa2e0f0c33"
+                        "url": "https://github.com/libical/libical/releases/download/v3.0.17/libical-3.0.17.tar.gz",
+                        "sha256": "bcda9a6db6870240328752854d1ea475af9bbc6356e6771018200e475e5f781b"
                      }   
                 ]
             },
@@ -233,8 +232,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.50/evolution-data-server-3.50.0.tar.xz",
-                        "sha256": "c9f793d99ba188ef8cf2891b8062d7e570e3cba22b8cfc46eb561c6cecc81d3a"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.50/evolution-data-server-3.50.2.tar.xz",
+                        "sha256": "5e66270388d50c14f3b1ae3fa0d2127b9fedce752acd393b5545281b01fc4970"
                     }
                 ],
                 "post-install": [
@@ -258,7 +257,30 @@
 				}
 			]
 		},
-    
+		
+		{
+			"name": "pinentry",
+			"config-opts": [
+				"--enable-pinentry-gnome3",
+				"--disable-ncurses",
+				"--disable-fallback-curses",
+				"--disable-pinentry-curses",
+				"--disable-pinentry-emacs",
+				"--disable-pinentry-gtk2",
+				"--disable-pinentry-qt5",
+				"--disable-pinentry-tty",
+				"--disable-pinentry-tqt",
+				"--disable-pinentry-fltk"
+			],
+			"sources": [
+				{
+					"type": "archive",
+					"url": "https://www.gnupg.org/ftp/gcrypt/pinentry/pinentry-1.2.1.tar.bz2",
+					"sha256": "457a185e5a85238fb945a955dc6352ab962dc8b48720b62fc9fa48c7540a4067"
+				}
+			]
+		},
+
 	    {
 			"name": "cmark",
 			"buildsystem": "cmake-ninja",
@@ -306,8 +328,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.50/evolution-3.50.0.tar.xz",
-                        "sha256": "1eb1b78052caebe0ad1a6240044f36ba78c0881357eb3e4620bf3f27d94ade8a"
+                        "url": "https://download.gnome.org/sources/evolution/3.50/evolution-3.50.2.tar.xz",
+                        "sha256": "0f8335db5e269854478b4d6d9472eedacd0a89ebf7fb4f8375624330caaa7120"
                     },
                     {
 					"type": "shell",
@@ -405,8 +427,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.50/evolution-ews-3.50.0.tar.xz",
-                        "sha256": "d7aa0de8a78fec8e48ed2d61ea3703a83c1ccb5ac00afffbab25ec0519c2bea4"
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.50/evolution-ews-3.50.2.tar.xz",
+                        "sha256": "8188237b3d931a73ab8ab7b5739ff43eaa24cbc9ad8e72b8239299f698b31e66"
                     }    
                     ],
                 "post-install": [
