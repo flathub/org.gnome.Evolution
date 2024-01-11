@@ -329,7 +329,7 @@
                     {
                         "type": "archive",
                         "url": "https://download.gnome.org/sources/evolution/3.50/evolution-3.50.3.tar.xz",
-                        "sha256": "e2fa5941376ad57e07d2673f8676c31f7f2b068d49f68ea0fb8bafeabb529bed"
+                        "sha256": "b354a3b05cd19964a3c9ada4ee6e11b02cc8db926d881ef0c37d059b301dfca4"
                     },
                     {
 					"type": "shell",
@@ -427,8 +427,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.50/evolution-ews-3.50.2.tar.xz",
-                        "sha256": "8188237b3d931a73ab8ab7b5739ff43eaa24cbc9ad8e72b8239299f698b31e66"
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.50/evolution-ews-3.50.3.tar.xz",
+                        "sha256": "e2fa5941376ad57e07d2673f8676c31f7f2b068d49f68ea0fb8bafeabb529bed
                     }    
                     ],
                 "post-install": [
