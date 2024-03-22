@@ -232,8 +232,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.50/evolution-data-server-3.50.4.tar.xz",
-                        "sha256": "d7edffbe03a0bbcecbee67393214b831c7b18cd895b84c4dbfe1387776e257c5"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.52/evolution-data-server-3.52.0.tar.xz",
+                        "sha256": "a5d5e11c7a1e585846efe260f3c1c61a78399bd8b623bfd79ac1c0ffea7bde06"
                     }
                 ],
                 "post-install": [
@@ -328,9 +328,14 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.50/evolution-3.50.4.tar.xz",
-                        "sha256": "e0f955ca14dfb1b2e1682fcfa1816a03c114b8161998f96cf9d681a6a3842698"
+
+                        "url": "https://download.gnome.org/sources/evolution/3.52/evolution-3.52.0.tar.xz",
+                        "sha256": "5ef708d7c0e40582e271b30e2a07625b648c32c6340cb5488df44177c7c946a9"
                     },
+                    {
+                        "type": "patch",
+                        "path": "appdata.patch"
+                    },    
                     {
 					"type": "shell",
 					"commands": [
@@ -427,8 +432,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.50/evolution-ews-3.50.3.tar.xz",
-                        "sha256": "e2fa5941376ad57e07d2673f8676c31f7f2b068d49f68ea0fb8bafeabb529bed"
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.52/evolution-ews-3.52.0.tar.xz",
+                        "sha256": "d4c1be0b3b6a76c64cfff1640e882bde764ecc0018873671f3c9bd479909a5ae"
                     }    
                     ],
                 "post-install": [
