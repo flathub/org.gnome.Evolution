@@ -1,7 +1,7 @@
 {
         "app-id": "org.gnome.Evolution",
         "runtime": "org.gnome.Platform",
-        "runtime-version": "45",
+        "runtime-version": "46",
         "sdk": "org.gnome.Sdk",
         "command": "evolution",
         "rename-icon": "evolution",
@@ -62,8 +62,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://github.com/libical/libical/releases/download/v3.0.17/libical-3.0.17.tar.gz",
-                        "sha256": "bcda9a6db6870240328752854d1ea475af9bbc6356e6771018200e475e5f781b"
+                        "url": "https://github.com/libical/libical/releases/download/v3.0.18/libical-3.0.18.tar.gz",
+                        "sha256": "72b7dc1a5937533aee5a2baefc990983b66b141dd80d43b51f80aced4aae219c"
                      }   
                 ]
             },
@@ -120,8 +120,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/gnome-online-accounts/3.48/gnome-online-accounts-3.48.0.tar.xz",
-                        "sha256": "418bb9fcffdbd72a98205ad365137617fc1e3551a54de74f6a98d45d266175bf"
+                        "url": "https://download.gnome.org/sources/gnome-online-accounts/3.50/gnome-online-accounts-3.50.1.tar.xz",
+                        "sha256": "42ee43fd1e2942b9ff6106252ccdc834602815508bf7a3a52c0bdfffa56eaf40"
                     }
                 ]
             },
@@ -141,8 +141,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/geocode-glib/3.26/geocode-glib-3.26.3.tar.xz",
-                        "sha256": "1dfeae83b90eccca1b6cf7dcf7c5e3b317828cf0b56205c4471ef0f911999766"
+                        "url": "https://download.gnome.org/sources/geocode-glib/3.26/geocode-glib-3.26.4.tar.xz",
+                        "sha256": "2d9a6826d158470449a173871221596da0f83ebdcff98b90c7049089056a37aa"
                     }
                 ]
             },
@@ -164,8 +164,8 @@
 			"sources": [
 				{
 					"type": "archive",
-					"url": "https://download.gnome.org/sources/libgweather/4.3/libgweather-4.3.2.tar.xz",
-					"sha256": "559da8150208be61af5f529d6712aa8836ccaef0866a165022d941a7d2fb3826"
+					"url": "https://download.gnome.org/sources/libgweather/4.4/libgweather-4.4.2.tar.xz",
+					"sha256": "a6e427b4770ada48945f3aa906af710fc833cff0d42df91f1828302740d794ec"
 				}
 			]
 		},
@@ -189,8 +189,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.6.tgz",
-                        "sha256": "082e998cf542984d43634442dbe11da860759e510907152ea579bdc42fe39ea0"
+                        "url": "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.7.tgz",
+                        "sha256": "cd775f625c944ed78a3da18a03b03b08eea73c8aabc97b41bb336e9a10954930"
                     },
      
                     {
@@ -232,8 +232,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.52/evolution-data-server-3.52.0.tar.xz",
-                        "sha256": "a5d5e11c7a1e585846efe260f3c1c61a78399bd8b623bfd79ac1c0ffea7bde06"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.52/evolution-data-server-3.52.1.tar.xz",
+                        "sha256": "825b3d7d5468440a67d11dd2a23933960c07b9eecc797bb125843cb2c870a348"
                     }
                 ],
                 "post-install": [
@@ -253,7 +253,7 @@
 				{
 					"type": "git",
 					"url": "https://gitlab.com/bogofilter/bogofilter.git",
-					"commit": "26cac0a458214ef34d57f23ab056122524475bd9"
+					"commit": "d1f560775e71daeeea4237b814e3a0c5dfe4b9f7"
 				}
 			]
 		},
@@ -275,8 +275,8 @@
 			"sources": [
 				{
 					"type": "archive",
-					"url": "https://www.gnupg.org/ftp/gcrypt/pinentry/pinentry-1.2.1.tar.bz2",
-					"sha256": "457a185e5a85238fb945a955dc6352ab962dc8b48720b62fc9fa48c7540a4067"
+					"url": "https://www.gnupg.org/ftp/gcrypt/pinentry/pinentry-1.3.0.tar.bz2",
+					"sha256": "9b3cd5226e7597f2fded399a3bc659923351536559e9db0826981bca316494de"
 				}
 			]
 		},
@@ -293,8 +293,8 @@
 			"sources": [
 				{
 					"type": "archive",
-					"url": "https://github.com/commonmark/cmark/archive/refs/tags/0.30.2.tar.gz",
-					"sha256": "6c7d2bcaea1433d977d8fed0b55b71c9d045a7cdf616e3cd2dce9007da753db3"
+					"url": "https://github.com/commonmark/cmark/archive/refs/tags/0.31.0.tar.gz",
+					"sha256": "bbcb8f8c03b5af33fcfcf11a74e9499f20a9043200b8552f78a6e8ba76e04d11"
 				}
 			]
 		},
@@ -329,13 +329,9 @@
                     {
                         "type": "archive",
 
-                        "url": "https://download.gnome.org/sources/evolution/3.52/evolution-3.52.0.tar.xz",
-                        "sha256": "5ef708d7c0e40582e271b30e2a07625b648c32c6340cb5488df44177c7c946a9"
-                    },
-                    {
-                        "type": "patch",
-                        "path": "appdata.patch"
-                    },    
+                        "url": "https://download.gnome.org/sources/evolution/3.52/evolution-3.52.1.tar.xz",
+                        "sha256": "68daed111dade3618ca708ecb3cab4cd93ba502f5ae9d5e797073c3a13e29de9"
+                    },   
                     {
 					"type": "shell",
 					"commands": [
@@ -432,8 +428,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.52/evolution-ews-3.52.0.tar.xz",
-                        "sha256": "d4c1be0b3b6a76c64cfff1640e882bde764ecc0018873671f3c9bd479909a5ae"
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.52/evolution-ews-3.52.1.tar.xz",
+                        "sha256": "4d1f4e962a450a526700335089a3907d980c07667fabd56699a834e99d874ab2"
                     }    
                     ],
                 "post-install": [
