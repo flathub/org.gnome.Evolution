@@ -44,6 +44,7 @@
 			"autodelete": true
 		}
 	},
+	
         "modules": [
             "shared-modules/libcanberra/libcanberra.json",
             {
