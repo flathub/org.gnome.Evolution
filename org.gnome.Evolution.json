@@ -328,15 +328,13 @@
                 "sources": [
                     {
                         "type": "archive",
-<<<<<<< HEAD
                         "url": "https://download.gnome.org/sources/evolution/3.52/evolution-3.52.2.tar.xz",
                         "sha256": "a48b7412d13edac74f6c09acfa676656e6a12edf0030cddc26029ac04da3e551"
-=======
-
-                        "url": "https://download.gnome.org/sources/evolution/3.52/evolution-3.52.1.tar.xz",
-                        "sha256": "68daed111dade3618ca708ecb3cab4cd93ba502f5ae9d5e797073c3a13e29de9"
->>>>>>> 0c877c7b94b233d1f4226767774fa66153377b7b
-                    },   
+                    },
+                    {
+                    	"type": "patch",
+                    	"path": "738ca7723da961d537082db615460ae627c7693b.patch"
+                    },
                     {
 					"type": "shell",
 					"commands": [
