@@ -232,8 +232,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.52/evolution-data-server-3.52.2.tar.xz",
-                        "sha256": "a006a44edcb38d26ffb1c62e1d5d0a31d1f2e59075565e26c79a2ee01c45a7e5"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.52/evolution-data-server-3.52.3.tar.xz",
+                        "sha256": "e9f6c80c142033b1801bccaa6221c453de34ead4ea089b2086b19086f9a9c2e4"
                     }
                 ],
                 "post-install": [
@@ -328,13 +328,9 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.52/evolution-3.52.2.tar.xz",
-                        "sha256": "a48b7412d13edac74f6c09acfa676656e6a12edf0030cddc26029ac04da3e551"
-                    },
-                    {
-                    	"type": "patch",
-                    	"path": "738ca7723da961d537082db615460ae627c7693b.patch"
-                    },
+                        "url": "https://download.gnome.org/sources/evolution/3.52/evolution-3.52.3.tar.xz",
+                        "sha256": "1c22f53b5554e260a48e917f3d669834d24e4d3ad5a124cbe042a2a4ace441c5"
+                    },                    
                     {
 					"type": "shell",
 					"commands": [
@@ -431,8 +427,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.52/evolution-ews-3.52.2.tar.xz",
-                        "sha256": "a9550f1b53d474036dd2399627b3118eb3b8431841cedc0edf21457b09619141"
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.52/evolution-ews-3.52.3.tar.xz",
+                        "sha256": "1fd6382fd5fd30043845cfc5dc4c34fe012bcc83512b6030154250bc618068c0"
                     }    
                     ],
                 "post-install": [
