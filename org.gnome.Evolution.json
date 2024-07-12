@@ -435,7 +435,11 @@
 				"cp NEWS /app/share/NEWS.ews"
                 ]
             },
-            
+             {
+                        "url": "https://download.gnome.org/sources/evolution/3.52/evolution-3.52.1.tar.xz",
+                    	"type": "patch",
+                    	"path": "1151a311a0ce600a5484f75087c6d933a7199221.patch"
+                    },
             {
 			"name": "news-to-appdata",
 			"buildsystem": "simple",
