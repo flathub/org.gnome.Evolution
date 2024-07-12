@@ -429,17 +429,17 @@
                         "type": "archive",
                         "url": "https://download.gnome.org/sources/evolution-ews/3.53/evolution-ews-3.53.1.tar.xz",
                         "sha256": "31ee4d43b9a8ca2cf301ad34f83a42e1f9c830e1d623e99f40e264ee108dc17a"
-                    }    
+                    },
+                    {
+                        "url": "https://download.gnome.org/sources/evolution/3.52/evolution-3.52.1.tar.xz",
+                    	"type": "patch",
+                    	"path": "1151a311a0ce600a5484f75087c6d933a7199221.patch"
+                    }
                     ],
                 "post-install": [
 				"cp NEWS /app/share/NEWS.ews"
                 ]
             },
-             {
-                        "url": "https://download.gnome.org/sources/evolution/3.52/evolution-3.52.1.tar.xz",
-                    	"type": "patch",
-                    	"path": "1151a311a0ce600a5484f75087c6d933a7199221.patch"
-                    },
             {
 			"name": "news-to-appdata",
 			"buildsystem": "simple",
