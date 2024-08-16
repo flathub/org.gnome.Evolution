@@ -332,10 +332,6 @@
                         "sha256": "f57929801d6e401a611d6521ef59224d81b30500357a4b9e3e46245ec9461819"
                     },
                     {
-                    	"type": "patch",
-                    	"path": "738ca7723da961d537082db615460ae627c7693b.patch"
-                    },
-                    {
 					"type": "shell",
 					"commands": [
 						"cp config.h.in config.h.in.orig",
