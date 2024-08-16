@@ -232,8 +232,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.52/evolution-data-server-3.52.3.tar.xz",
-                        "sha256": "e9f6c80c142033b1801bccaa6221c453de34ead4ea089b2086b19086f9a9c2e4"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.52/evolution-data-server-3.52.4.tar.xz",
+                        "sha256": "1b36a839db1c8d898066e19be78b995930a0a2f2a886f149e4f64e1755f064f7"
                     }
                 ],
                 "post-install": [
@@ -328,9 +328,9 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.52/evolution-3.52.3.tar.xz",
-                        "sha256": "1c22f53b5554e260a48e917f3d669834d24e4d3ad5a124cbe042a2a4ace441c5"
-                    },                    
+                        "url": "https://download.gnome.org/sources/evolution/3.52/evolution-3.52.4.tar.xz",
+                        "sha256": "f57929801d6e401a611d6521ef59224d81b30500357a4b9e3e46245ec9461819"
+                    },
                     {
 					"type": "shell",
 					"commands": [
@@ -427,8 +427,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.52/evolution-ews-3.52.3.tar.xz",
-                        "sha256": "1fd6382fd5fd30043845cfc5dc4c34fe012bcc83512b6030154250bc618068c0"
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.52/evolution-ews-3.52.4.tar.xz",
+                        "sha256": "408d55056c80e4ad6447e3c778836875821f6c261d35ea7117562870f02f63ba"
                     }    
                     ],
                 "post-install": [
