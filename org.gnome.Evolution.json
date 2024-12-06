@@ -121,12 +121,18 @@
             {
                 "name": "gnome-online-accounts",
                 "buildsystem": "meson",
+                "config-opts": [
+				"-Dvapi=false",
+				"-Dgoabackend=false",
+				"-Dintrospection=false",
+				"-Dkerberos=false"
+			],
                 "cleanup": [ "/bin", "/share/GConf" ],
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/gnome-online-accounts/3.50/gnome-online-accounts-3.50.5.tar.xz",
-                        "sha256": "2d24942700ebb6d40a4757bb1d202f3c238f80f30df6f32c63f57a9edcb73f1a"
+                        "url": "https://download.gnome.org/sources/gnome-online-accounts/3.52/gnome-online-accounts-3.52.2.tar.xz",
+                        "sha256": "fb413f48deefbb9fc3002a91579dee947ceeed41f49c2f51317af7489b676f67"
                     }
                 ]
             },
@@ -194,8 +200,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.8.tgz",
-                        "sha512": "c86bda8a0af2645e586d56a1494a5bd486ec5dd55c47859dbabcc2bb6ddc0a8307e23c6b58228d49ee3c8bc5e4d6ead305863442efdcee3dc2ab9953097b5a77"
+                        "url": "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.9.tgz",
+                        "sha512": "d3f839d3cf1030caa410e54f968e9c0caf3bc371c06ea0f64cf3a6ece6d31013c9dbfb08a3a63ea9137a2062aa6edc6e0bc542b365fe4ad66608df4cdbe94a4e"
                     },
      
                     {
@@ -237,8 +243,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.54/evolution-data-server-3.54.1.tar.xz",
-                        "sha256": "25b336c48a6babc36321d88094b382aeaf18abcbab4a9438b3fff90c29e105ae"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.54/evolution-data-server-3.54.2.tar.xz",
+                        "sha256": "11f0253089c8abf456cffda3fe658a35a0de2b8ae93d8f257d6b020ae7963d20"
                     }
                 ],
                 "post-install": [
@@ -333,8 +339,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.54/evolution-3.54.1.tar.xz",
-                        "sha256": "a8443374977a01c63bd03afdb5c63e73a48e6745d7d459b4f26823dd5cf9971b"
+                        "url": "https://download.gnome.org/sources/evolution/3.54/evolution-3.54.2.tar.xz",
+                        "sha256": "edea2912ffdb6599c0ea0289c3a9ae2017bfe37a08d78223584521aa5686b576"
                     },                    
                     {
 					"type": "shell",
@@ -432,8 +438,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.54/evolution-ews-3.54.1.tar.xz",
-                        "sha256": "a1e33d6840f818b74bbfe89a7dbda37295dd8145a7df4265ad2db2414538903a"
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.54/evolution-ews-3.54.2.tar.xz",
+                        "sha256": "efb519da29e8217e7cb7774d43d04626248c3be58a1946c8a63c320e5d883cd4"
                     }
                     ],
                 "post-install": [
