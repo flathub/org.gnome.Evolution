@@ -438,7 +438,7 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.54/evolution-ews-3.54.3.tar.xz",
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.54/evolution-ews-3.54.3.0.tar.xz",
                         "sha256": "1ac707cf2591a844512575621a4930c761b2174dbc5ecb1c8a185262946a14f6"
                     }
                     ],
