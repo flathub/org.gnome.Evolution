@@ -62,7 +62,7 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://github.com/libical/libical/releases/download/v3.0.18/libical-3.0.18.tar.gz",
+                        "url": "https://github.com/libical/libical/releases/download/v3.0.19/libical-3.0.19.tar.gz",
                         "sha256": "72b7dc1a5937533aee5a2baefc990983b66b141dd80d43b51f80aced4aae219c"
                      }   
                 ]
@@ -131,8 +131,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/gnome-online-accounts/3.52/gnome-online-accounts-3.52.2.tar.xz",
-                        "sha256": "fb413f48deefbb9fc3002a91579dee947ceeed41f49c2f51317af7489b676f67"
+                        "url": "https://download.gnome.org/sources/gnome-online-accounts/3.53/gnome-online-accounts-3.53.2.tar.xz",
+                        "sha256": "40d5a8d7212ba9cf51e7617c5c6bef004503e36c0bf68f9ad08e9bb2731a1616"
                     }
                 ]
             },
@@ -243,8 +243,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.55/evolution-data-server-3.55.1.tar.xz",
-                        "sha256": "d840511954e6fc99ea4f18c7e4a2a0c32864179da01d5d244a2e671b11db73eb"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.55/evolution-data-server-3.55.3.tar.xz",
+                        "sha256": "fe83e58a6107b86d8f62a705e78481f092d5e71b189bdf787d3e7d474868148d"
                     }
                 ],
                 "post-install": [
@@ -339,8 +339,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.55/evolution-3.55.1.tar.xz",
-                        "sha256": "ae9e10e8b7be7ee8bbffbbf1e180a3614da0ee2d7465e817c4dc1f90e26c0530"
+                        "url": "https://download.gnome.org/sources/evolution/3.55/evolution-3.55.3.tar.xz",
+                        "sha256": "778d98650d2d65f0d9f100dda52e5caf9a74ec7d91ab005101e123596ae3f626"
                     },                    
                     {
 					"type": "shell",
@@ -438,8 +438,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.55/evolution-ews-3.55.1.tar.xz",
-                        "sha256": "c26af30d2f9c7d7adb145a87d1b4999210ff0e06567ae1ca6d848186fd6f7ab1"
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.55/evolution-ews-3.55.3.tar.xz",
+                        "sha256": "63880992bccacb74d2427a0e9e2bd991b6f68dd9f6a228ef4205d3262c3df4e9"
                     }
                     ],
                 "post-install": [
