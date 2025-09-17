@@ -462,16 +462,16 @@
 						"fi",
 						"VER=${VER%.*}",
 						"APPDATA_RELEASES=`./news-to-appdata \"\" ${TYPE} ${VER} /app/share/NEWS.evo ${VER} /app/share/NEWS.eds ${VER} /app/share/NEWS.ews`",
-						"APPDATA=`cat /app/share/org.gnome.Evolution.appdata.xml`",
+						"APPDATA=`cat /app/share/org.gnome.Evolution.metainfo.xml`",
 						"if [ \"${APPDATA_RELEASES}\" = \"\" ]; then",
 						"    APPDATA_RELEASES=\"<release version=\\\"$(pkg-config --modversion evolution-shell-3.0)\\\" date=\\\"$(date +%Y-%m-%d)\\\" type=\\\"${TYPE}\\\"/>\"",
 						"fi",
-						"echo \"${APPDATA%APPDATA_RELEASES*}${APPDATA_RELEASES}${APPDATA#*APPDATA_RELEASES}\">/app/share/metainfo/org.gnome.Evolution.appdata.xml",
+						"echo \"${APPDATA%APPDATA_RELEASES*}${APPDATA_RELEASES}${APPDATA#*APPDATA_RELEASES}\">/app/share/metainfo/org.gnome.Evolution.metainfo.xml",
 						"rm /app/share/NEWS.eds",
 						"rm /app/share/NEWS.evo",
 						"rm /app/share/NEWS.ews",
 						"rm /app/share/news-to-appdata.c",
-						"rm /app/share/org.gnome.Evolution.appdata.xml"
+						"rm /app/share/org.gnome.Evolution.metainfo.xml"
 					],
 					"dest-filename": "update-appdata.sh"
 				}
