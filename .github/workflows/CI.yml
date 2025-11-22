@@ -1,0 +1,24 @@
+on:
+  push:
+  #  branches: [main, beta]
+  pull_request:
+name: CI
+jobs:
+  verify-version:
+    name: "Verify version string"
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/flathub-infra/flatpak-github-actions:gnome-48
+      options: --privileged
+    steps:
+    - uses: actions/checkout@v4
+    - run: |
+        if [ `cat org.gnome.Evolution.json | grep -- "-DVERSION_SUBSTRING" | grep -c "by Flathub.org"` = "0" ]; then
+            echo "ERROR: Version information broken, VERSION_SUBSTRING should contain 'by Flathub.org'" >&2;
+            exit 1;
+        fi
+    - run: |
+        if [ `cat org.gnome.Evolution.json | grep -- "@VERSION_SUBSTRING" | grep -c "by Flathub.org"` = "0" ]; then
+            echo "ERROR: Version information broken, VERSION_SUBSTRING should contain 'by Flathub.org'" >&2;
+            exit 1;
+        fi
