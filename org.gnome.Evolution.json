@@ -243,8 +243,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.58/evolution-data-server-3.58.1.tar.xz",
-                        "sha256": "a914928814ef887f0979ba78ea8d7bcc98f96cf07cbb70b0051980bd90ec35f0"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.58/evolution-data-server-3.58.2.tar.xz",
+                        "sha256": "6942ecfc39ebb36b0b4363adff00771c1c2dfa34f54e80ec92c3baa3feb020fb"
                     }
                 ],
                 "post-install": [
@@ -339,14 +339,14 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.58/evolution-3.58.1.tar.xz",
-                        "sha256": "03d8d0cccd102aa1a73c31d9e2f374cb3db83acddfc1126c9186af63da6cbecc"
+                        "url": "https://download.gnome.org/sources/evolution/3.58/evolution-3.58.2.tar.xz",
+                        "sha256": "ba1bc3b5728a31b8c9eaa0da1ee8ae946eddcc544ee8242dccc209d96dcaa330"
                     },                    
                     {
 					"type": "shell",
 					"commands": [
 						"cp config.h.in config.h.in.orig",
-						"cat config.h.in.orig | sed -e \"s|\\@VERSION_SUBSTRING\\@| \\(flatpak git$(git log --pretty=format:%h --max-count=1)\\)|\" >config.h.in",
+						"cat config.h.in.orig | sed -e \"s|\\@VERSION_SUBSTRING\\@| \\(by Flathub.org\\)|\" >config.h.in",
 						"cp data/org.gnome.Evolution.metainfo.xml.in.in data/org.gnome.Evolution.metainfo.xml.in.in.orig",
 						"cat data/org.gnome.Evolution.metainfo.xml.in.in.orig | sed -e \"s|\\@APPDATA_RELEASES\\@|APPDATA_RELEASES|\" >data/org.gnome.Evolution.metainfo.xml.in.in"
 					]
@@ -438,8 +438,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.58/evolution-ews-3.58.1.tar.xz",
-                        "sha256": "10006bd78ffb7d6409c5d00a558be9dc190e8594bb9a2b973e2ec05613167820"
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.58/evolution-ews-3.58.2.tar.xz",
+                        "sha256": "fa6fc0dfd17ef61a630ad33c645b8358c4266766126f1716b3c79fefd290c8fb"
                     }
                     ],
                 "post-install": [
