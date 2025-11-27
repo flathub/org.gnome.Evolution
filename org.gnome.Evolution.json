@@ -1,14 +1,15 @@
 {
         "app-id": "org.gnome.Evolution",
         "runtime": "org.gnome.Platform",
-        "runtime-version": "48",
+        "runtime-version": "49",
         "sdk": "org.gnome.Sdk",
         "command": "evolution",
         "rename-icon": "evolution",
         "copy-icon": true,
         "build-options" : {
             "cflags": "-O2 -g -Wno-deprecated-declarations",
-            "cxxflags": "-O2 -g -Wno-deprecated-declarations"
+            "cxxflags": "-O2 -g -Wno-deprecated-declarations",
+            "env": { "ACLOCAL_PATH": "/usr/share/gettext/m4/" }
         },
         "cleanup": [
             "*.la",
