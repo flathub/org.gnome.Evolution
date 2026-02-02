@@ -244,8 +244,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.58/evolution-data-server-3.58.2.tar.xz",
-                        "sha256": "6942ecfc39ebb36b0b4363adff00771c1c2dfa34f54e80ec92c3baa3feb020fb"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.58/evolution-data-server-3.58.3.tar.xz",
+                        "sha256": "da136d1190d9e8b09499452f6058e24eee6b77f441a8c769f74a52451bf379f1"
                     }
                 ],
                 "post-install": [
@@ -340,8 +340,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.58/evolution-3.58.2.tar.xz",
-                        "sha256": "ba1bc3b5728a31b8c9eaa0da1ee8ae946eddcc544ee8242dccc209d96dcaa330"
+                        "url": "https://download.gnome.org/sources/evolution/3.58/evolution-3.58.3.tar.xz",
+                        "sha256": "5d01b79a5bebdf2d3a9871b61350939cf2501f6ea03c241543f744a9286d4d79"
                     },                    
                     {
 					"type": "shell",
@@ -439,8 +439,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.58/evolution-ews-3.58.2.tar.xz",
-                        "sha256": "fa6fc0dfd17ef61a630ad33c645b8358c4266766126f1716b3c79fefd290c8fb"
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.58/evolution-ews-3.58.3.tar.xz",
+                        "sha256": "3f6ef8bb6389013e843e258ce1dc317a891a34f87d79780c9aef04d2741abc92"
                     }
                     ],
                 "post-install": [
