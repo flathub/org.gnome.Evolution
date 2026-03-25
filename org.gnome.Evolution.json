@@ -132,8 +132,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/gnome-online-accounts/3.56/gnome-online-accounts-3.56.0.tar.xz",
-                        "sha256": "31d6a017d171b27ff936478fdb0792a200c8142eafc18b255073ce9dfb417572"
+                        "url": "https://download.gnome.org/sources/gnome-online-accounts/3.58/gnome-online-accounts-3.58.0.tar.xz",
+                        "sha256": "344d4dff9149a1adc4539417193e1eccc2f76ef40ac24e104ccf58072be55999"
                     }
                 ]
             },
@@ -244,8 +244,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.58/evolution-data-server-3.58.3.tar.xz",
-                        "sha256": "da136d1190d9e8b09499452f6058e24eee6b77f441a8c769f74a52451bf379f1"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.60/evolution-data-server-3.60.0.tar.xz",
+                        "sha256": "e04e383e0e28b24d91b3d373f6ffb87a5d46ba3845c7999c412cc7813adf6c18"
                     }
                 ],
                 "post-install": [
@@ -270,29 +270,6 @@
 			]
 		},
 		
-		{
-			"name": "pinentry",
-			"config-opts": [
-				"--enable-pinentry-gnome3",
-				"--disable-ncurses",
-				"--disable-fallback-curses",
-				"--disable-pinentry-curses",
-				"--disable-pinentry-emacs",
-				"--disable-pinentry-gtk2",
-				"--disable-pinentry-qt5",
-				"--disable-pinentry-tty",
-				"--disable-pinentry-tqt",
-				"--disable-pinentry-fltk"
-			],
-			"sources": [
-				{
-					"type": "archive",
-					"url": "https://www.gnupg.org/ftp/gcrypt/pinentry/pinentry-1.3.2.tar.bz2",
-					"sha256": "8e986ed88561b4da6e9efe0c54fa4ca8923035c99264df0b0464497c5fb94e9e"
-				}
-			]
-		},
-
 	    {
 			"name": "cmark",
 			"buildsystem": "cmake-ninja",
@@ -340,8 +317,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.58/evolution-3.58.3.tar.xz",
-                        "sha256": "5d01b79a5bebdf2d3a9871b61350939cf2501f6ea03c241543f744a9286d4d79"
+                        "url": "https://download.gnome.org/sources/evolution/3.60/evolution-3.60.0.tar.xz",
+                        "sha256": "0fed748a44933a7a1138fe6027966abc366c6c32eb5a41e30eb61b8e5439b5e5"
                     },                    
                     {
 					"type": "shell",
@@ -439,8 +416,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.58/evolution-ews-3.58.3.tar.xz",
-                        "sha256": "3f6ef8bb6389013e843e258ce1dc317a891a34f87d79780c9aef04d2741abc92"
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.60/evolution-ews-3.60.0.tar.xz",
+                        "sha256": "ccd2cf7fb3bcdd20e6de96263052e8a2a51e2a74e16bf8c3f5bc6087aa8d9934"
                     }
                     ],
                 "post-install": [
@@ -480,23 +457,6 @@
 			"build-commands": [
 				"./update-appdata.sh stable"
 			]
-		},
-
-            {
-            	"name": "libsecret",
-            	"buildsystem": "meson",
-            	"config-opts": [
-				"-Dmanpage=false",
-				"-Dvapi=false",
-				"-Dgtk_doc=false"
-				],
-            	"sources": [
-            	    {
-            	    	"type": "archive",
-            	    	"url": "https://download.gnome.org/sources/libsecret/0.19/libsecret-0.19.1.tar.xz",
-            	    	"sha256": "8583e10179456ae2c83075d95455f156dc08db6278b32bf4bd61819335a30e3a"
-            	    }	
-        	]
-	}
+		}
 	]
 }	
