@@ -132,8 +132,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/gnome-online-accounts/3.57/gnome-online-accounts-3.57.0.tar.xz",
-                        "sha256": "a038d632627e9e898aef0a1c8f9e74b8df82dbb10087aa7f238398d642d8b81e"
+                        "url": "https://download.gnome.org/sources/gnome-online-accounts/3.58/gnome-online-accounts-3.58.0.tar.xz",
+                        "sha256": "344d4dff9149a1adc4539417193e1eccc2f76ef40ac24e104ccf58072be55999"
                     }
                 ]
             },
@@ -244,8 +244,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.59/evolution-data-server-3.59.2.tar.xz",
-                        "sha256": "15bd798c85dee923462bebe880761b4668b6c5065584e840900988389add83bf"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.60/evolution-data-server-3.60.0.tar.xz",
+                        "sha256": "e04e383e0e28b24d91b3d373f6ffb87a5d46ba3845c7999c412cc7813adf6c18"
                     }
                 ],
                 "post-install": [
@@ -270,29 +270,6 @@
 			]
 		},
 		
-		{
-			"name": "pinentry",
-			"config-opts": [
-				"--enable-pinentry-gnome3",
-				"--disable-ncurses",
-				"--disable-fallback-curses",
-				"--disable-pinentry-curses",
-				"--disable-pinentry-emacs",
-				"--disable-pinentry-gtk2",
-				"--disable-pinentry-qt5",
-				"--disable-pinentry-tty",
-				"--disable-pinentry-tqt",
-				"--disable-pinentry-fltk"
-			],
-			"sources": [
-				{
-					"type": "archive",
-					"url": "https://www.gnupg.org/ftp/gcrypt/pinentry/pinentry-1.3.2.tar.bz2",
-					"sha256": "8e986ed88561b4da6e9efe0c54fa4ca8923035c99264df0b0464497c5fb94e9e"
-				}
-			]
-		},
-
 	    {
 			"name": "cmark",
 			"buildsystem": "cmake-ninja",
@@ -340,8 +317,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.59/evolution-3.59.2.tar.xz",
-                        "sha256": "47361b6d023e0e8b086f596c5d06aa00f084eddb17eef68d6298a353caeb1674"
+                        "url": "https://download.gnome.org/sources/evolution/3.60/evolution-3.60.0.tar.xz",
+                        "sha256": "0fed748a44933a7a1138fe6027966abc366c6c32eb5a41e30eb61b8e5439b5e5"
                     },                    
                     {
 					"type": "shell",
@@ -439,8 +416,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.59/evolution-ews-3.59.2.tar.xz",
-                        "sha256": "e7f5857a1b12a793aa5028c829cd93d66a7ba7fd212564b8507071cdbec515d2"
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.60/evolution-ews-3.60.0.tar.xz",
+                        "sha256": "ccd2cf7fb3bcdd20e6de96263052e8a2a51e2a74e16bf8c3f5bc6087aa8d9934"
                     }
                     ],
                 "post-install": [
