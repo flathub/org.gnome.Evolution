@@ -132,8 +132,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/gnome-online-accounts/3.58/gnome-online-accounts-3.58.0.tar.xz",
-                        "sha256": "344d4dff9149a1adc4539417193e1eccc2f76ef40ac24e104ccf58072be55999"
+                        "url": "https://download.gnome.org/sources/gnome-online-accounts/3.58/gnome-online-accounts-3.58.1.tar.xz",
+                        "sha256": "9ec1900cc51409c2067c07c828c10be06fe3bf68d2999bb72d7d5ed325ed9bbc"
                     }
                 ]
             },
@@ -244,8 +244,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.60/evolution-data-server-3.60.0.tar.xz",
-                        "sha256": "e04e383e0e28b24d91b3d373f6ffb87a5d46ba3845c7999c412cc7813adf6c18"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.60/evolution-data-server-3.60.1.tar.xz",
+                        "sha256": "33f92d3b8822eba04c313796c0778cbb65a1a38472e857edc5f98854cca9b34c"
                     }
                 ],
                 "post-install": [
@@ -317,8 +317,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.60/evolution-3.60.0.tar.xz",
-                        "sha256": "0fed748a44933a7a1138fe6027966abc366c6c32eb5a41e30eb61b8e5439b5e5"
+                        "url": "https://download.gnome.org/sources/evolution/3.60/evolution-3.60.1.tar.xz",
+                        "sha256": "8f333ceb4c31cce7d77495e8901a00efdc5376da5429c1c294d7e3efbc6f7308"
                     },                    
                     {
 					"type": "shell",
@@ -416,8 +416,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.60/evolution-ews-3.60.0.tar.xz",
-                        "sha256": "ccd2cf7fb3bcdd20e6de96263052e8a2a51e2a74e16bf8c3f5bc6087aa8d9934"
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.60/evolution-ews-3.60.1.tar.xz",
+                        "sha256": "0a22f865ebeb70e2679520fd2d94aa9973c403cbe4e03aa88cf8f23f358e8b6d"
                     }
                     ],
                 "post-install": [
