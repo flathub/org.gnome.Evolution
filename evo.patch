@@ -1,0 +1,54 @@
+From e12f21481d8f7caa2e75118d9df6ea4bf5d2b0e3 Mon Sep 17 00:00:00 2001
+Date: Tue, 28 Apr 2026 18:32:57 +0200
+Subject: [PATCH] mail: Use E_OAUTH2_SERVICE_ERROR instead of abused G_IO_ERROR
+ codes
+
+Update mail_session_get_oauth2_access_token_sync() to check for
+the new E_OAUTH2_SERVICE_ERROR_TOKEN_EXPIRED and
+E_OAUTH2_SERVICE_ERROR_REFRESH_FAILED codes instead of
+G_IO_ERROR_CONNECTION_REFUSED. Also handle SECRET_NOT_FOUND
+with CREDENTIALS_REASON_REQUIRED instead of REJECTED.
+
+This prevents real network errors (like "No route to host")
+from being misinterpreted as credential failures, which was
+causing false credential prompts for unrelated accounts.
+
+Related: https://github.com/flathub/org.gnome.Evolution/issues/222
+
+Assisted-by: Claude Opus 4.6 (1M context) <noreply@anthropic.com>
+---
+ src/libemail-engine/e-mail-session.c | 13 ++++++++-----
+ 1 file changed, 8 insertions(+), 5 deletions(-)
+
+diff --git a/src/libemail-engine/e-mail-session.c b/src/libemail-engine/e-mail-session.c
+index 6019f87ed4..45178cbac4 100644
+--- a/src/libemail-engine/e-mail-session.c
++++ b/src/libemail-engine/e-mail-session.c
+@@ -1952,16 +1952,19 @@ mail_session_get_oauth2_access_token_sync (CamelSession *session,
+ 
+ 	success = e_source_get_oauth2_access_token_sync (cred_source ? cred_source : source, cancellable, out_access_token, out_expires_in, &local_error);
+ 
+-	/* The Connection Refused error can be returned when the OAuth2 token is expired or
+-	   when its refresh failed for some reason. In that case change the error domain/code,
+-	   thus the other Camel/mail code understands it. */
+-	if (g_error_matches (local_error, G_IO_ERROR, G_IO_ERROR_CONNECTION_REFUSED) ||
+-	    g_error_matches (local_error, G_IO_ERROR, G_IO_ERROR_NOT_FOUND)) {
++	if (g_error_matches (local_error, E_OAUTH2_SERVICE_ERROR, E_OAUTH2_SERVICE_ERROR_TOKEN_EXPIRED) ||
++	    g_error_matches (local_error, E_OAUTH2_SERVICE_ERROR, E_OAUTH2_SERVICE_ERROR_REFRESH_FAILED)) {
+ 		local_error->domain = CAMEL_SERVICE_ERROR;
+ 		local_error->code = CAMEL_SERVICE_ERROR_CANT_AUTHENTICATE;
+ 
+ 		e_source_invoke_credentials_required_sync (cred_source ? cred_source : source,
+ 			E_SOURCE_CREDENTIALS_REASON_REJECTED, NULL, 0, local_error, cancellable, NULL);
++	} else if (g_error_matches (local_error, E_OAUTH2_SERVICE_ERROR, E_OAUTH2_SERVICE_ERROR_SECRET_NOT_FOUND)) {
++		local_error->domain = CAMEL_SERVICE_ERROR;
++		local_error->code = CAMEL_SERVICE_ERROR_CANT_AUTHENTICATE;
++
++		e_source_invoke_credentials_required_sync (cred_source ? cred_source : source,
++			E_SOURCE_CREDENTIALS_REASON_REQUIRED, NULL, 0, local_error, cancellable, NULL);
+ 	}
+ 
+ 	if (local_error)
+-- 
+2.53.0
+
