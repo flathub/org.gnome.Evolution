@@ -409,13 +409,22 @@
 				"cp flatpak-evolution-wrapper.sh /app/bin/evolution"
 			]
 		},
-     
+            {
+                "name": "libmspack",
+                "cleanup": [ "/bin" ],
+                "sources": [
+                    {
+                        "type": "archive",
+                        "url": "https://www.cabextract.org.uk/libmspack/libmspack-0.11alpha.tar.gz",
+                        "sha256": "70dd1fb2f0aecc36791b71a1e1840e62173079eadaa081192d1c323a0eeea21b",
+                        "disable-http-decompression": true
+                    }
+                ]
+            },  
+            
             {
                 "name": "evolution-ews",
                 "buildsystem": "cmake-ninja",
-                "config-opts": [
-				"-DWITH_MSPACK=OFF"
-			],
                 "sources": [
                     {
                         "type": "archive",
