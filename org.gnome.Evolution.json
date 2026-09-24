@@ -58,13 +58,14 @@
                     "-DCMAKE_INSTALL_LIBDIR:PATH=/app/lib",
                     "-DICAL_BUILD_DOCS:BOOL=OFF",
                     "-DICAL_GLIB_VAPI:BOOL=OFF",
-                    "-DICAL_GLIB:BOOL=ON"
+                    "-DICAL_GLIB:BOOL=ON",
+                    "-DLIBICAL_JAVA_BINDINGS:BOOL=OFF"
                 ],
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://github.com/libical/libical/releases/download/v3.0.20/libical-3.0.20.tar.gz",
-                        "sha256": "e73de92f5a6ce84c1b00306446b290a2b08cdf0a80988eca0a2c9d5c3510b4c2"
+                        "url": "https://github.com/libical/libical/releases/download/v4.0.5/libical-4.0.5.tar.gz",
+                        "sha256": "cc09a3ac41d60e6144e644bd3fcf97d47106d659c4a0b8965102581401e67c9c"
                      }   
                 ]
             },
@@ -83,8 +84,8 @@
 			"sources": [
 				{
 					"type": "archive",
-					"url": "https://download.gnome.org/sources/gspell/1.14/gspell-1.14.0.tar.xz",
-					"sha256": "64ea1d8e9edc1c25b45a920e80daf67559d1866ffcd7f8432fecfea6d0fe8897"
+					"url": "https://download.gnome.org/sources/gspell/1.14/gspell-1.14.4.tar.xz",
+					"sha256": "e73a89d68c70f8748aefb6b0f5cfdfec3ff173cf4449837fd6cb17d1e9fcf486"
 				}
 			]
             },
@@ -213,8 +214,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.10.tgz",
-                        "sha512": "18129ad9a385457941e3203de5f130fe2571701abf24592c5beffb01361aae3182c196b2cd48ffeecb792b9b0e5f82c8d92445a7ec63819084757bdedba63b20"
+                        "url": "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.15.tgz",
+                        "sha512": "33f75c41eb4c61e9ba1995e72b7c20b277b252a9c059b0a9f5a07abd70a0436423c537ba016e385a983b6d6f5d15fbef1e72b64833765511dafcaea9d3084ff0"
                     },
      
                     {
@@ -256,8 +257,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-data-server/3.60/evolution-data-server-3.60.2.tar.xz",
-                        "sha256": "2084dbdac396371b365d504c1ff45866ba8dca2f1252e5da1d3d9c33abdc1286"
+                        "url": "https://download.gnome.org/sources/evolution-data-server/3.62/evolution-data-server-3.62.0.tar.xz",
+                        "sha256": "78be88e9a511f5afe7ff2e363eade84b622dd0282647fc576edb2d4ff2962cba"
                     }
                 ],
                 "post-install": [
@@ -271,7 +272,7 @@
 			"name": "bogofilter",
 			"buildsystem": "simple",
 			"build-commands": [
-			   "cd ./bogofilter/ && echo \"# Skip for Flatpak build\" > doc/Makefile.am && autoreconf -fi && ./configure --prefix=/app --disable-rpath --with-database=sqlite3 && make && make install"
+			   "cd ./bogofilter/ && touch config.rpath && echo \"# Skip for Flatpak build\" > doc/Makefile.am && autoreconf -fi && ./configure --prefix=/app --disable-rpath --with-database=sqlite3 && make && make install"
 			],
 			"sources": [
 				{
@@ -294,8 +295,8 @@
 			"sources": [
 				{
 					"type": "archive",
-					"url": "https://github.com/commonmark/cmark/archive/refs/tags/0.31.1.tar.gz",
-					"sha256": "3da93db5469c30588cfeb283d9d62edfc6ded9eb0edc10a4f5bbfb7d722ea802"
+                        "url": "https://github.com/commonmark/cmark/archive/refs/tags/0.31.2.tar.gz",
+                        "sha256": "f9bc5ca38bcb0b727f0056100fac4d743e768872e3bacec7746de28f5700d697"
 				}
 			]
 		},
@@ -329,8 +330,8 @@
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution/3.60/evolution-3.60.2.tar.xz",
-                        "sha256": "218a49fa5068155dbdbd35a30d10a2f237c72465fb1d0e0aa78889f039c2ed8f"
+                        "url": "https://download.gnome.org/sources/evolution/3.62/evolution-3.62.0.tar.xz",
+                        "sha256": "7fc2cc40e1699bf706b5cfcf0255650fc4623b99edbc72c5ad026cea2587a3d6"
                     },                    
                     {
 					"type": "shell",
@@ -409,7 +410,6 @@
 				"cp flatpak-evolution-wrapper.sh /app/bin/evolution"
 			]
 		},
-      
             {
                 "name": "libmspack",
                 "cleanup": [ "/bin" ],
@@ -417,19 +417,20 @@
                     {
                         "type": "archive",
                         "url": "https://www.cabextract.org.uk/libmspack/libmspack-0.11alpha.tar.gz",
-                        "sha256": "70dd1fb2f0aecc36791b71a1e1840e62173079eadaa081192d1c323a0eeea21b"
+                        "sha256": "70dd1fb2f0aecc36791b71a1e1840e62173079eadaa081192d1c323a0eeea21b",
+                        "disable-http-decompression": true
                     }
                 ]
-            },
-     
+            },  
+            
             {
                 "name": "evolution-ews",
                 "buildsystem": "cmake-ninja",
                 "sources": [
                     {
                         "type": "archive",
-                        "url": "https://download.gnome.org/sources/evolution-ews/3.60/evolution-ews-3.60.2.tar.xz",
-                        "sha256": "940205818f6988411457ddf5804d210f3515c26e33415debd8fbb2731b1daf2b"
+                        "url": "https://download.gnome.org/sources/evolution-ews/3.62/evolution-ews-3.62.0.tar.xz",
+                        "sha256": "85b8e7089582d9d5ea6dc1a82325b3e5c4b0396924f7a6e0f743a9128cad73d4"
                     }
                     ],
                 "post-install": [
