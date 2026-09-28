@@ -22,6 +22,7 @@
             "--socket=wayland",
             "--socket=pulseaudio",
             "--device=dri",
+            "--socket=gpg-agent",
             "--socket=pcsc",
             "--talk-name=org.gnome.OnlineAccounts",
             "--talk-name=org.freedesktop.Notifications",
